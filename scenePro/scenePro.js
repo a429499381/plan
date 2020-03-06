@@ -5,17 +5,17 @@ class ScenePro {
 
     setup() {
         this.level = 0
-        this.ObjArr = []
-        this.BallArr = []
+        this.EnemyArr = []
+        this.PlayerArr = []
         this.sceneWidth = 600
-        this.sceneheight = 500
+        this.sceneheight = 800
     }
 
-    addObj = (obj) => {
-        this.ObjArr.push(obj)
+    addEnemy = (obj) => {
+        this.EnemyArr.push(obj)
     }
-    addBall(b) {
-        this.BallArr.push(b)
+    addPlayer(b) {
+        this.PlayerArr.push(b)
     }
 
     collideArr = (ballArr, objArr) => {
@@ -69,15 +69,22 @@ class ScenePro {
     draw() {
         this.ui.clearUi()
         this.ui.drawImage(this.bg)
-        for (let i = 0; i < this.ObjArr.length; i++) {
-            let obj = this.ObjArr[i]
+
+        for (let i = 0; i < this.PlayerArr.length; i++) {
+            let obj = this.PlayerArr[i]
             if (obj.kill !== true) {
                 this.ui.drawImage(obj)
             }
         }
+      /*  for (let i = 0; i < this.PlayerArr.length; i++) {
+            let obj = this.PlayerArr[i]
+            if (obj.kill !== true) {
+                this.ui.drawImage(obj)
+            }
+        }*/
 
-        for (let i = 0; i < this.BallArr.length; i++) {
-            let obj = this.BallArr[i]
+        for (let i = 0; i < this.EnemyArr.length; i++) {
+            let obj = this.EnemyArr[i]
             if (obj.kill !== true) {
                 this.ui.drawImage(obj)
             }

@@ -1,9 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="16172606-dcf2-46ae-b793-e4dc3de580f0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marbles.html" beforeDir="false" afterPath="$PROJECT_DIR$/Marbles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/ball.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/Enemy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/paddle.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/palyer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/date/ballConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/date/Enemy_Config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/date/paddleConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/date/playerConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/player1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/player1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenePro/scenePro.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scenePro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenePro/scene_game.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scene_game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/imgS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Yl0tg7YdaKYoO69M7Y5VdnxGVB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -11,14 +41,76 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\WebstormProjects\打飞机\img" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\WebstormProjects\打飞机\img" />
+      <recent name="C:\Users\Administrator\WebstormProjects\打飞机\ui" />
+      <recent name="C:\Users\Administrator\WebstormProjects\打飞机" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="16172606-dcf2-46ae-b793-e4dc3de580f0" name="Default Changelist" comment="" />
+      <created>1583502089096</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583502089096</updated>
+      <workItem from="1583502090458" duration="5022000" />
+    </task>
+    <task id="LOCAL-00001" summary="开始做打飞机">
+      <created>1583502302804</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583502302804</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="开始做打飞机" />
+    <option name="LAST_COMMIT_MESSAGE" value="开始做打飞机" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="113" key="CommitChangelistDialog2" timestamp="1583502275911">
+    <state x="302" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583502348233">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="184" y="113" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1583502275911" />
+    <state x="302" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583502348233" />
+    <state x="184" y="113" key="CommitChangelistDialog2" timestamp="1583502301928">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="184" y="113" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1583502301928" />
+    <state x="191" y="100" width="762" height="831" key="DiffContextDialog" timestamp="1583503540248">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="191" y="100" width="762" height="831" key="DiffContextDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583503540248" />
     <state x="191" y="100" width="762" height="831" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583502260781">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="191" y="100" width="762" height="831" key="com.intellij.history.integration.ui.views.FileHistoryDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583502260781" />
+    <state x="228" y="240" key="run.anything.popup" timestamp="1583506696996">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="228" y="240" key="run.anything.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1583506696996" />
   </component>
 </project>

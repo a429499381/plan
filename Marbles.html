@@ -6,19 +6,17 @@
     <style>
         #id-canvas {
             border: 1px black solid;
-            margin-top: 200px;
-            margin-left: 150px;
+            margin-top: 0px;
+            margin-left: 50px;
         }
     </style>
     <!-- UI绘制-->
     <script src="ui/ui.js"></script>
-    <script src="ui/imgS.js"></script>
     <script src="sing/singleton.js"></script>
     <!-- 物体实现移动 -->
     <script src="actions/Articles.js"></script>
-    <script src="actions/ball.js"></script>
-    <script src="actions/paddle.js"></script>
-    <script src="actions/black.js"></script>
+    <script src="actions/Enemy.js"></script>
+    <script src="actions/palyer.js"></script>
 
     <!--碰撞检测-->
     <script src="actions/collide.js"></script>
@@ -35,15 +33,15 @@
     <script src="page/title.js"></script>
 
     <!-- 配置表-->
-    <script src="date/paddleConfig.js"></script>
-    <script src="date/ballConfig.js"></script>
+    <script src="date/playerConfig.js"></script>
+    <script src="date/Enemy_Config.js"></script>
     <script src="date/blackConfig.js"></script>
 
 
 </head>
 
 <body>
-<canvas id="id-canvas" width="600" height="500"></canvas>
+<canvas id="id-canvas" width="400" height="760"></canvas>
 </body>
 
 </html>

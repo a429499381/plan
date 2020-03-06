@@ -1,12 +1,12 @@
-var ballConfig = {
-    x: 320,
-    y: 350,
+var EnemyConfig = {
+    x: 150,
+    y: 50,
     w:16,
     h:16,
-    speedY: 5,
     speedX: 5,
+    speedY: 2,
     isFire: true,
     life: 1,
-    name: "ball",
+    name: "Enemy",
     kill: false,
 }

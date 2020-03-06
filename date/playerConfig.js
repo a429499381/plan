@@ -1,12 +1,12 @@
-var paddleConfig = {
+var playerConfig = {
     x: 200,
-    y: 400,
+    y: 600,
     w:96,
     h:16,
     speed: 20,
     leftDown: false,
     rightDown: false,
-    name: "paddle",
+    name: "player",
     life: 2,
     kill: false,
 }

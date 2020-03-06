@@ -11,6 +11,9 @@ class Ui{
         // log(image.image, image.x, image.y)
         //log(typeof image === "object")
         if(typeof image === "object"){
+            if(image.name === 'ball') {
+                //this.context.scale(0.2, 0.2)
+            }
             this.context.drawImage(image.image, image.x, image.y);
         }
     }

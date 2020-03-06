@@ -1,4 +1,4 @@
-class Paddle extends Articles {
+class Palyer extends Articles {
     constructor(path, config) {
         super(path, config)
         this.setup()
@@ -11,11 +11,12 @@ class Paddle extends Articles {
 
     regKeyArr() {
         // 注册按键
-        this.regEvent.register('KeyA', () => {
-            this.moveLeft();
+        this.regEvent.register('ArrowUp', () => {
+            log('player up')
+            this.moveUp();
         });
-        this.regEvent.register('KeyD', () => {
-            this.moveRight();
+        this.regEvent.register('ArrowDown', () => {
+            this.moveDown();
         })
         this.regEvent.register('ArrowLeft', () => {
             this.moveLeft();
@@ -27,13 +28,18 @@ class Paddle extends Articles {
         this.isRegKey = true
 
     }
-
+    moveUp() {
+        this.y > 0 ? this.x -= this.speed : this.x = 0;
+    }
+    moveDown() {
+        this.y > 0 ? this.x -= this.speed : this.x = 0;
+    }
     moveLeft() {
         this.x > 0 ? this.x -= this.speed : this.x = 0;
     }
 
     moveRight() {
-        this.x <= (600 - this.image.width) ? this.x += this.speed : this.x = 600 - this.image.width;
+        this.x <= (400 - this.image.width) ? this.x += this.speed : this.x = 400 - this.image.width;
     }
 
 }
