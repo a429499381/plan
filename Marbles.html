@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹弹珠</title>
+    <style>
+        #id-canvas {
+            border: 1px black solid;
+            margin-top: 200px;
+            margin-left: 150px;
+        }
+    </style>
+    <!-- UI绘制-->
+    <script src="ui/ui.js"></script>
+    <script src="ui/imgS.js"></script>
+    <script src="sing/singleton.js"></script>
+    <!-- 物体实现移动 -->
+    <script src="actions/Articles.js"></script>
+    <script src="actions/ball.js"></script>
+    <script src="actions/paddle.js"></script>
+    <script src="actions/black.js"></script>
+
+    <!--碰撞检测-->
+    <script src="actions/collide.js"></script>
+    <!--注册事件-->
+    <script src="actions/RegEvent.js"></script>
+
+    <script src="actions/drag.js"></script>
+    <script src="main.js"></script>
+
+    <!--页面-->
+    <script src="scenePro/scenePro.js"></script>
+    <script src="page/Page.js"></script>
+    <script src="scenePro/scene_game.js"></script>
+    <script src="page/title.js"></script>
+
+    <!-- 配置表-->
+    <script src="date/paddleConfig.js"></script>
+    <script src="date/ballConfig.js"></script>
+    <script src="date/blackConfig.js"></script>
+
+
+</head>
+
+<body>
+<canvas id="id-canvas" width="600" height="500"></canvas>
+</body>
+
+</html>

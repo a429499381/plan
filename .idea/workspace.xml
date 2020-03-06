@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Yl0tg7YdaKYoO69M7Y5VdnxGVB" />
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="113" key="CommitChangelistDialog2" timestamp="1583502275911">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="184" y="113" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1583502275911" />
+    <state x="191" y="100" width="762" height="831" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583502260781">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="191" y="100" width="762" height="831" key="com.intellij.history.integration.ui.views.FileHistoryDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583502260781" />
+  </component>
+</project>
