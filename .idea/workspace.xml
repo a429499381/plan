@@ -2,23 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16172606-dcf2-46ae-b793-e4dc3de580f0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/date/get_data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Marbles.html" beforeDir="false" afterPath="$PROJECT_DIR$/Marbles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/ball.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/Enemy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/paddle.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/palyer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/date/ballConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/date/Enemy_Config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/date/paddleConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/date/playerConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/player1.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/player1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/Articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/Articles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/RegEvent.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/RegEvent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/palyer.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/palyer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/date/playerConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/date/playerConfig.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenePro/scenePro.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scenePro.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenePro/scene_game.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scene_game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/imgS.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583502089096</updated>
-      <workItem from="1583502090458" duration="5022000" />
+      <workItem from="1583502090458" duration="31719000" />
     </task>
     <task id="LOCAL-00001" summary="开始做打飞机">
       <created>1583502302804</created>
@@ -70,7 +75,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583502302804</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="开始做打飞机 方向 子弹发射">
+      <created>1583508625852</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583508625852</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,28 +101,41 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="开始做打飞机" />
-    <option name="LAST_COMMIT_MESSAGE" value="开始做打飞机" />
+    <MESSAGE value="开始做打飞机 方向 子弹发射" />
+    <option name="LAST_COMMIT_MESSAGE" value="开始做打飞机 方向 子弹发射" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="343" y="205" key="#Inspections" timestamp="1583587432176">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="343" y="205" key="#Inspections/62.0.1858.1080@62.0.1858.1080" timestamp="1583587432176" />
     <state x="302" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583502348233">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="302" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583502348233" />
-    <state x="184" y="113" key="CommitChangelistDialog2" timestamp="1583502301928">
+    <state x="184" y="113" key="CommitChangelistDialog2" timestamp="1583508624824">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="184" y="113" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1583502301928" />
+    <state x="184" y="113" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1583508624824" />
     <state x="191" y="100" width="762" height="831" key="DiffContextDialog" timestamp="1583503540248">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="191" y="100" width="762" height="831" key="DiffContextDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583503540248" />
-    <state x="191" y="100" width="762" height="831" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583502260781">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1583583468568">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="191" y="100" width="762" height="831" key="com.intellij.history.integration.ui.views.FileHistoryDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583502260781" />
+    <state width="498" height="446" key="SwitcherDM/62.0.1858.1080@62.0.1858.1080" timestamp="1583583468568" />
+    <state x="322" y="129" width="1284" height="831" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583566293285">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="322" y="129" width="1284" height="831" key="com.intellij.history.integration.ui.views.FileHistoryDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583566293285" />
     <state x="228" y="240" key="run.anything.popup" timestamp="1583506696996">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="228" y="240" key="run.anything.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1583506696996" />
+    <state x="654" y="433" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583564734657">
+      <screen x="62" y="0" width="1858" height="1080" />
+    </state>
+    <state x="654" y="433" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583564734657" />
   </component>
 </project>

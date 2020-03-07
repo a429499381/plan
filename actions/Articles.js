@@ -1,10 +1,7 @@
-class Articles {
+class Articles extends ScenePro{
     constructor(path, config) {
-        //this.game = game
+        super()
         this.init(path, config)
-        this.regEvent = sing(RegEvent)
-        // this.regEvent = new RegEvent()
-
     }
 
     init(path, config) {
@@ -16,7 +13,7 @@ class Articles {
        // this.image = this.imgPath(path)
          this.imgPathP(path)
 
-         //log('Articles init', this.image)
+
     }
 
     imgPath(path) {

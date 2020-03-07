@@ -8,15 +8,9 @@ class Ui{
     }
     //writeUi
     drawImage = (image) => {
-        // log(image.image, image.x, image.y)
-        //log(typeof image === "object")
-        if(typeof image === "object"){
-            if(image.name === 'ball') {
-                //this.context.scale(0.2, 0.2)
-            }
             this.context.drawImage(image.image, image.x, image.y);
         }
-    }
+
     //  清除图层
     clearUi = () => {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);

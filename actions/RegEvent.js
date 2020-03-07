@@ -8,7 +8,6 @@ class RegEvent{
             //event
         var self = this
         window.addEventListener('keydown', function (event) {
-            var key = event.code
             self.keydowns[event.code] = true;
             // 比对获取KEY 响应的函数 并执行
             self.keyAction()
@@ -38,7 +37,7 @@ class RegEvent{
         var actions = Object.keys(this.actions);
         if (actions) {
             for (var i = 0; i < actions.length; i++) {
-                var key = actions[i];
+                let key = actions[i];
                 if (this.keydowns[key] && this.actions[key]) {
                     //如果按键被按下，调用注册的ACTION
                     this.keydowns[key] = false

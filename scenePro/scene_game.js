@@ -7,21 +7,28 @@ class SceneGame extends ScenePro {
 
     setup = () => {
         this.SceneGameTimeId = -1
-        this.ui = sing(Ui)
-        this.palyer = new Palyer(this.run.img.player, playerConfig)
-        this.enemy0 = new Enemy(this.run.img.enemy0, EnemyConfig)
-        this.bg = {
-            image: this.enemy0.imgPath("img/bg1.jpg"),
-            name: "bg",
-            kill: true,
-            x: 0,
-            y: 0,
-        }
-        //this.addObjArr(blackConfig.blackNum)
-         this.addPlayer(this.palyer)
-        this.addEnemy(this.enemy0)
+        this.palyer = new Articles(this.run.img.player, {name: 'player', x: 160, y: 550})
+        this.bg = new Articles('img/bg0.jpg', {x: 0, y: 0})
+
+        // 加入相应数组
+        this.addPlayer(this.bg)
+        this.addPlayer(this.palyer)
+        this.addObjArr(this.run.img.yun0, 3, 'Other')
+        this.addObjArr(this.run.img.enemy0, 3, 'Enemy')
+        this.addObjArr(this.run.img.enemy6, 3, 'Enemy')
+        this.addObjArr(this.run.img.enemy7, 2, 'Enemy')
         //循环
         this.update()
+    }
+
+    moveEnemy(arr) {
+        for (let i = 0; i < arr.length; i++) {
+             if(!arr[i].speed) {
+                 arr[i].speed = 1
+             }else {
+                 arr[i].y += arr[i].speed;
+             }
+        }
     }
 
 
@@ -44,10 +51,7 @@ class SceneGame extends ScenePro {
                 this.run.titlePage.setup()
                 return false
             }
-            // gameOver = this.ball.move()
-            //this.collideArr(this.BallArr, this.ObjArr)
-
-            this.enemy0.move()
+            this.moveEnemy(this.EnemyArr)
             this.draw()
         }, 1000 / 30)
     }

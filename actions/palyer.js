@@ -1,5 +1,5 @@
 class Palyer extends Articles {
-    constructor(path, config) {
+    constructor(path, config,) {
         super(path, config)
         this.setup()
     }
@@ -11,8 +11,11 @@ class Palyer extends Articles {
 
     regKeyArr() {
         // 注册按键
+        log('player regkeyArr', this.regEvent)
+        this.regEvent.register('Space', () => {
+            this.fire();
+        });
         this.regEvent.register('ArrowUp', () => {
-            log('player up')
             this.moveUp();
         });
         this.regEvent.register('ArrowDown', () => {
@@ -28,12 +31,23 @@ class Palyer extends Articles {
         this.isRegKey = true
 
     }
+
+    fire() {
+        var Bullets
+        // var Bullets = this.run.Bullets
+        Bullets.x = this.x / 2
+        Bullets.y = this.y / 2
+
+    }
+
     moveUp() {
-        this.y > 0 ? this.x -= this.speed : this.x = 0;
+        this.y > 0 ? this.y -= this.speed : this.y = 0;
     }
+
     moveDown() {
-        this.y > 0 ? this.x -= this.speed : this.x = 0;
+        this.y < 720 ? this.y += this.speed : this.y = 720;
     }
+
     moveLeft() {
         this.x > 0 ? this.x -= this.speed : this.x = 0;
     }
