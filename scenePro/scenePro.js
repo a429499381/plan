@@ -76,7 +76,7 @@ class ScenePro {
             black.y = (this.Between(40, 100));
             black.name = Symbol(i)
 
-          //  log('scenePro addObjArr', black.x)
+            //  log('scenePro addObjArr', black.x)
 
             if (type === 'Enemy') {
                 this.addEnemy(black)
@@ -120,6 +120,22 @@ class ScenePro {
             this.ui.drawImage(obj)
         }
 
+
+    }
+
+    collideArr(playArr, enemyArr) {
+        for (let play = 0; play < playArr.length; play++) {
+            for (let enemy = 0; enemy < enemyArr.length; j++) {
+                let result = collide(playArr[i], enemyArr[j])
+                if (result) {
+                    this.collideAction(enemyArr[j])
+                }
+            }
+        }
+    }
+
+    collideAction(pass) {
+        pass.image = sing(new Articles('img/peng.png', {x: 0, y: 0}))
 
     }
 
