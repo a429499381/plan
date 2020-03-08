@@ -40,7 +40,7 @@ class RegEvent{
                 let key = actions[i];
                 if (this.keydowns[key] && this.actions[key]) {
                     //如果按键被按下，调用注册的ACTION
-                    this.keydowns[key] = false
+     //               this.keydowns[key] = false
                     //log('执行了按下后调函数', key)
                     this.actions[key]();
 

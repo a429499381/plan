@@ -5,7 +5,6 @@ class Bulltes {
     }
 
     setup(path, config) {
-
         this.config = new Articles(path, config)
         this.config.speed = 5
     }
@@ -22,12 +21,13 @@ class Palyer {
         this.game = game
         this.x = obj.x
         this.y = obj.y
-        this.speed = 15
+        this.speed = 20
         this.image = obj.image
         this.setup()
     }
 
     setup() {
+        this.TimeFireId = -5
         this.isFire = false
         this.isNum = 0
         this.isRegKey = false
@@ -59,8 +59,15 @@ class Palyer {
     }
 
     fire() {
-        this.isNum += 1
-        if (this.isNum === 0 || this.isNum >= 10) {
+       this.isNum  += 1
+        if(!this.TimeFireId) {
+            this.TimeFireId = setTimeout(function () {
+                this.isNum = 0
+                this.TimeFireId = -5
+            },50)
+        }
+
+        if (this.isNum === 0 || this.isNum >= 9) {
             this.isNum = 0
             var game = this.game
             var bullte = new Bulltes('img/bullets.png', {x: 0, y: 0}).config

@@ -8,7 +8,7 @@ class ScenePro {
         this.EnemyArr = []
         this.PlayerArr = []
         this.OtherArr = []
-        this.BulltesArr= []
+        this.BulltesArr = []
         this.sceneWidth = 400
         this.sceneheight = 760
         this.ui = sing(Ui)
@@ -17,7 +17,7 @@ class ScenePro {
     }
 
     Between(min, max) {
-        let t =  Math.floor(Math.random()*(max + 1 - min)) + min;
+        let t = Math.floor(Math.random() * (max + 1 - min)) + min;
         return t
     }
 
@@ -72,8 +72,8 @@ class ScenePro {
         for (let i = 0; i < n; i++) {
             var black = new Articles(path, {x: 0, y: 0})
             //设置坐标
-            black.x = (this.Between(40,340));
-            black.y = (this.Between(40,100)) ;
+            black.x = (this.Between(40, 340));
+            black.y = (this.Between(40, 100));
             black.name = Symbol(i)
 
             log('scenePro addObjArr', black.x)
@@ -99,7 +99,7 @@ class ScenePro {
         for (let i = 0; i < this.EnemyArr.length; i++) {
             let obj = this.EnemyArr[i]
             // 超过地图边界重置
-            if(obj.y > this.sceneheight) {
+            if (obj.y > this.sceneheight) {
                 obj.y = this.Between(0, 50)
                 obj.x = this.Between(0, 300)
             }
