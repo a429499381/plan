@@ -4,6 +4,7 @@
     <list default="true" id="16172606-dcf2-46ae-b793-e4dc3de580f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenePro/scenePro.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scenePro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenePro/scene_game.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scene_game.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +39,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
+  <component name="ReadonlyStatusHandler">
+    <option name="SHOW_DIALOG" value="false" />
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\WebstormProjects\打飞机\img" />
@@ -68,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583502089096</updated>
-      <workItem from="1583502090458" duration="49846000" />
+      <workItem from="1583502090458" duration="53165000" />
     </task>
     <task id="LOCAL-00001" summary="开始做打飞机">
       <created>1583502302804</created>
@@ -119,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583658107801</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="开始做碰撞逻辑">
+      <created>1583658784987</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1583658784987</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,7 +155,8 @@
     <MESSAGE value="开始做子弹发射完成， 发射后停止再发射会有2秒停顿才会继续发射，  而且每次只能识别一个按键处理，" />
     <MESSAGE value="开始做子弹发射完成， 方向按键 会打断 子弹的发射" />
     <MESSAGE value="解决方向按键 会打断 子弹的发射" />
-    <option name="LAST_COMMIT_MESSAGE" value="解决方向按键 会打断 子弹的发射" />
+    <MESSAGE value="开始做碰撞逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="开始做碰撞逻辑" />
   </component>
   <component name="WindowStateProjectService">
     <state x="343" y="205" key="#Inspections" timestamp="1583587432176">
@@ -155,10 +167,10 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="302" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583502348233" />
-    <state x="654" y="184" key="CommitChangelistDialog2" timestamp="1583658106804">
+    <state x="654" y="184" key="CommitChangelistDialog2" timestamp="1583658783987">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="654" y="184" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1583658106804" />
+    <state x="654" y="184" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1583658783987" />
     <state x="191" y="100" width="762" height="831" key="DiffContextDialog" timestamp="1583503540248">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -199,9 +211,9 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="531" y="204" width="670" height="676" key="search.everywhere.popup/62.0.1858.1080@62.0.1858.1080" timestamp="1583650867831" />
-    <state x="654" y="433" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583640562767">
+    <state x="654" y="433" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1583666833757">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="654" y="433" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583640562767" />
+    <state x="654" y="433" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583666833757" />
   </component>
 </project>

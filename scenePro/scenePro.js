@@ -1,6 +1,7 @@
 class ScenePro {
-    constructor() {
+    constructor(img) {
         this.setup()
+        this.img = img
     }
 
     setup() {
@@ -32,41 +33,6 @@ class ScenePro {
         this.PlayerArr.push(b)
     }
 
-    collideArr = (ballArr, objArr) => {
-        let isC = false
-
-        if (!Array.isArray(ballArr) && !Array.isArray(objArr)) {
-            log('collideArr 参数不是数组')
-            return false
-        }
-        for (let i = 0; i < ballArr.length; i++) {
-            for (let j = 0; j < objArr.length; j++) {
-                if (!ballArr[i].kill && !objArr[j].kill) {
-                    isC = collide(ballArr[i], objArr[j])
-                    if (isC) {
-                        this.actions(ballArr[i], objArr[j])
-                        return true
-                    }
-                }
-
-            }
-        }
-        this.actions = function (ball, obj) {
-            if (obj.name === 'paddle') {
-                ball.rebound()
-                return true
-            }
-
-            if (obj.name >= 0 && obj.name < objArr.length) {
-                ball.rebound()
-                obj.isKill()
-                return true
-            }
-
-            return false
-        }
-    }
-
     addObjArr(path, num, type) {
         let n = this.Between(1, num)
         for (let i = 0; i < n; i++) {
@@ -74,7 +40,7 @@ class ScenePro {
             //设置坐标
             black.x = (this.Between(40, 340));
             black.y = (this.Between(40, 100));
-            black.name = Symbol(i)
+            black.name = i
 
             //  log('scenePro addObjArr', black.x)
 
@@ -124,21 +90,24 @@ class ScenePro {
     }
 
     collideArr(playArr, enemyArr) {
-        for (let play = 0; play < playArr.length; play++) {
-            for (let enemy = 0; enemy < enemyArr.length; j++) {
+        for (let i = 0; i < playArr.length; i++) {
+            for (let j = 0; j < enemyArr.length; j++) {
                 let result = collide(playArr[i], enemyArr[j])
                 if (result) {
                     this.collideAction(enemyArr[j])
+                    log("collideAction",(playArr[i].x, playArr[i].y, ' or '  , enemyArr[j].x, enemyArr[j].y))
+
                 }
             }
         }
     }
 
     collideAction(pass) {
-        pass.image = sing(new Articles('img/peng.png', {x: 0, y: 0}))
+        //pass.image = new Articles(this.img.peng, {x: 0, y: 0})
 
     }
 
     update = () => {
     }
+
 }

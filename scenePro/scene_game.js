@@ -51,6 +51,7 @@ class SceneGame extends ScenePro {
             }
             //this.moveEnemy(this.EnemyArr)
             this.autoFire()
+            this.collideArr(this.BulltesArr, this.EnemyArr)
             this.draw()
         }, 1000 / 30)
     }
