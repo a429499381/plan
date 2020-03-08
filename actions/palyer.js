@@ -6,7 +6,7 @@ class Bulltes {
 
     setup(path, config) {
         this.config = new Articles(path, config)
-        this.config.speed = 5
+        this.config.speed = 8
     }
 
     move() {
@@ -39,19 +39,23 @@ class Palyer {
         // 注册按键
         this.regEvent = sing(RegEvent)
         this.regEvent.register('Space', () => {
+            //log('fire')
             this.fire();
         });
         this.regEvent.register('ArrowUp', () => {
+           // log('up')
             this.moveUp();
         });
         this.regEvent.register('ArrowDown', () => {
+           // log('Down')
             this.moveDown();
         })
         this.regEvent.register('ArrowLeft', () => {
+           // log('left')
             this.moveLeft();
         })
         this.regEvent.register('ArrowRight', () => {
-            // log('right')
+           // log('right')
             this.moveRight();
         })
         this.isRegKey = true
@@ -59,14 +63,9 @@ class Palyer {
     }
 
     fire() {
-       this.isNum  += 1
-        if(!this.TimeFireId) {
-            this.TimeFireId = setTimeout(function () {
-                this.isNum = 0
-                this.TimeFireId = -5
-            },50)
-        }
+        this.isNum += 1
 
+       // log(this.regEvent.keydowns.Space)
         if (this.isNum === 0 || this.isNum >= 9) {
             this.isNum = 0
             var game = this.game

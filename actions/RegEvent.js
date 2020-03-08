@@ -11,8 +11,10 @@ class RegEvent{
             self.keydowns[event.code] = true;
             // 比对获取KEY 响应的函数 并执行
             self.keyAction()
+            log('keydown')
         })
         window.addEventListener('keyup', function (event) {
+            log('keyup')
             self.keydowns[event.code] = false;
 
         })

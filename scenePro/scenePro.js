@@ -76,7 +76,7 @@ class ScenePro {
             black.y = (this.Between(40, 100));
             black.name = Symbol(i)
 
-            log('scenePro addObjArr', black.x)
+          //  log('scenePro addObjArr', black.x)
 
             if (type === 'Enemy') {
                 this.addEnemy(black)

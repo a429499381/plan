@@ -5,6 +5,7 @@ class SceneGame extends ScenePro {
         // this.setup()
     }
 
+
     setup = () => {
         this.SceneGameTimeId = -1
         this.p = new Articles("img/player1.png", {x: 150, y: 550})
@@ -22,6 +23,12 @@ class SceneGame extends ScenePro {
         this.update()
     }
 
+    autoFire() {
+        if(this.regEvent.keydowns && this.regEvent.keydowns.Space) {
+            this.player.fire()
+            log('autoFire')
+        }
+    }
 
     update = () => {
 
@@ -43,6 +50,7 @@ class SceneGame extends ScenePro {
                 return false
             }
             //this.moveEnemy(this.EnemyArr)
+            this.autoFire()
             this.draw()
         }, 1000 / 30)
     }
