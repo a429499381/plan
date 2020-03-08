@@ -14,8 +14,8 @@ class Title{
 
     setup() {
         this.ui.clearUi()
-        log('进入', this.title.name, '界面')
-        log('Page.setup', this)
+        //log('进入', this.title.name, '界面')
+        //log('Page.setup', this)
         this.ui.context.font = "20px Georgia";
         this.ui.context.fillText(this.title.name, 240, 240)
         this.regKey.register(this.title.key, this.up)
@@ -59,11 +59,11 @@ var Title = function (game) {
     var cx = canvas.context
     T.start = function () {
         canvas.clearUi()
-        log('进入Title 界面', canvas)
+        //log('进入Title 界面', canvas)
         cx.font="30px Georgia";
         cx.fillText(T.name, 100, 240)
 
-        log(regKey.keydowns)
+        //log(regKey.keydowns)
         regKey.register('KeyK', T.TitleCallBack)
     }
 

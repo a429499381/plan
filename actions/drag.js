@@ -5,21 +5,21 @@ var Drag = function (GameObj) {
         dragEn: false,
         isRegKey: false,
     }
-    log('GameObj', GameObj)
+    //log('GameObj', GameObj)
     var game = 0
     //  鼠标移动X Y
     d.addMouseMove = function (event) {
         if (!event) {
             return false
         }
-        log('addMouseMove', event.clientX)
+        //log('addMouseMove', event.clientX)
         d.keydowns[event.type] = true
         game.ball.x = event.clientX - 8
         game.ball.y = event.clientY - 6
 
     }
     d.addMouseUp = function (event) {
-        log('mouseUp', event)
+        //log('mouseUp', event)
         d.keydowns[event.type] = false
         window.removeEventListener('mousemove', d.addMouseMove)
         d.isMove = false
@@ -30,7 +30,7 @@ var Drag = function (GameObj) {
         }
         d.timeIdDown = setTimeout(function () {
             if (!event) {
-                log('addMouseDown 不存在')
+                //log('addMouseDown 不存在')
                 return false
             }
             event ? d.keydowns[event.type] = true : '';
@@ -48,7 +48,7 @@ var Drag = function (GameObj) {
     d.dragEnable = function () {
         d.dragEn = !d.dragEn
         if (d.dragEn) {
-            log('开启关闭 拖拽', d.dragEn)
+            //log('开启关闭 拖拽', d.dragEn)
             // 鼠标事件
             window.addEventListener('mouseup', d.addMouseUp)
             window.addEventListener('mousedown', d.addMouseDown)
@@ -84,7 +84,7 @@ var Drag = function (GameObj) {
                 let key = actions[i];
                 if (d.keydowns[key]) {
                     //如果按键被按下，调用注册的ACTION
-                    log('drag执行了按下后调函数', d.num += 1, '   ', i, '  ', d.keydowns)
+                    //log('drag执行了按下后调函数', d.num += 1, '   ', i, '  ', d.keydowns)
                     d.keydowns[key] = false
                     d.actions[key]();
                     return true

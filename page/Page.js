@@ -6,8 +6,8 @@ class Page {
         this.ui = new Ui()
         this.ui.clearUi()
         this.regKey = new RegEvent()
-        log('进入', n.name, '界面')
-        log('Page.setup', this)
+        //log('进入', n.name, '界面')
+        //log('Page.setup', this)
         this.ui.context.font = "20px Georgia";
         this.ui.context.fillText(n.name, 240, 240)
 
@@ -29,11 +29,11 @@ var GameOver = function (game) {
     var cx = canvas.context
     R.start = function () {
         canvas.clearUi()
-        log('进入 GameOver 界面', canvas)
+        //log('进入 GameOver 界面', canvas)
         cx.font = "20px Georgia";
         cx.fillText(R.name, 240, 240)
 
-        log(regKey.keydowns)
+        //log(regKey.keydowns)
         regKey.register('KeyR', R.OverCallBack)
     }
 

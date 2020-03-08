@@ -1,4 +1,4 @@
-/*var log = console.log.bind(console);*/
+/*var //log = console.//log.bind(console);*/
 var {log} = console
 function main() {
     window.onload = function () {

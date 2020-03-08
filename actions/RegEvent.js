@@ -11,10 +11,10 @@ class RegEvent{
             self.keydowns[event.code] = true;
             // 比对获取KEY 响应的函数 并执行
             self.keyAction()
-            log('keydown')
+            //log('keydown')
         })
         window.addEventListener('keyup', function (event) {
-            log('keyup')
+            //log('keyup')
             self.keydowns[event.code] = false;
 
         })
@@ -30,7 +30,7 @@ class RegEvent{
     RemoveRegister = (key) => {
         this.actions[key] = false
         this.keydowns[key] = false
-        log('RemoveRegister',  this.keydowns[key])
+        //log('RemoveRegister',  this.keydowns[key])
         return false
     }
 
@@ -43,7 +43,7 @@ class RegEvent{
                 if (this.keydowns[key] && this.actions[key]) {
                     //如果按键被按下，调用注册的ACTION
      //               this.keydowns[key] = false
-                    //log('执行了按下后调函数', key)
+                    ////log('执行了按下后调函数', key)
                     this.actions[key]();
 
                 }

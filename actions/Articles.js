@@ -25,7 +25,7 @@ class Articles{
             const img = new Image();
             img.src = path;
             img.onload = function () {
-               // log('ok')
+               // //log('ok')
                 resolve(img)
             }
         }).then(value => {

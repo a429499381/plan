@@ -38,13 +38,19 @@ class ScenePro {
         for (let i = 0; i < n; i++) {
             var black = new Articles(path, {x: 0, y: 0})
             //设置坐标
+            if(!black || !black.image){
+                log(black,`miss`)
+            }
+            black.w = black.image.width || 0
+            black.h = black.image.height || 0
             black.x = (this.Between(40, 340));
             black.y = (this.Between(40, 100));
-            black.name = i
+            black.name = Symbol(type)
 
-            //  log('scenePro addObjArr', black.x)
+            //  //log('scenePro addObjArr', black.x)
 
             if (type === 'Enemy') {
+                this.pass = false
                 this.addEnemy(black)
             }
             if (type === 'Player') {
@@ -92,18 +98,25 @@ class ScenePro {
     collideArr(playArr, enemyArr) {
         for (let i = 0; i < playArr.length; i++) {
             for (let j = 0; j < enemyArr.length; j++) {
-                let result = collide(playArr[i], enemyArr[j])
-                if (result) {
-                    this.collideAction(enemyArr[j])
-                    log("collideAction",(playArr[i].x, playArr[i].y, ' or '  , enemyArr[j].x, enemyArr[j].y))
+                let enem = enemyArr[j]
+                let play = playArr[i]
+                if(!enem.pass) {
+                    // 比较是否碰撞
+                    let result = collide(play,enem)
+                    if (result) {
+                        enem.pass = true
+                        this.collideAction(enem)
+                        log("collideAction",play.x, play.y, ' or '  , enem.x, enem.y)
 
+                    }
                 }
+
             }
         }
     }
 
     collideAction(pass) {
-        //pass.image = new Articles(this.img.peng, {x: 0, y: 0})
+        pass.image = new Articles('img/peng.png', {x: 0, y: 0})
 
     }
 

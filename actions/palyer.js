@@ -6,7 +6,7 @@ class Bulltes {
 
     setup(path, config) {
         this.config = new Articles(path, config)
-        this.config.speed = 8
+        this.config.speed = 1
     }
 
     move() {
@@ -39,23 +39,23 @@ class Palyer {
         // 注册按键
         this.regEvent = sing(RegEvent)
         this.regEvent.register('Space', () => {
-            //log('fire')
+            ////log('fire')
             this.fire();
         });
         this.regEvent.register('ArrowUp', () => {
-           // log('up')
+           // //log('up')
             this.moveUp();
         });
         this.regEvent.register('ArrowDown', () => {
-           // log('Down')
+           // //log('Down')
             this.moveDown();
         })
         this.regEvent.register('ArrowLeft', () => {
-           // log('left')
+           // //log('left')
             this.moveLeft();
         })
         this.regEvent.register('ArrowRight', () => {
-           // log('right')
+           // //log('right')
             this.moveRight();
         })
         this.isRegKey = true
@@ -65,13 +65,16 @@ class Palyer {
     fire() {
         this.isNum += 1
 
-       // log(this.regEvent.keydowns.Space)
+       // //log(this.regEvent.keydowns.Space)
         if (this.isNum === 0 || this.isNum >= 9) {
             this.isNum = 0
             var game = this.game
             var bullte = new Bulltes('img/bullets.png', {x: 0, y: 0}).config
-            bullte.x = this.x + bullte.image.width
-            bullte.y = this.y - bullte.image.height
+            bullte.pass = false
+            bullte.w = bullte.image.width || 0
+            bullte.h = bullte.image.height || 0
+            bullte.x = this.x + bullte.w
+            bullte.y = this.y - bullte.h
             game.BulltesArr.push(bullte)
         }
 
