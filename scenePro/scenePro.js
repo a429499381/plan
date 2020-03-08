@@ -24,7 +24,6 @@ class ScenePro {
 
     addOther = (obj) => {
         this.EnemyArr.push(obj)
-        return this
     };
     addEnemy = (obj) => {
         this.EnemyArr.push(obj)
@@ -38,8 +37,8 @@ class ScenePro {
         for (let i = 0; i < n; i++) {
             var black = new Articles(path, {x: 0, y: 0})
             //设置坐标
-            if(!black || !black.image){
-                log(black,`miss`)
+            if (!black || !black.image) {
+                log(black, `miss`)
             }
             black.w = black.image.width || 0
             black.h = black.image.height || 0
@@ -50,12 +49,12 @@ class ScenePro {
             //  //log('scenePro addObjArr', black.x)
 
             if (type === 'Enemy') {
-                this.pass = false
+                black.pass = false
                 this.addEnemy(black)
             }
             if (type === 'Player') {
                 this.addPlayer(black)
-            } else {
+            } else if (type === 'Other') {
                 this.addOther(black)
             }
         }
@@ -89,6 +88,11 @@ class ScenePro {
             let obj = this.BulltesArr[i]
             // 每次循环移动一次
             obj.y -= obj.speed
+
+            // 子弹飞出界面 移除
+            if (obj.y < -obj.h) {
+                this.BulltesArr.pop()
+            }
             this.ui.drawImage(obj)
         }
 
@@ -98,15 +102,17 @@ class ScenePro {
     collideArr(playArr, enemyArr) {
         for (let i = 0; i < playArr.length; i++) {
             for (let j = 0; j < enemyArr.length; j++) {
-                let enem = enemyArr[j]
                 let play = playArr[i]
-                if(!enem.pass) {
+                let enem = enemyArr[j]
+                if (!enem.pass) {
                     // 比较是否碰撞
-                    let result = collide(play,enem)
+                    let result = collide(play, enem)
                     if (result) {
                         enem.pass = true
-                        this.collideAction(enem)
-                        log("collideAction",play.x, play.y, ' or '  , enem.x, enem.y)
+                        play.passNum = i
+                        enem.passNum = j
+                        this.collideAction(playArr, play.passNum)
+                        this.collideAction(enemyArr, enem.passNum)
 
                     }
                 }
@@ -115,9 +121,20 @@ class ScenePro {
         }
     }
 
-    collideAction(pass) {
-        pass.image = new Articles('img/peng.png', {x: 0, y: 0})
-
+    collideAction(obj, num) {
+        //首位移除
+        if(num === 0) {
+            obj.shift()
+            return  '首位'
+        }
+        //末尾移除
+        if(num === obj.length) {
+            obj.pop()
+            return '末尾'
+        }
+        for (let i = num; i < obj.length; i++) {
+            obj[i] = obj[i+1]
+        }
     }
 
     update = () => {

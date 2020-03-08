@@ -17,10 +17,10 @@ class SceneGame extends ScenePro {
         // 加入相应数组
         this.addPlayer(this.bg)
         this.addPlayer(this.player)
-      //  this.addObjArr(this.run.img.yun0, 2, 'Other')
+        this.addObjArr(this.run.img.yun0, 2, 'Other')
         this.addObjArr(this.run.img.enemy0, 1, 'Enemy')
-       // this.addObjArr(this.run.img.enemy6, 2, 'Enemy')
-        //this.addObjArr(this.run.img.enemy7, 2, 'Enemy')
+        this.addObjArr(this.run.img.enemy6, 2, 'Enemy')
+        this.addObjArr(this.run.img.enemy7, 2, 'Enemy')
         //循环
         this.update()
     }
@@ -53,8 +53,7 @@ class SceneGame extends ScenePro {
             // }
             //this.moveEnemy(this.EnemyArr)
             this.autoFire()
-            if (this.BulltesArr.length > 10) {
-                log('子弹数量',this.BulltesArr.length)
+            if (this.BulltesArr.length > 0) {
                 this.collideArr(this.BulltesArr, this.EnemyArr)
             }
             this.draw()

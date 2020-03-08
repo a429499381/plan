@@ -32,12 +32,12 @@ class Palyer {
         this.isNum = 0
         this.isRegKey = false
         this.regKeyArr()
-        return this
     }
 
     regKeyArr() {
         // 注册按键
-        this.regEvent = sing(RegEvent)
+         this.regEvent = this.game.regEvent
+        //this.regEvent = sing(RegEvent)
         this.regEvent.register('Space', () => {
             ////log('fire')
             this.fire();
@@ -66,7 +66,7 @@ class Palyer {
         this.isNum += 1
 
        // //log(this.regEvent.keydowns.Space)
-        if (this.isNum === 0 || this.isNum >= 9) {
+        if (this.isNum === 0 || this.isNum >= 15) {
             this.isNum = 0
             var game = this.game
             var bullte = new Bulltes('img/bullets.png', {x: 0, y: 0}).config
@@ -75,7 +75,7 @@ class Palyer {
             bullte.h = bullte.image.height || 0
             bullte.x = this.x + bullte.w
             bullte.y = this.y - bullte.h
-            game.BulltesArr.push(bullte)
+            game.BulltesArr.unshift(bullte)
         }
 
     }
