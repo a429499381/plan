@@ -23,14 +23,11 @@ class ScenePro {
     addOther = (obj) => {
         this.EnemyArr.push(obj)
         return this
-
-
     };
     addEnemy = (obj) => {
         this.EnemyArr.push(obj)
     }
-
-    addPlayer(b) {
+    addPlayer = (b) => {
         this.PlayerArr.push(b)
     }
 

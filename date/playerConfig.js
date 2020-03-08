@@ -3,7 +3,7 @@ var playerConfig = {
     y: 600,
     w:96,
     h:16,
-    speed: 30,
+    speed: 5,
     leftDown: false,
     rightDown: false,
     name: "player",

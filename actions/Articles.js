@@ -1,6 +1,5 @@
-class Articles extends ScenePro{
+class Articles{
     constructor(path, config) {
-        super()
         this.init(path, config)
     }
 
@@ -9,9 +8,8 @@ class Articles extends ScenePro{
         for (let key in config) {
             this[key] = config[key]
         }
-        // this.imgPath(path)
-       // this.image = this.imgPath(path)
-         this.imgPathP(path)
+       this.image = this.imgPath(path)
+        // this.imgPathP(path)
 
 
     }

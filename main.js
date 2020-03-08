@@ -18,6 +18,7 @@ function main() {
             enemy9: "img/Enemy9.png",
             enemy10: "img/Enemy10.png",
             peng: "img/peng.png",
+            bullets: "img/bullets.png",
             yun0: "img/yun0.png",
             yun1: "img/yun1.png",
         };

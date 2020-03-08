@@ -1,17 +1,39 @@
-class Palyer extends Articles {
-    constructor(path, config,) {
-        super(path, config)
+class Bulltes {
+    constructor(path, config) {
+        this.setup(path, config)
+    }
+    setup(path, config) {
+       this.config =  new Articles(path, config)
+        this.config.speed = 5
+    }
+
+    move() {
+        this.y += this.speed
+    }
+
+
+}
+
+class Palyer{
+    constructor(game, obj) {
+        this.game = game
+        this.x = obj.x
+        this.y = obj.y
+        this.speed = 15
+        this.image = obj.image
         this.setup()
     }
 
     setup() {
+
         this.isRegKey = false
         this.regKeyArr()
+        return this
     }
 
     regKeyArr() {
         // 注册按键
-        log('player regkeyArr', this.regEvent)
+        this.regEvent = sing(RegEvent)
         this.regEvent.register('Space', () => {
             this.fire();
         });
@@ -33,11 +55,12 @@ class Palyer extends Articles {
     }
 
     fire() {
-        var Bullets
-        // var Bullets = this.run.Bullets
-        Bullets.x = this.x / 2
-        Bullets.y = this.y / 2
-
+        var game = this.game
+        var bullte = new Bulltes('img/bullets.png', {x: 0, y: 0}).config
+        bullte.x = this.x + bullte.image.width
+        bullte.y = this.y - bullte.image.height
+        //bullte.move()
+        game.PlayerArr.push(bullte)
     }
 
     moveUp() {
