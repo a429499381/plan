@@ -8,6 +8,7 @@ class ScenePro {
         this.EnemyArr = []
         this.PlayerArr = []
         this.OtherArr = []
+        this.BulltesArr= []
         this.sceneWidth = 400
         this.sceneheight = 760
         this.ui = sing(Ui)
@@ -102,11 +103,20 @@ class ScenePro {
                 obj.y = this.Between(0, 50)
                 obj.x = this.Between(0, 300)
             }
+            obj.y += 1
             this.ui.drawImage(obj)
         }
 
         for (let i = 0; i < this.OtherArr.length; i++) {
             let obj = this.OtherArr[i]
+            obj.y += 1
+            this.ui.drawImage(obj)
+        }
+
+        for (let i = 0; i < this.BulltesArr.length; i++) {
+            let obj = this.BulltesArr[i]
+            // 每次循环移动一次
+            obj.y -= obj.speed
             this.ui.drawImage(obj)
         }
 

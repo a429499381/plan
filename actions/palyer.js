@@ -1,20 +1,23 @@
 class Bulltes {
     constructor(path, config) {
         this.setup(path, config)
+
     }
+
     setup(path, config) {
-       this.config =  new Articles(path, config)
+
+        this.config = new Articles(path, config)
         this.config.speed = 5
     }
 
     move() {
-        this.y += this.speed
+        this.y += this.config.speed
     }
 
 
 }
 
-class Palyer{
+class Palyer {
     constructor(game, obj) {
         this.game = game
         this.x = obj.x
@@ -25,7 +28,8 @@ class Palyer{
     }
 
     setup() {
-
+        this.isFire = false
+        this.isNum = 0
         this.isRegKey = false
         this.regKeyArr()
         return this
@@ -55,12 +59,16 @@ class Palyer{
     }
 
     fire() {
-        var game = this.game
-        var bullte = new Bulltes('img/bullets.png', {x: 0, y: 0}).config
-        bullte.x = this.x + bullte.image.width
-        bullte.y = this.y - bullte.image.height
-        //bullte.move()
-        game.PlayerArr.push(bullte)
+        this.isNum += 1
+        if (this.isNum === 0 || this.isNum >= 10) {
+            this.isNum = 0
+            var game = this.game
+            var bullte = new Bulltes('img/bullets.png', {x: 0, y: 0}).config
+            bullte.x = this.x + bullte.image.width
+            bullte.y = this.y - bullte.image.height
+            game.BulltesArr.push(bullte)
+        }
+
     }
 
     moveUp() {
