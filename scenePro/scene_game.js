@@ -14,7 +14,6 @@ class SceneGame extends ScenePro {
         log(this.player)
 
         // 加入相应数组
-
         this.addPlayer(this.bg)
         this.addPlayer(this.player)
         this.addObjArr(this.run.img.yun0, 'Other')
@@ -56,7 +55,7 @@ class SceneGame extends ScenePro {
             //     return false
             // }
             //this.moveEnemy(this.EnemyArr)
-           // this.autoFire()
+            this.autoFire()
             if (this.BulltesArr.length > 0) {
                 this.collideArr(this.BulltesArr, this.EnemyArr)
             }

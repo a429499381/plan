@@ -3,6 +3,8 @@ class Palyer {
         this.game = game
         this.x = obj.x
         this.y = obj.y
+        this.w = obj.w
+        this.h = obj.h
         this.speed = 20
         this.image = obj.image
         this.setup()
@@ -18,8 +20,7 @@ class Palyer {
 
     regKeyArr() {
         // 注册按键
-        this.regEvent = this.game.regEvent
-        //this.regEvent = sing(RegEvent)
+        this.regEvent = sing(RegEvent)
         this.regEvent.register('Space', () => {
             log('fire')
             this.fire();
@@ -45,16 +46,16 @@ class Palyer {
     }
 
     fire() {
-        var game = this.game
         this.isNum += 1
         // //log(this.regEvent.keydowns.Space)
-        if (this.isNum === 0 || this.isNum >= 1) {
+        if (this.isNum === 0 || this.isNum >= 9) {
             this.isNum = 0
-            //var bullte = game.addObjArr('img/bullets.png', 'Bulltes', {w:18, h: 46, x: this.x, y: this.y})
-             var bullte = new Articles('img/bullets.png',  {w:18, h: 46, x: this.x , y: this.y})
-            bullte.x = this.x + this.w || this.w/2
-            bullte.y = this.y + this.h || this.h/2
-            log('play w h', this.w, this.h)
+            this.bullte = new Articles('img/bullets.png',  {w:18, h: 46, x: 0 , y: 0})
+            this.bullte.x  = this.x + this.w/2 - this.bullte.w/2
+            this.bullte.y  = this.y  - this.bullte.h
+            log('play  zhidan', this.bullte)
+            window.g = this.game.BulltesArr
+            this.game.addBulltesArr(this.bullte)
         }
 
     }

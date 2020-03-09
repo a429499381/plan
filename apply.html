@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var {log} = console
+    function fruits(){}
+
+    fruits.prototype = {
+        color: "red",
+        say: function(){
+            console.log("My color is " + this.color);
+        }
+    };
+
+    var another = {
+        color: "yellow"
+    };
+
+    var apple = new fruits;
+    apple.say();                //My color is red
+    apple.say.call(another);    //My color is yellow
+    apple.say.apply(another);   //My color is yellow
+
+</script>
+</html>

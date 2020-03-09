@@ -49,7 +49,7 @@ class ScenePro {
                 log(black, `miss`)
             }
             black.num = i
-            log(config)
+            //log(config)
             black.w = config.w || black.image.width || 0
             black.h = config.h || black.image.height || 0
             black.name = Symbol(type)
@@ -104,8 +104,8 @@ class ScenePro {
 
         for (let i = 0; i < this.BulltesArr.length; i++) {
             let obj = this.BulltesArr[i]
-            // 每次循环移动一次
-            obj.y -= obj.speed
+            // 每次循环移动一次   SPEED没有定位 做计算会导致NAN
+            obj.y -= obj.speed || 3
 
             // 子弹飞出界面 移除
             if (obj.y < -obj.h) {
@@ -129,17 +129,14 @@ class ScenePro {
             for (let j = 0; j < eLong; j++) {
                 let play = playArr[i]
                 let enem = enemyArr[j]
-                if (!enem.pass) {
-                    // 比较是否碰撞
-                    let result = collide(play, enem)
-                    if (result) {
-                        enem.pass = true
-                        play.passNum = i
-                        enem.passNum = j
-                        this.collideAction(playArr, play.passNum)
-                        this.collideAction(enemyArr, enem.passNum)
+                // 比较是否碰撞
+                let result = collide(play, enem)
+                if (result) {
+                    play.passNum = i
+                    enem.passNum = j
+                    this.collideAction(playArr, play.passNum)
+                    this.collideAction(enemyArr, enem.passNum)
 
-                    }
                 }
 
             }
