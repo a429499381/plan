@@ -146,7 +146,8 @@ class ScenePro {
                     this.score += 1
                     play.passNum = i
                     enem.passNum = j
-                    this.replaceImage(enemyArr)
+                    // 击中图片替换
+                    this.replaceImage(enem)
                     this.collideAction(playArr, play.passNum)
                     this.collideAction(enemyArr, enem.passNum)
 
@@ -156,10 +157,14 @@ class ScenePro {
         }
     }
     replaceImage(obj) {
-        let {x, y} = {obj}
+        let x = obj.x
+        let y = obj.y
         let img = this.run.img.peng
-        let peng = new Articles(img, x, y)
+        let peng = new Articles(img, {x:x, y: y})
         this.addOther(peng)
+        setTimeout(() => {
+            this.OtherArr.pop()
+        },200)
     }
 
     //碰撞结果处理
