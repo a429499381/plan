@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="16172606-dcf2-46ae-b793-e4dc3de580f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/palyer.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/palyer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenePro/scenePro.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scenePro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenePro/scene_game.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scene_game.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583502089096</updated>
       <workItem from="1583502090458" duration="53522000" />
-      <workItem from="1583676188262" duration="46299000" />
+      <workItem from="1583676188262" duration="49876000" />
     </task>
     <task id="LOCAL-00001" summary="开始做打飞机">
       <created>1583502302804</created>
@@ -202,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583767692625</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="做被击中图片替换  完成">
+      <created>1583769195655</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1583769195655</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +249,8 @@
     <MESSAGE value=" 添加了比分" />
     <MESSAGE value="   全部功能完成, 还有一些小东西需要改善,看情况再说" />
     <MESSAGE value="做被击中图片替换" />
-    <option name="LAST_COMMIT_MESSAGE" value="做被击中图片替换" />
+    <MESSAGE value="做被击中图片替换  完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="做被击中图片替换  完成" />
   </component>
   <component name="WindowStateProjectService">
     <state x="343" y="205" key="#Inspections" timestamp="1583587432176">
@@ -250,11 +261,11 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="302" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583502348233" />
-    <state x="655" y="180" key="CommitChangelistDialog2" timestamp="1583767691772">
+    <state x="655" y="180" key="CommitChangelistDialog2" timestamp="1583769194809">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
     <state x="654" y="184" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1583667330626" />
-    <state x="655" y="180" key="CommitChangelistDialog2/63.0.1857.1080@63.0.1857.1080" timestamp="1583767691772" />
+    <state x="655" y="180" key="CommitChangelistDialog2/63.0.1857.1080@63.0.1857.1080" timestamp="1583769194809" />
     <state x="191" y="100" width="762" height="831" key="DiffContextDialog" timestamp="1583503540248">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
@@ -287,16 +298,20 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="675" y="231" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1583650540220" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1583767563465">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1583771641591">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
     <state width="498" height="446" key="SwitcherDM/62.0.1858.1080@62.0.1858.1080" timestamp="1583650918388" />
-    <state width="498" height="446" key="SwitcherDM/63.0.1857.1080@63.0.1857.1080" timestamp="1583767563465" />
-    <state x="323" y="129" width="1284" height="831" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583685681731">
+    <state width="498" height="446" key="SwitcherDM/63.0.1857.1080@63.0.1857.1080" timestamp="1583771641591" />
+    <state x="323" y="129" width="1284" height="831" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583770354475">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
     <state x="322" y="129" width="1284" height="831" key="com.intellij.history.integration.ui.views.FileHistoryDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583649804515" />
-    <state x="323" y="129" width="1284" height="831" key="com.intellij.history.integration.ui.views.FileHistoryDialog/63.0.1857.1080@63.0.1857.1080" timestamp="1583685681731" />
+    <state x="323" y="129" width="1284" height="831" key="com.intellij.history.integration.ui.views.FileHistoryDialog/63.0.1857.1080@63.0.1857.1080" timestamp="1583770354475" />
+    <state x="164" y="100" width="1101" height="887" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1583770326645">
+      <screen x="63" y="0" width="1857" height="1080" />
+    </state>
+    <state x="164" y="100" width="1101" height="887" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/63.0.1857.1080@63.0.1857.1080" timestamp="1583770326645" />
     <state x="325" y="266" width="759" height="548" key="find.popup" timestamp="1583676524580">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>

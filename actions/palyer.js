@@ -50,9 +50,12 @@ class Palyer {
         // //log(this.regEvent.keydowns.Space)
         if (this.isNum === 0 || this.isNum >= 9) {
             this.isNum = 0
-            this.bullte = new Articles('img/bullets.png',  {w:18, h: 46, x: 0 , y: 0})
-            this.bullte.x  = Math.floor(this.x + this.w/2 - this.bullte.w/2)
-            this.bullte.y  = Math.floor(this.y  - this.bullte.h)
+            // this.bullte = new Articles('img/bullets.png',  {w:18, h: 46, x: 0 , y: 0})
+
+
+            this.bullte = new Articles('img/zhidanPro.png',  {w:1024, h: 1024, x: 0 , y: 0})
+            this.bullte.x  = Math.floor(this.x + this.w/2 - 20)
+            this.bullte.y  = Math.floor(this.y  - 20)
             this.bullte.speed = 10
             //log('play  zhidan', this.bullte)
             window.g = this.game.BulltesArr

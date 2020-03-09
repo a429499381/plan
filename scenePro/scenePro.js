@@ -22,6 +22,7 @@ class ScenePro {
         let t = Math.floor(Math.random() * (max + 1 - min)) + min;
         return t
     }
+
     // 子弹
     addBulltesArr = (obj) => {
         this.BulltesArr.unshift(obj)
@@ -77,19 +78,27 @@ class ScenePro {
             return black
         }
     }
+
     createEnemArr(num = 1) {
-        if(this.EnemyArr.length < 1) {
+        if (this.EnemyArr.length < 1) {
             this.addObjArr(this.run.img.enemy0, 'Enemy', {w: 101, h: 78}, num)
             this.addObjArr(this.run.img.enemy6, 'Enemy', {w: 110, h: 99}, num)
             this.addObjArr(this.run.img.enemy7, 'Enemy', {w: 142, h: 147}, num)
         }
     }
+
     writeScore(text) {
         var texts = `分数: ${text}`
-       this.ui.writeText(texts)
+        this.ui.writeText(texts)
     }
+
     draw() {
         this.ui.clearUi()
+        for (let i = 0; i < this.OtherArr.length; i++) {
+            let obj = this.OtherArr[i]
+           this.ui.drawImage(obj)
+        }
+
         for (let i = 0; i < this.PlayerArr.length; i++) {
             let obj = this.PlayerArr[i]
             this.ui.drawImage(obj)
@@ -104,13 +113,10 @@ class ScenePro {
             }
             obj.y += obj.speed
             this.ui.drawImage(obj)
+
         }
 
-        for (let i = 0; i < this.OtherArr.length; i++) {
-            let obj = this.OtherArr[i]
-            obj.y += 1
-            this.ui.drawImage(obj)
-        }
+
 
         for (let i = 0; i < this.BulltesArr.length; i++) {
             let obj = this.BulltesArr[i]
@@ -121,7 +127,8 @@ class ScenePro {
             if (obj.y < -obj.h) {
                 this.BulltesArr.pop()
             }
-            this.ui.drawImage(obj)
+           //  this.ui.drawImage(obj)
+           this.ui.context.drawImage(obj.image, 330, 5, 90, 100, obj.x, obj.y, 40, 60,)
         }
 
 
@@ -156,15 +163,16 @@ class ScenePro {
             }
         }
     }
+
     replaceImage(obj) {
         let x = obj.x
         let y = obj.y
         let img = this.run.img.peng
-        let peng = new Articles(img, {x:x, y: y})
+        let peng = new Articles(img, {x: x, y: y})
         this.addOther(peng)
         setTimeout(() => {
             this.OtherArr.pop()
-        },200)
+        }, 300)
     }
 
     //碰撞结果处理
