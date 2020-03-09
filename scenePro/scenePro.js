@@ -77,6 +77,13 @@ class ScenePro {
             return black
         }
     }
+    createEnemarr(num = 1) {
+        if(this.EnemyArr.length < 1) {
+            this.addObjArr(this.run.img.enemy0, 'Enemy', {w: 101, h: 78}, num)
+            this.addObjArr(this.run.img.enemy6, 'Enemy', {w: 110, h: 99}, num)
+            this.addObjArr(this.run.img.enemy7, 'Enemy', {w: 142, h: 147}, num)
+        }
+    }
 
     draw() {
         this.ui.clearUi()
@@ -116,6 +123,7 @@ class ScenePro {
 
 
     }
+
 
     // 碰撞数组检测
     collideArr(playArr, enemyArr) {

@@ -1,6 +1,19 @@
 //碰撞检测
 /* 最难调试碰撞检测 */
 var collide = function (ball, paddle) {
+    // 参数检查
+    if (!ball || ball.length < 1 || !paddle || paddle.length < 1) {
+        log(ball, paddle, 'collide碰撞检测参数是空数组')
+        return false
+    }
+    if (!ball.x || !ball.y || !ball.w || !ball.h) {
+        log(ball, paddle, 'collide碰撞检测参数不全')
+        return false
+    }
+    if (!paddle.x || !paddle.y || !paddle.w || !paddle.h) {
+        log(ball, paddle, 'collide碰撞检测参数不全')
+        return false
+    }
 
     var leftX = ball.x
     var rightX = ball.x + (ball.image.width || ball.w)

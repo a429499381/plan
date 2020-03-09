@@ -22,7 +22,7 @@ class Palyer {
         // 注册按键
         this.regEvent = sing(RegEvent)
         this.regEvent.register('Space', () => {
-            log('fire')
+          //  log('fire')
             this.fire();
         });
         this.regEvent.register('ArrowUp', () => {
@@ -51,9 +51,10 @@ class Palyer {
         if (this.isNum === 0 || this.isNum >= 9) {
             this.isNum = 0
             this.bullte = new Articles('img/bullets.png',  {w:18, h: 46, x: 0 , y: 0})
-            this.bullte.x  = this.x + this.w/2 - this.bullte.w/2
-            this.bullte.y  = this.y  - this.bullte.h
-            log('play  zhidan', this.bullte)
+            this.bullte.x  = Math.floor(this.x + this.w/2 - this.bullte.w/2)
+            this.bullte.y  = Math.floor(this.y  - this.bullte.h)
+            this.bullte.speed = 15
+            //log('play  zhidan', this.bullte)
             window.g = this.game.BulltesArr
             this.game.addBulltesArr(this.bullte)
         }

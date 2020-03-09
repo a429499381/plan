@@ -17,15 +17,12 @@ class SceneGame extends ScenePro {
         this.addPlayer(this.bg)
         this.addPlayer(this.player)
         this.addObjArr(this.run.img.yun0, 'Other')
-        this.addObjArr(this.run.img.enemy0, 'Enemy', {w: 101, h: 78})
-        this.addObjArr(this.run.img.enemy6, 'Enemy', {w:110, h:99})
-        this.addObjArr(this.run.img.enemy7, 'Enemy', {w:142, h:147})
-
+        this.createEnemarr()
         //循环
         var self = this
         setTimeout(function () {
             self.update()
-        },500)
+        }, 500)
     }
 
     autoFire() {
@@ -56,9 +53,8 @@ class SceneGame extends ScenePro {
             // }
             //this.moveEnemy(this.EnemyArr)
             this.autoFire()
-            if (this.BulltesArr.length > 0) {
-                this.collideArr(this.BulltesArr, this.EnemyArr)
-            }
+            this.collideArr(this.BulltesArr, this.EnemyArr)
+            this.createEnemarr(15)
             this.draw()
         }, 1000 / 30)
     }
