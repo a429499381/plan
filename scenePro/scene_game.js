@@ -19,10 +19,8 @@ class SceneGame extends ScenePro {
         this.addObjArr(this.run.img.yun0, 'Other')
         this.addPlayer(this.player)
         //循环
-        var self = this
-        setTimeout(function () {
-            self.update()
-        }, 500)
+
+        this.update()
     }
 
     autoFire() {

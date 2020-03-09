@@ -10,12 +10,13 @@ class Ui {
 
     //writeUi
     drawImage = (image) => {
-        this.context.drawImage(image.image, image.x, image.y);
+        this.context.drawImage(image.image, image.x, image.y,);
     }
 
     writeText(text, config = {x: 20, y: 740}) {
         let cx = this.context
         cx.font = "24px sans-serif";
+        cx.fillStyle = 'white'
         cx.fillText(text, config.x, config.y)
     }
 

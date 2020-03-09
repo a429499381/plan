@@ -15,7 +15,7 @@ class Enemy extends Articles {
 
     move = () => {
             this.y += this.speedY;
-    };
+    }
 
     fire(){
         this.isFire = !this.isFire

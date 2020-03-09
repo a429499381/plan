@@ -49,6 +49,7 @@ class ScenePro {
                 log(black, `miss`)
             }
             black.num = i
+            black.speed = 3
             //log(config)
             black.w = config.w || black.image.width || 0
             black.h = config.h || black.image.height || 0
@@ -103,7 +104,7 @@ class ScenePro {
                 obj.y = this.Between(0, 50)
                 obj.x = this.Between(0, 300)
             }
-            obj.y += 1
+            obj.y += obj.speed
             this.ui.drawImage(obj)
         }
 
