@@ -15,9 +15,9 @@ class SceneGame extends ScenePro {
 
         // 加入相应数组
         this.addPlayer(this.bg)
-        this.addPlayer(this.player)
-        this.addObjArr(this.run.img.yun0, 'Other')
         this.createEnemarr()
+        this.addObjArr(this.run.img.yun0, 'Other')
+        this.addPlayer(this.player)
         //循环
         var self = this
         setTimeout(function () {
@@ -56,6 +56,7 @@ class SceneGame extends ScenePro {
             this.collideArr(this.BulltesArr, this.EnemyArr)
             this.createEnemarr(15)
             this.draw()
+            this.writeScore(this.score)
         }, 1000 / 30)
     }
 

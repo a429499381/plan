@@ -6,6 +6,7 @@ class ScenePro {
 
     setup() {
         this.level = 0
+        this.score = 0
         this.EnemyArr = []
         this.PlayerArr = []
         this.OtherArr = []
@@ -14,7 +15,6 @@ class ScenePro {
         this.sceneheight = 760
         this.ui = sing(Ui)
         this.regEvent = sing(RegEvent)
-
 
     }
 
@@ -85,6 +85,10 @@ class ScenePro {
         }
     }
 
+    writeScore(text) {
+        var texts = `分数: ${text}`
+       this.ui.writeText(texts)
+    }
     draw() {
         this.ui.clearUi()
         for (let i = 0; i < this.PlayerArr.length; i++) {
@@ -140,6 +144,7 @@ class ScenePro {
                 // 比较是否碰撞
                 let result = collide(play, enem)
                 if (result) {
+                    this.score += 1
                     play.passNum = i
                     enem.passNum = j
                     this.collideAction(playArr, play.passNum)
