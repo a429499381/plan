@@ -15,6 +15,7 @@ class ScenePro {
         this.ui = sing(Ui)
         this.regEvent = sing(RegEvent)
 
+
     }
 
     Between(min, max) {
@@ -22,17 +23,23 @@ class ScenePro {
         return t
     }
 
+    // 子弹
+    addBulltesArr = (obj) => {
+        this.BulltesArr.unshift(obj)
+    }
     addOther = (obj) => {
-        this.EnemyArr.push(obj)
+        this.OtherArr.push(obj)
     };
+    //敌机
     addEnemy = (obj) => {
         this.EnemyArr.push(obj)
     }
+    // 选手
     addPlayer = (b) => {
         this.PlayerArr.push(b)
     }
-
-    addObjArr(path, num, type) {
+    // 添加 飞机 云 子弹 等等
+    addObjArr(path, type, num = 1 ) {
         let n = this.Between(1, num)
         for (let i = 0; i < n; i++) {
             var black = new Articles(path, {x: 0, y: 0})
@@ -40,6 +47,7 @@ class ScenePro {
             if (!black || !black.image) {
                 log(black, `miss`)
             }
+            black.num = i
             black.w = black.image.width || 0
             black.h = black.image.height || 0
             black.x = (this.Between(40, 340));
@@ -98,7 +106,7 @@ class ScenePro {
 
 
     }
-
+    // 碰撞数组检测
     collideArr(playArr, enemyArr) {
         for (let i = 0; i < playArr.length; i++) {
             for (let j = 0; j < enemyArr.length; j++) {
@@ -120,7 +128,7 @@ class ScenePro {
             }
         }
     }
-
+    //碰撞结果处理
     collideAction(obj, num) {
         //首位移除
         if(num === 0) {

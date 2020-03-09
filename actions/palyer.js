@@ -7,6 +7,7 @@ class Bulltes {
     setup(path, config) {
         this.config = new Articles(path, config)
         this.config.speed = 1
+
     }
 
     move() {
@@ -71,11 +72,13 @@ class Palyer {
             var game = this.game
             var bullte = new Bulltes('img/bullets.png', {x: 0, y: 0}).config
             bullte.pass = false
+            bullte.num = game.BulltesArr.length + 1
             bullte.w = bullte.image.width || 0
             bullte.h = bullte.image.height || 0
             bullte.x = this.x + bullte.w
             bullte.y = this.y - bullte.h
-            game.BulltesArr.unshift(bullte)
+            // game.BulltesArr.unshift(bullte)
+            game.addBulltesArr(bullte)
         }
 
     }

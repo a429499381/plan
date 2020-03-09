@@ -1,6 +1,7 @@
 class Articles{
     constructor(path, config) {
         this.init(path, config)
+
     }
 
     init(path, config) {

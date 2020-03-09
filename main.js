@@ -2,7 +2,8 @@
 var {log} = console
 function main() {
     window.onload = function () {
-        var run = {}
+        var run = {
+        }
         run.img = {
             bg: "/img/bg0.jpg",
             player: "img/player1.png",
@@ -23,7 +24,7 @@ function main() {
             yun1: "img/yun1.png",
         };
         run.sceneGame = new SceneGame(run)
-        run.titlePage = new Title(run)
+       // run.titlePage = new Title(run)
         //run.titlePage.setup()
         run.sceneGame.setup()
     }

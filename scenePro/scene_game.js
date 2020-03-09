@@ -13,14 +13,17 @@ class SceneGame extends ScenePro {
         this.p.h = (this.p.image.height || 0)
         this.player = new Palyer(this, this.p)
         this.bg = new Articles('img/bg0.jpg', {x: 0, y: 0})
+        log(this.player)
 
         // 加入相应数组
+
         this.addPlayer(this.bg)
         this.addPlayer(this.player)
-        this.addObjArr(this.run.img.yun0, 2, 'Other')
-        this.addObjArr(this.run.img.enemy0, 1, 'Enemy')
-        this.addObjArr(this.run.img.enemy6, 2, 'Enemy')
-        this.addObjArr(this.run.img.enemy7, 2, 'Enemy')
+        this.addObjArr(this.run.img.yun0, 'Other')
+        this.addObjArr(this.run.img.enemy0, 'Enemy')
+        this.addObjArr(this.run.img.enemy6, 'Enemy')
+        this.addObjArr(this.run.img.enemy7, 'Enemy')
+
         //循环
         this.update()
     }
