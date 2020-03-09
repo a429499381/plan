@@ -15,7 +15,8 @@ class SceneGame extends ScenePro {
 
         // 加入相应数组
         this.addPlayer(this.bg)
-        this.createEnemarr()
+        //各种不同飞机
+        this.createEnemArr()
         this.addObjArr(this.run.img.yun0, 'Other')
         this.addPlayer(this.player)
         //循环
@@ -52,7 +53,7 @@ class SceneGame extends ScenePro {
             //this.moveEnemy(this.EnemyArr)
             this.autoFire()
             this.collideArr(this.BulltesArr, this.EnemyArr)
-            this.createEnemarr(15)
+            this.createEnemArr(15)
             this.draw()
             this.writeScore(this.score)
         }, 1000 / 30)

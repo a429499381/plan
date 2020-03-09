@@ -22,7 +22,6 @@ class ScenePro {
         let t = Math.floor(Math.random() * (max + 1 - min)) + min;
         return t
     }
-
     // 子弹
     addBulltesArr = (obj) => {
         this.BulltesArr.unshift(obj)
@@ -78,14 +77,13 @@ class ScenePro {
             return black
         }
     }
-    createEnemarr(num = 1) {
+    createEnemArr(num = 1) {
         if(this.EnemyArr.length < 1) {
             this.addObjArr(this.run.img.enemy0, 'Enemy', {w: 101, h: 78}, num)
             this.addObjArr(this.run.img.enemy6, 'Enemy', {w: 110, h: 99}, num)
             this.addObjArr(this.run.img.enemy7, 'Enemy', {w: 142, h: 147}, num)
         }
     }
-
     writeScore(text) {
         var texts = `分数: ${text}`
        this.ui.writeText(texts)
@@ -148,6 +146,7 @@ class ScenePro {
                     this.score += 1
                     play.passNum = i
                     enem.passNum = j
+                    this.replaceImage(enemyArr)
                     this.collideAction(playArr, play.passNum)
                     this.collideAction(enemyArr, enem.passNum)
 
@@ -155,6 +154,12 @@ class ScenePro {
 
             }
         }
+    }
+    replaceImage(obj) {
+        let {x, y} = {obj}
+        let img = this.run.img.peng
+        let peng = new Articles(img, x, y)
+        this.addOther(peng)
     }
 
     //碰撞结果处理
