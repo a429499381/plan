@@ -1,22 +1,3 @@
-class Bulltes {
-    constructor(path, config) {
-        this.setup(path, config)
-
-    }
-
-    setup(path, config) {
-        this.config = new Articles(path, config)
-        this.config.speed = 1
-
-    }
-
-    move() {
-        this.y += this.config.speed
-    }
-
-
-}
-
 class Palyer {
     constructor(game, obj) {
         this.game = game
@@ -37,26 +18,26 @@ class Palyer {
 
     regKeyArr() {
         // 注册按键
-         this.regEvent = this.game.regEvent
+        this.regEvent = this.game.regEvent
         //this.regEvent = sing(RegEvent)
         this.regEvent.register('Space', () => {
-            ////log('fire')
+            log('fire')
             this.fire();
         });
         this.regEvent.register('ArrowUp', () => {
-           // //log('up')
+            // //log('up')
             this.moveUp();
         });
         this.regEvent.register('ArrowDown', () => {
-           // //log('Down')
+            // //log('Down')
             this.moveDown();
         })
         this.regEvent.register('ArrowLeft', () => {
-           // //log('left')
+            // //log('left')
             this.moveLeft();
         })
         this.regEvent.register('ArrowRight', () => {
-           // //log('right')
+            // //log('right')
             this.moveRight();
         })
         this.isRegKey = true
@@ -64,21 +45,16 @@ class Palyer {
     }
 
     fire() {
+        var game = this.game
         this.isNum += 1
-
-       // //log(this.regEvent.keydowns.Space)
-        if (this.isNum === 0 || this.isNum >= 15) {
+        // //log(this.regEvent.keydowns.Space)
+        if (this.isNum === 0 || this.isNum >= 1) {
             this.isNum = 0
-            var game = this.game
-            var bullte = new Bulltes('img/bullets.png', {x: 0, y: 0}).config
-            bullte.pass = false
-            bullte.num = game.BulltesArr.length + 1
-            bullte.w = bullte.image.width || 0
-            bullte.h = bullte.image.height || 0
-            bullte.x = this.x + bullte.w
-            bullte.y = this.y - bullte.h
-            // game.BulltesArr.unshift(bullte)
-            game.addBulltesArr(bullte)
+            //var bullte = game.addObjArr('img/bullets.png', 'Bulltes', {w:18, h: 46, x: this.x, y: this.y})
+             var bullte = new Articles('img/bullets.png',  {w:18, h: 46, x: this.x , y: this.y})
+            bullte.x = this.x + this.w || this.w/2
+            bullte.y = this.y + this.h || this.h/2
+            log('play w h', this.w, this.h)
         }
 
     }

@@ -1,5 +1,5 @@
 class Articles{
-    constructor(path, config) {
+    constructor(path, config = {x: 0, y: 0}) {
         this.init(path, config)
 
     }
@@ -10,13 +10,13 @@ class Articles{
             this[key] = config[key]
         }
        this.image = this.imgPath(path)
-        // this.imgPathP(path)
+       //  this.imgPathP(path)
 
 
     }
 
     imgPath(path) {
-        const img = new Image();
+        let img = new Image();
         img.src = path;
         return img
     }
@@ -26,7 +26,7 @@ class Articles{
             const img = new Image();
             img.src = path;
             img.onload = function () {
-               // //log('ok')
+               log('ok')
                 resolve(img)
             }
         }).then(value => {

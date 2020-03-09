@@ -38,33 +38,43 @@ class ScenePro {
     addPlayer = (b) => {
         this.PlayerArr.push(b)
     }
+
     // 添加 飞机 云 子弹 等等
-    addObjArr(path, type, num = 1 ) {
+    addObjArr(path, type, config = {w: 0, h: 0}, num = 1) {
         let n = this.Between(1, num)
         for (let i = 0; i < n; i++) {
-            var black = new Articles(path, {x: 0, y: 0})
+            var black = new Articles(path, config)
             //设置坐标
             if (!black || !black.image) {
                 log(black, `miss`)
             }
             black.num = i
-            black.w = black.image.width || 0
-            black.h = black.image.height || 0
-            black.x = (this.Between(40, 340));
-            black.y = (this.Between(40, 100));
+            log(config)
+            black.w = config.w || black.image.width || 0
+            black.h = config.h || black.image.height || 0
             black.name = Symbol(type)
 
             //  //log('scenePro addObjArr', black.x)
-
+            if (type === 'Bulltes') {
+                black.pass = false
+                this.addBulltesArr(black)
+            }
             if (type === 'Enemy') {
+                black.x = (this.Between(40, 340));
+                black.y = (this.Between(40, 100));
                 black.pass = false
                 this.addEnemy(black)
             }
             if (type === 'Player') {
                 this.addPlayer(black)
-            } else if (type === 'Other') {
+            }
+            if (type === 'Other') {
+                black.x = (this.Between(40, 340));
+                black.y = (this.Between(40, 100));
                 this.addOther(black)
             }
+
+            return black
         }
     }
 
@@ -106,10 +116,17 @@ class ScenePro {
 
 
     }
+
     // 碰撞数组检测
     collideArr(playArr, enemyArr) {
-        for (let i = 0; i < playArr.length; i++) {
-            for (let j = 0; j < enemyArr.length; j++) {
+        let pLong = playArr.length
+        let eLong = enemyArr.length
+        if (!Array.isArray(playArr) && !Array.isArray(enemyArr) && pLong <= 0 && eLong <= 0) {
+            log('请检查是否为数组 collideArr(playArr, enemyArr)')
+            return '长度不够'
+        }
+        for (let i = 0; i < pLong; i++) {
+            for (let j = 0; j < eLong; j++) {
                 let play = playArr[i]
                 let enem = enemyArr[j]
                 if (!enem.pass) {
@@ -128,20 +145,23 @@ class ScenePro {
             }
         }
     }
+
     //碰撞结果处理
     collideAction(obj, num) {
         //首位移除
-        if(num === 0) {
+        if (num === 0) {
             obj.shift()
-            return  '首位'
+            return '首位'
         }
         //末尾移除
-        if(num === obj.length) {
+        if (num === obj.length) {
             obj.pop()
             return '末尾'
         }
         for (let i = num; i < obj.length; i++) {
-            obj[i] = obj[i+1]
+            obj[i] = obj[i + 1]
+            //移除最后的 undefine
+            obj.pop()
         }
     }
 

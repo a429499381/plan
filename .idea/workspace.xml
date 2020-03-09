@@ -4,8 +4,8 @@
     <list default="true" id="16172606-dcf2-46ae-b793-e4dc3de580f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/actions/Articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/Articles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/collide.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/collide.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/actions/palyer.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/palyer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenePro/scenePro.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scenePro.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenePro/scene_game.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scene_game.js" afterDir="false" />
     </list>
@@ -76,7 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583502089096</updated>
       <workItem from="1583502090458" duration="53522000" />
-      <workItem from="1583676188262" duration="17394000" />
+      <workItem from="1583676188262" duration="24130000" />
     </task>
     <task id="LOCAL-00001" summary="开始做打飞机">
       <created>1583502302804</created>
@@ -155,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583687104081</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="开始做碰撞逻辑  子弹碰撞各自消失完成， 大概率子弹无法正确相撞，相撞后子弹自动不停连发， 循环时间&#10;异常等问题">
+      <created>1583724093332</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1583724093332</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,19 +204,19 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="302" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583502348233" />
-    <state x="655" y="184" key="CommitChangelistDialog2" timestamp="1583687103185">
+    <state x="655" y="184" key="CommitChangelistDialog2" timestamp="1583724092418">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
     <state x="654" y="184" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1583667330626" />
-    <state x="655" y="184" key="CommitChangelistDialog2/63.0.1857.1080@63.0.1857.1080" timestamp="1583687103185" />
+    <state x="655" y="184" key="CommitChangelistDialog2/63.0.1857.1080@63.0.1857.1080" timestamp="1583724092418" />
     <state x="191" y="100" width="762" height="831" key="DiffContextDialog" timestamp="1583503540248">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="191" y="100" width="762" height="831" key="DiffContextDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583503540248" />
-    <state x="701" y="298" key="FileChooserDialogImpl" timestamp="1583676230643">
+    <state x="701" y="298" key="FileChooserDialogImpl" timestamp="1583730857609">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
-    <state x="701" y="298" key="FileChooserDialogImpl/63.0.1857.1080@63.0.1857.1080" timestamp="1583676230643" />
+    <state x="701" y="298" key="FileChooserDialogImpl/63.0.1857.1080@63.0.1857.1080" timestamp="1583730857609" />
     <state width="1678" height="292" key="GridCell.Tab.0.bottom" timestamp="1583676201160">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
@@ -248,6 +255,10 @@
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
     <state x="325" y="266" width="759" height="548" key="find.popup/63.0.1857.1080@63.0.1857.1080" timestamp="1583676524580" />
+    <state x="737" y="341" width="672" height="286" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1583730862319">
+      <screen x="63" y="0" width="1857" height="1080" />
+    </state>
+    <state x="737" y="341" width="672" height="286" key="org.intellij.images.editor.actions.BackgroundImageDialog/63.0.1857.1080@63.0.1857.1080" timestamp="1583730862319" />
     <state x="336" y="237" key="run.anything.popup" timestamp="1583676228612">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>

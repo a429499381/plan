@@ -3,9 +3,9 @@
 var collide = function (ball, paddle) {
 
     var leftX = ball.x
-    var rightX = ball.x + (ball.w || ball.image.width)
+    var rightX = ball.x + (ball.image.width || ball.w)
     var leftY = ball.y
-    var rightY = ball.y + (ball.h || ball.image.height)
+    var rightY = ball.y + (ball.image.height || ball.h)
 
     // 球的左上点X 检测
     if (leftX > paddle.x && leftX < paddle.x + paddle.w) {
