@@ -1,6 +1,6 @@
 class Palyer {
     constructor(game, obj) {
-        this.game = game
+        this.game = new ShareDate(this.constructor.name)
         this.x = obj.x
         this.y = obj.y
         this.w = obj.w
@@ -16,6 +16,12 @@ class Palyer {
         this.isNum = 0
         this.isRegKey = false
         this.regKeyArr()
+        this.pr = new Pr(this.game, this)
+        this.pr.pengArr.forEach(img => {
+            this.game.addOther(img)
+        })
+
+
     }
 
     regKeyArr() {

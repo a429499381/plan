@@ -12,10 +12,11 @@ class SceneGame extends ScenePro {
         this.player = new Palyer(this, this.p)
         this.bg = new Articles('img/bg0.jpg', {x: 0, y: 0})
 
+
         // 加入相应数组
-        this.addOther(this.bg)
+      / this.addOther(this.bg)
         //各种不同飞机
-        this.createEnemArr()
+        //this.createEnemArr()
         this.addObjArr(this.run.img.yun0, 'Other')
         this.addPlayer(this.player)
         //循环

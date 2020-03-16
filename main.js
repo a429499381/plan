@@ -20,7 +20,6 @@ function main() {
             enemy10: "img/Enemy10.png",
             peng: "img/peng.png",
             bullets: "img/bullets.png",
-            bullets1: "img/zhidanPro.png",
             yun0: "img/yun0.png",
             yun1: "img/yun1.png",
         };
