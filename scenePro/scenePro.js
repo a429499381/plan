@@ -1,9 +1,9 @@
-class ScenePro {
+class ScenePro{
     constructor() {
-        this.setup()
+        this.init()
     }
 
-    setup() {
+    init() {
         this.level = 0
         this.score = 0
         this.EleArr = []
@@ -12,12 +12,14 @@ class ScenePro {
         this.regEvent = sing(RegEvent)
         this.sceneWidth = this.ui.canvas.clientWidth || 400
         this.sceneheight = this.ui.canvas.clientHeight || 400
+
     }
 
     Between(min, max) {
         let t = Math.floor(Math.random() * (max + 1 - min)) + min;
         return t
     }
+
 
     // 添加 要渲染的 this
     addEle(b) {
@@ -27,6 +29,7 @@ class ScenePro {
     addOther(path, x = 0, y = 0) {
         let b = {
             image: this.ui.imgPath(path),
+            name: path,
             x: x,
             y: y,
         }

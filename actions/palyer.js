@@ -1,34 +1,78 @@
-class Palyer {
-    constructor(game, obj) {
-        this.game = new ShareDate(this.constructor.name)
-        this.x = obj.x
-        this.y = obj.y
-        this.w = obj.w
-        this.h = obj.h
-        this.speed = 20
-        this.image = obj.image
-        this.setup()
+class Player extends SceneGame {
+    constructor(run) {
+        super(run)
+        this.addEle(this)
+        this.regKeyArr()
+        this.setup(this.imgAll.player)
+        super.setup()
     }
 
-    setup() {
+    setup(path) {
+        this.BulltesArr = []
+        this.Bullte = this.ui.imgPath('img/zhidanPro.png', {w: 1024, h: 1024, x: 0, y: 0})
+        this.speed = 20
         this.TimeFireId = -5
         this.isFire = false
         this.isNum = 0
+        this.isUpdate = false
+        this.isAutoFire = false
+        this.autoFireNum = 0
         this.isRegKey = false
-        this.regKeyArr()
-        this.pr = new Pr(this.game, this)
-        this.pr.pengArr.forEach(img => {
-            this.game.addOther(img)
-        })
+        this.player = {
+            image: this.ui.imgPath(path),
+            x: 160,
+            y: 550,
+            vx: 0.4,
+            vy: 0.4,
+        }
+        this.x = this.player.x
+        this.y = this.player.y
+        this.w = 83
+        this.h = 90
+    }
 
 
+    update() {
+        this.autoFire()
+    }
+
+    draw() {
+        //发射子弹
+        this.bulltesDraw()
+        // 飞机画面更新
+        this.player.x = this.x
+        this.player.y = this.y
+        this.ui.drawImage(this.player)
+    }
+
+    autoFire() {
+        if (this.regEvent.keydowns && this.regEvent.keydowns.Space) {
+            this.fire()
+            //log('autoFire')
+        }
+    }
+
+    bulltesDraw() {
+        for (let i = 0; i < this.BulltesArr.length; i++) {
+            let obj = this.BulltesArr[i]
+            // 每次循环移动一次   SPEED没有定位 做计算会导致NAN
+            obj.y -= obj.speed || 3
+
+            // 子弹飞出界面 移除
+            if (obj.y < -obj.h) {
+                this.BulltesArr.pop()
+            }
+            this.ui.context.drawImage(obj.image, 330, 5, 90, 100, obj.x, obj.y, 40, 60,)
+        }
     }
 
     regKeyArr() {
         // 注册按键
-        this.regEvent = sing(RegEvent)
+        // this.regEvent = sing(RegEvent)
+        //this.regEvent = this.game.
+
         this.regEvent.register('Space', () => {
-          //  log('fire')
+            //  log('fire')
             this.fire();
         });
         this.regEvent.register('ArrowUp', () => {
@@ -51,23 +95,22 @@ class Palyer {
 
     }
 
-    fire() {
+    createBulltes() {
         this.isNum += 1
-        // //log(this.regEvent.keydowns.Space)
         if (this.isNum === 0 || this.isNum >= 9) {
             this.isNum = 0
-            // this.bullte = new Articles('img/bullets.png',  {w:18, h: 46, x: 0 , y: 0})
-
-
-            this.bullte = new Articles('img/zhidanPro.png',  {w:1024, h: 1024, x: 0 , y: 0})
-            this.bullte.x  = Math.floor(this.x + this.w/2 - 20)
-            this.bullte.y  = Math.floor(this.y  - 20)
-            this.bullte.speed = 10
-            //log('play  zhidan', this.bullte)
-            window.g = this.game.BulltesArr
-            this.game.addBulltesArr(this.bullte)
+            let bullte = {}
+            bullte.image = this.Bullte
+            bullte.x = Math.floor(this.x + this.w / 2 - 20)
+            bullte.y = Math.floor(this.y - 20)
+            bullte.speed = 10
+            return bullte
         }
+    }
 
+    fire() {
+        let c = this.createBulltes()
+        c ? this.BulltesArr.push(c) : ''
     }
 
     moveUp() {
@@ -83,7 +126,7 @@ class Palyer {
     }
 
     moveRight() {
-        this.x <= (400 - this.image.width) ? this.x += this.speed : this.x = 400 - this.image.width;
+        this.x <= (this.sceneWidth - this.w) ? this.x += this.speed : this.x = this.sceneWidth - this.w
     }
 
 }

@@ -1,15 +1,16 @@
 class SceneGame extends ScenePro {
     constructor(run) {
-        super()
+        super(run)
         this.imgAll = run.img
         // this.setup()
     }
 
 
-    setup = () => {
+    setup() {
         const Ui = this.ui
         this.SceneGameTimeId = -1
         this.addOther(this.imgAll.bg)
+        this.addOther(this.imgAll.yun0, this.Between(0, 50), this.Between(0, 100))
         this.loop()
     }
 
@@ -21,8 +22,8 @@ class SceneGame extends ScenePro {
         }
 
         this.SceneGameTimeId = setInterval(() => {
-            this.update()
-            this.draw()
+            super.update()
+            super.draw()
         }, 1000 / 30)
     }
 

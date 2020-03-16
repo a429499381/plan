@@ -1,9 +1,9 @@
 /*var //log = console.//log.bind(console);*/
 var {log} = console
+
 function main() {
     window.onload = function () {
-        var run = {
-        }
+        var run = {}
         run.img = {
             bg: "/img/bg0.jpg",
             bg1: "img/bg1.jpg",
@@ -27,10 +27,12 @@ function main() {
             yun0: "img/yun0.png",
             yun1: "img/yun1.png",
         };
-        run.sceneGame = new SceneGame(run)
-       // run.titlePage = new Title(run)
+        //run.ShareObj = new ShareObj(run)
+        // run.sceneGame = new SceneGame(run)
+        run.player = new Player(run)
+
+        // run.titlePage = new Title(run)
         //run.titlePage.setup()
-        run.sceneGame.setup()
     }
 }
 
