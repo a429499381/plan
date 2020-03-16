@@ -24,15 +24,18 @@ class Ui {
         }
         if (typeof path === 'string' && path.length > 3) {
             s.str = path.slice(-3).toLowerCase()
-            if (s.str !== 'png' || s.str !== 'jpg') {
+            if (s.str !== "png" && s.str !== "jpg") {
                 console.log('imPath中类型不匹配 不是png jpg', this.constructor.name)
                 return 'no is png or jps'
             }
+
+            //消除首位斜杠
+            path.slice(0,1) === '/' ? s.path = path.slice(1) : s.path = path
         }
 
         //实际代码
         let img = new Image();
-        img.src = path;
+        img.src = s.path || path;
         return img
     }
 
@@ -42,7 +45,7 @@ class Ui {
         if (!img) {
             return
         }
-        if (typeof img !== 'object' || !img.x || !img.y) {
+        if (typeof img !== 'object' && !img.x && !img.y) {
             console.log('drawImage 请检查img参数', this.constructor.name)
             return 'drawImage img is no object or img.x img.y is undefined'
         }
