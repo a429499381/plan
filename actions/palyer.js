@@ -9,7 +9,7 @@ class Player extends SceneGame {
 
     setup(path) {
         this.BulltesArr = []
-        this.Bullte = this.ui.imgPath(this.imgAll.zhidan, {w: 1024, h: 1024, x: 0, y: 0})
+        this.BullteImage = this.ui.imgPath(this.imgAll.zhidan, {w: 1024, h: 1024, x: 0, y: 0})
         this.isNum = 0
         this.player = {
             image: this.ui.imgPath(path),
@@ -22,16 +22,9 @@ class Player extends SceneGame {
             h: 90,
             speed: 20,
         }
-        this.bullte = {
-            image: this.Bullte,
-            x: Math.floor(this.x + this.w / 2 - 20),
-            y: Math.floor(this.y - 20),
-            speed: 10,
-            w: 40,
-            h: 60,
-        }
-        this.x = this.player.x
-        this.y = this.player.y
+
+        this.x = 160
+        this.y = 550
         this.w = this.player.w
         this.h = this.player.h
     }
@@ -56,10 +49,13 @@ class Player extends SceneGame {
         this.player.y = this.y
         this.ui.drawImage(this.player)
     }
+
     fire() {
         let c = this.createBulltes()
         c ? this.BulltesArr.push(c) : ''
+        log(this.BulltesArr)
     }
+
     autoFire() {
         if (this.regEvent.keydowns && this.regEvent.keydowns.Space) {
             this.fire()
@@ -75,7 +71,7 @@ class Player extends SceneGame {
         }
 
         let bullte = {
-            image: this.Bullte,
+            image: this.BullteImage,
             x: Math.floor(this.x + this.w / 2 - 20),
             y: Math.floor(this.y - 20),
             speed: 10,
@@ -85,20 +81,8 @@ class Player extends SceneGame {
 
         return bullte
 
-        /*    this.isNum += 1
-            if (this.isNum === 0 || this.isNum >= 9) {
-                this.isNum = 0
-                let bullte = {
-                    w: 40,
-                    h: 60,
-                }
-                bullte.image = this.Bullte
-                bullte.x = Math.floor(this.x + this.w / 2 - 20)
-                bullte.y = Math.floor(this.y - 20)
-                bullte.speed = 10
-                return bullte
-            }*/
     }
+
     bulltesDraw() {
         if (this.BulltesArr.length <= 0) {
             return 'BulltesArr length 0'
@@ -108,7 +92,7 @@ class Player extends SceneGame {
             // 子弹飞出界面 移除
             if (b.y < (-b.h || -200)) {
                 // 先进先出 每次移除头数组
-                this.BulltesArr.shift()
+                // this.BulltesArr.shift()
 
             }
             this.ui.context.drawImage(b.image, 330, 5, 90, 100, b.x, b.y, 40, 60,)
@@ -151,6 +135,7 @@ class Player extends SceneGame {
         this.isRegKey = true
 
     }
+
     moveUp() {
         this.y > 0 ? this.y -= this.player.speed : this.y = 0;
     }
