@@ -6,12 +6,12 @@ var collide = function (ball, paddle) {
         log(ball, paddle, 'collide碰撞检测参数是空数组')
         return false
     }
-    if (!ball.x || !ball.y || !ball.w || !ball.h) {
-        log(ball, paddle,  `${ball.name}`,'collide碰撞检测参数不全')
+    if (ball.x == undefined || ball.y == undefined || ball.w == undefined || ball.h == undefined) {
+        log(ball, `${ball.name}`,'collide碰撞检测参数不全')
         return false
     }
-    if (!paddle.x || !paddle.y || !paddle.w || !paddle.h) {
-        log(ball, paddle,  `${paddle.name}`,'collide碰撞检测参数不全')
+    if (paddle.x == undefined || paddle.y == undefined || paddle.w == undefined || paddle.h == undefined) {
+        log(paddle,  `${paddle.name}`,'collide碰撞检测参数不全')
         return false
     }
 

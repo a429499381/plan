@@ -98,8 +98,6 @@ class Enemy {
     }
 
     createBulltes(coordinates) {
-        log(coordinates)
-
         let bullte = {
             image: this.bulltesImage,
             name: `EnemyBulltes${this.isNum}`,

@@ -181,8 +181,6 @@ class Player extends SceneGame {
                 let c = this.createBulltes()
                 c ? this.BulltesArr.push(c) : ''
             }
-            log('autoFire', this.isNum)
-
         }
     }
 
