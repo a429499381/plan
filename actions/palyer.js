@@ -13,6 +13,7 @@ class Player extends SceneGame {
         this.isNum = 0
         this.player = {
             image: this.ui.imgPath(path),
+            name: `player${this.isNum}`,
             x: 160,
             y: 550,
             vx: 0.4,
@@ -53,7 +54,6 @@ class Player extends SceneGame {
     fire() {
         let c = this.createBulltes()
         c ? this.BulltesArr.push(c) : ''
-        log(this.BulltesArr)
     }
 
     autoFire() {
@@ -72,6 +72,7 @@ class Player extends SceneGame {
 
         let bullte = {
             image: this.BullteImage,
+            name: `playerBulltes${this.isNum}`,
             x: Math.floor(this.x + this.w / 2 - 20),
             y: Math.floor(this.y - 20),
             speed: 10,
@@ -92,7 +93,7 @@ class Player extends SceneGame {
             // 子弹飞出界面 移除
             if (b.y < (-b.h || -200)) {
                 // 先进先出 每次移除头数组
-                // this.BulltesArr.shift()
+                 this.BulltesArr.shift()
 
             }
             this.ui.context.drawImage(b.image, 330, 5, 90, 100, b.x, b.y, 40, 60,)
