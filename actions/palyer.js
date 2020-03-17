@@ -39,7 +39,7 @@ class Player extends SceneGame {
             })
         }
 
-        this.autoFire()
+        this.createBulltes()
     }
 
     draw() {

@@ -8,7 +8,6 @@ class Enemy {
     setup(path, config) {
         let g = this.game
         this.EnemyArr = []
-        this.BulltesArr = []
         this.isNum = 0
         this.enemyImage = g.ui.imgPath(g.imgAll.enemy.enemy0)
         this.x = config.x
@@ -17,7 +16,7 @@ class Enemy {
         // this.h = config.h || 0
         this.speed = 3
 
-        this.createEnemyArr(8)
+        this.createEnemyArr(5)
 
     }
 
@@ -28,14 +27,31 @@ class Enemy {
 
         this.EnemyArr.forEach(e => {
             e.y += e.speed
-            this.autoFire(e)
+
+            if(e.y > this.game.sceneheight + (e.h || 100)) {
+                e.x = this.game.Between(10, 300)
+                e.y = this.game.Between(50, 200)
+            }
+
+            if(e.BulltesArr.length > 0) {
+                e.BulltesArr.forEach(b => {
+                    b.y += b.speed || 10
+                })
+            }
+
+
+            this.isNum == undefined ? this.isNum = 0 : this.isNum++
+            // 不能被 9 除尽就退出
+            if (this.isNum % 30 !== 0) {
+                return `no more bullte`
+            }
+
+            e.BulltesArr.push(this.createBulltes(e))
+
+
         })
 
 
-        this.BulltesArr.forEach(e => {
-            e.y += e.speed
-
-        })
     }
 
 
@@ -46,49 +62,42 @@ class Enemy {
 
         this.EnemyArr.forEach(e => {
             this.game.ui.drawImage(e)
+            // 绘制每个飞机的子弹
+            this.bulltesDraw(e)
         })
 
-        //发射子弹
-        this.bulltesDraw()
 
     }
 
-    bulltesDraw() {
-        if (this.BulltesArr.length <= 0) {
-            return 'BulltesArr length 0'
+    bulltesDraw(e) {
+        if (e.BulltesArr.length <= 0) {
+            return 'EnemyBulltesArr length 0'
         }
 
-        this.BulltesArr.forEach(b => {
+        e.BulltesArr.forEach(b => {
             // 子弹飞出界面 移除
-            if (b.y > (this.game.sceneheight + b.h || this.game.sceneheight + 200)) {
+            if (b.y > (this.game.sceneheight + e.h || this.game.sceneheight + 200)) {
                 // 先进先出 每次移除头数组
-                this.BulltesArr.shift()
+                e.BulltesArr.shift()
 
             }
             this.game.ui.context.drawImage(b.image, 330, 5, 90, 100, b.x, b.y, 40, 60,)
         })
     }
 
-        autoFire(e) {
-            this.isNum == undefined ? this.isNum = 0 : this.isNum++
-            // 不能被 9 除尽就退出
-            if (this.isNum % 9 !== 0) {
-                return
-            }
+    createBulltes(coordinates) {
 
-
-            let bullte = {
-                image: this.game.ui.imgPath(this.game.imgAll.zhidan, {w: 1024, h: 1024, x: 0, y: 0}),
-                name: `EnemyBulltes${this.isNum}`,
-                x: e.x,
-                y: e.y,
-                speed: 10,
-                w: 40,
-                h: 60,
-            }
-            this.BulltesArr.push(bullte)
-            return 'EnemArr fire'
+        let bullte = {
+            image: this.game.ui.imgPath(this.game.imgAll.zhidan, {w: 1024, h: 1024, x: 0, y: 0}),
+            name: `EnemyBulltes${this.isNum}`,
+            x: coordinates.x + 30,
+            y: coordinates.y + 30,
+            speed: 10,
+            w: 40,
+            h: 60,
         }
+        return bullte
+    }
 
 
     createEnemyArr(num = 3) {
@@ -100,9 +109,9 @@ class Enemy {
                 name: `Enemy${i}`,
                 x: g.Between(50, 300),
                 y: g.Between(50, 300),
-                speed: this.speed
+                speed: this.speed,
+                BulltesArr: [],
             }
-
             this.EnemyArr.push(e)
         }
     }
