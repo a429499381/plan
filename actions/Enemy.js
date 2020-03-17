@@ -51,6 +51,10 @@ class Enemy {
 
         })
 
+        if(this.EnemyArr.length <= 2) {
+            this.createEnemyArr(4)
+        }
+
 
     }
 
@@ -59,6 +63,7 @@ class Enemy {
         if (this.EnemyArr.length <= 0) {
             return
         }
+
 
         this.EnemyArr.forEach(e => {
             this.game.ui.drawImage(e)

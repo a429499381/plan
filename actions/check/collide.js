@@ -7,11 +7,11 @@ var collide = function (ball, paddle) {
         return false
     }
     if (!ball.x || !ball.y || !ball.w || !ball.h) {
-        log(ball, paddle, 'collide碰撞检测参数不全')
+        log(ball, paddle,  `${ball.name}`,'collide碰撞检测参数不全')
         return false
     }
     if (!paddle.x || !paddle.y || !paddle.w || !paddle.h) {
-        log(ball, paddle, 'collide碰撞检测参数不全')
+        log(ball, paddle,  `${paddle.name}`,'collide碰撞检测参数不全')
         return false
     }
 

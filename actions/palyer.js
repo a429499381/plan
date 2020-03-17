@@ -34,11 +34,25 @@ class Player extends SceneGame {
 
     // 碰撞检测 后执行
     collideAction() {
-        this.enemy.EnemyArr.forEach(e => {
+        var removeEnemy = function (obj, index) {
+            let e = obj
+            let t = 0
+            for (let i = index; i < e.length - 1; i++) {
+                e[i] = e[i + 1]
+            }
+            //去掉尾部 空数组
+            e.pop()
+        }
+
+
+        this.enemy.EnemyArr.forEach((e, j) => {
             //是否与飞机碰撞
             let result = collide(this.player, e)
             if (result) {
-                log('游戏结束')
+                removeEnemy(this.enemy.EnemyArr, j)
+                //减分
+                this.score -= 10
+                log('被击中')
             }
             //我方飞机子弹
             if (this.BulltesArr && this.BulltesArr.length > 0) {
@@ -54,26 +68,20 @@ class Player extends SceneGame {
             }
 
             if (e.BulltesArr && e.BulltesArr.length > 0) {
-                e.BulltesArr.forEach(b => {
+                e.BulltesArr.forEach((eb, k) => {
                     //是否与飞机碰撞
-                    let result = collide(this.player, b)
+                    let result = collide(this.player, eb)
                     if (result) {
-                        log('游戏结束')
+                        removeEnemy(e.BulltesArr, k)
+                        //减分
+                        this.score -= 10
+                        log('被击中')
                     }
                 })
             }
 
         })
 
-        var removeEnemy = function (obj, index) {
-            let e = obj
-            let t = 0
-            for (let i = index; i < e.length - 1; i++) {
-                e[i] = e[i + 1]
-            }
-            //去掉尾部 空数组
-            e.pop()
-        }
     }
 
     update() {
