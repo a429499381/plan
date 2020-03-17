@@ -13,13 +13,12 @@ class Enemy {
         this.bulltesImage = this.game.ui.imgPath(this.game.imgAll.zhidan, {
             w: 1024,
             h: 1024,
-            x: 0,
-            y: 0
-        }), this.x = config.x
+            x: config.x,
+            y: config.y,
+        })
+        this.x = config.x
         this.y = config.y
-        // this.w = config.w || 0
-        // this.h = config.h || 0
-        this.speed = 3
+        // this.speed = 3
         this.zoom = 0.5
 
         this.createEnemyArr(5)
@@ -35,8 +34,8 @@ class Enemy {
             e.y += e.speed
 
             if (e.y > this.game.sceneheight + (e.h || 100)) {
-                e.x = this.game.Between(10, 300)
-                e.y = this.game.Between(50, 200)
+                e.x = this.game.Between(10, 300) * this.game.zoom * 4
+                e.y = this.game.Between(50, 200) * this.game.zoom * 4
             }
 
             if (e.BulltesArr.length > 0) {
@@ -99,12 +98,13 @@ class Enemy {
     }
 
     createBulltes(coordinates) {
+        log(coordinates)
 
         let bullte = {
             image: this.bulltesImage,
             name: `EnemyBulltes${this.isNum}`,
-            x: coordinates.x * 1.5,
-            y: coordinates.y * 1.5,
+            x: coordinates.x * this.zoom * 2 + 50 ,
+            y: coordinates.y * this.zoom * 2 + 80,
             speed: 6,
             isNum: 0,
             w: 40,
@@ -127,7 +127,7 @@ class Enemy {
                 y: g.Between(10, 200) * this.zoom * 4,
                 w: 100,
                 h: 70,
-                speed: 2 || this.speed,
+                speed: this.speed || 2,
                 isNum: 0,
                 BulltesArr: [],
             }

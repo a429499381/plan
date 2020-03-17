@@ -152,8 +152,8 @@ class Player extends SceneGame {
             peng.flag = flag
             peng.vx += g.Between(-10, 10)
             peng.vy += g.Between(-10, 10)
-            peng.x = T.x * 1.5 + peng.vx
-            peng.y = T.y * 1.5 + peng.vy
+            peng.x = T.x * 2 + peng.vx
+            peng.y = T.y * 2 - 20
             p.push(peng)
         }
 

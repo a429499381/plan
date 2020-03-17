@@ -1,37 +1,16 @@
-class Title{
-    constructor(run) {
-        this.run = run
-        this.init()
+class Title extends Page{
+    constructor() {
+        super()
+        this.setup()
     }
-    init() {
-        this.ui = sing(Ui)
-        this.regKey =sing(RegEvent)
+    setup() {
+        super.setup()
         this.title = {
             name: "按 k 开始游戏",
             key: "KeyK",
         }
     }
 
-    setup() {
-        this.ui.clearUi()
-        //log('进入', this.title.name, '界面')
-        //log('Page.setup', this)
-        this.ui.context.font = "20px Georgia";
-        this.ui.context.fillText(this.title.name, 240, 240)
-        this.regKey.register(this.title.key, this.up)
-    }
-
-    up = () => {
-        this.regKey.RemoveRegister(this.title.key)
-        if( this.run.SceneGameTimeId > 0){
-            this.run.clearInterval(this.run.SceneGameTimeId)
-            this.run.SceneGameTimeId = -5
-        }
-
-        this.run.BallArr = []
-        this.run.ObjArr = []
-        this.run.sceneGame.setup()
-    }
 
 
 }
