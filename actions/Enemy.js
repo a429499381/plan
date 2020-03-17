@@ -10,8 +10,7 @@ class Enemy {
         this.EnemyArr = []
         this.isNum = 0
         this.enemyImage = g.ui.imgPath(g.imgAll.enemy.enemy0)
-        this.bulltesImage = this.game.ui.imgPath(this.game.imgAll.zhidan, {w: 1024, h: 1024, x: 0, y: 0}),
-            this.x = config.x
+        this.bulltesImage = this.game.ui.imgPath(this.game.imgAll.zhidan, {w: 1024, h: 1024, x: 0, y: 0}), this.x = config.x
         this.y = config.y
         // this.w = config.w || 0
         // this.h = config.h || 0
@@ -51,7 +50,7 @@ class Enemy {
 
         })
 
-        if(this.EnemyArr.length <= 2) {
+        if (this.EnemyArr.length <= 2) {
             this.createEnemyArr(4)
         }
 

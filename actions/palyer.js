@@ -29,27 +29,29 @@ class Player extends SceneGame {
         this.y = 550
         this.w = this.player.w
         this.h = this.player.h
+        //礼花数组
+        this.prArr = []
     }
 
+   removeEnemy(obj, index) {
+        let e = obj
+        let t = 0
+        for (let i = index; i < e.length - 1; i++) {
+            e[i] = e[i + 1]
+        }
+        //去掉尾部 空数组
+        e.pop()
+    }
 
     // 碰撞检测 后执行
     collideAction() {
-        var removeEnemy = function (obj, index) {
-            let e = obj
-            let t = 0
-            for (let i = index; i < e.length - 1; i++) {
-                e[i] = e[i + 1]
-            }
-            //去掉尾部 空数组
-            e.pop()
-        }
-
 
         this.enemy.EnemyArr.forEach((e, j) => {
             //是否与飞机碰撞
             let result = collide(this.player, e)
             if (result) {
-                removeEnemy(this.enemy.EnemyArr, j)
+                this.pr(e, 'playBulltesArr')
+                this.removeEnemy(this.enemy.EnemyArr, j)
                 //减分
                 this.score -= 10
                 log('被击中')
@@ -59,10 +61,11 @@ class Player extends SceneGame {
                 this.BulltesArr.forEach((b, i) => {
                     let r = collide(b, e)
                     if (r) {
+                        this.pr(e, 'playBulltesArr')
                         //子弹消失
                         this.BulltesArr.shift()
                         // 敌机消失方式
-                        removeEnemy(this.enemy.EnemyArr, i)
+                        this.removeEnemy(this.enemy.EnemyArr, i)
                     }
                 })
             }
@@ -72,7 +75,7 @@ class Player extends SceneGame {
                     //是否与飞机碰撞
                     let result = collide(this.player, eb)
                     if (result) {
-                        removeEnemy(e.BulltesArr, k)
+                        this.removeEnemy(e.BulltesArr, k)
                         //减分
                         this.score -= 10
                         log('被击中')
@@ -95,18 +98,63 @@ class Player extends SceneGame {
         // 碰撞检测 后执行
         this.collideAction()
 
+        if (this.prArr && this.prArr.length > 0) {
+            this.prArr.forEach((pr, i) => {
+                pr.forEach(b => {
+                    b.x += b.vx
+                    b.y += b.vy
+                })
+            })
+        }
+
 
         this.createBulltes()
         this.autoFire()
     }
 
     draw() {
+        if (this.prArr && this.prArr.length > 0) {
+            this.prArr.forEach((pr, i) => {
+                setTimeout(()=>{
+                    this.removeEnemy(this.prArr, i)
+                },3000)
+                pr.forEach(b => {
+                    this.ui.context.drawImage(b.image, 330, 5, 90, 100, b.x, b.y, 40, 60,)
+                })
+            })
+        }
+
+
         //发射子弹
         this.bulltesDraw()
         // 飞机画面更新
         this.player.x = this.x
         this.player.y = this.y
         this.ui.drawImage(this.player)
+    }
+
+    // 爆炸烟花
+    pr(T, flag) {
+        let g = this
+        let p = []
+        for (let i = 1; i < 30; i++) {
+            let peng = {
+                image: this.BullteImage,
+            }
+            peng.vx = 0
+            peng.vy = 0
+            peng.name = i
+            peng.flag = flag
+            peng.vx += g.Between(-10, 10)
+            peng.vy += g.Between(-10, 10)
+            peng.x = T.x + peng.vx
+            peng.y = T.y + peng.vy
+            p.push(peng)
+        }
+
+        log('pr arr', this.pengArr)
+        this.prArr.push(p)
+        return p
     }
 
     fire() {
