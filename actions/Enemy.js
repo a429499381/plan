@@ -18,7 +18,7 @@ class Enemy {
         })
         this.x = config.x
         this.y = config.y
-        // this.speed = 3
+        this.speed = 3
         this.zoom = 0.5
 
         this.createEnemyArr(5)

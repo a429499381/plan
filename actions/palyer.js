@@ -47,15 +47,30 @@ class Player extends SceneGame {
     collideAction() {
 
         this.enemy.EnemyArr.forEach((e, j) => {
-            //是否与飞机碰撞
+            //敌机是否与飞机碰撞
             let result = collide(this.player, e)
             if (result) {
                 this.pr(e, 'playBulltesArr')
                 this.removeEnemy(this.enemy.EnemyArr, j)
                 //减分
-                this.score -= 10
+                this.score -= 100
                 // log('被击中')
             }
+
+            // 地方子弹是否击中我方飞机
+            if (e.BulltesArr && e.BulltesArr.length > 0) {
+                e.BulltesArr.forEach((eb, k) => {
+                    //是否与飞机碰撞
+                    let result = collide(eb, this.player)
+                    if (result) {
+                        this.removeEnemy(e.BulltesArr, k)
+                        //减分
+                        this.score -= 100
+                        // log('被击中')
+                    }
+                })
+            }
+
             //我方飞机子弹
             if (this.BulltesArr && this.BulltesArr.length > 0) {
                 this.BulltesArr.forEach((b, i) => {
@@ -72,18 +87,6 @@ class Player extends SceneGame {
                 })
             }
 
-            if (e.BulltesArr && e.BulltesArr.length > 0) {
-                e.BulltesArr.forEach((eb, k) => {
-                    //是否与飞机碰撞
-                    let result = collide(this.player, eb)
-                    if (result) {
-                        this.removeEnemy(e.BulltesArr, k)
-                        //减分
-                        this.score -= 10
-                        // log('被击中')
-                    }
-                })
-            }
 
         })
 
