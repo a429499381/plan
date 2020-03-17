@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16172606-dcf2-46ae-b793-e4dc3de580f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/actions/shareDate/shareObj.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marbles.html" beforeDir="false" afterPath="$PROJECT_DIR$/Marbles.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/actions/palyer.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/palyer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/shareDate/ShareDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/shareDate/ShareDate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenePro/scenePro.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scenePro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenePro/scene_game.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scene_game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sing/singleton.js" beforeDir="false" afterPath="$PROJECT_DIR$/sing/singleton.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +85,7 @@
       <workItem from="1584071155790" duration="4862000" />
       <workItem from="1584277341698" duration="2940000" />
       <workItem from="1584285156880" duration="107000" />
-      <workItem from="1584324316236" duration="36826000" />
+      <workItem from="1584324316236" duration="45915000" />
     </task>
     <task id="LOCAL-00001" summary="开始做打飞机">
       <created>1583502302804</created>
@@ -255,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584354579028</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="  重构 之 数据共享尝试了很久, 失败,最后使用了最恶心链式继承,代码逻辑全部改.">
+      <created>1584379488974</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1584379488974</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,6 +264,21 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="2">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="3">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State>
@@ -273,6 +288,13 @@
           </value>
         </entry>
       </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+        <option value="2" />
+        <option value="3" />
+      </set>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
@@ -297,7 +319,8 @@
     <MESSAGE value=" 添加了背景音乐" />
     <MESSAGE value="  重构" />
     <MESSAGE value="  重构 之 消除首位斜杠 , 输入容错" />
-    <option name="LAST_COMMIT_MESSAGE" value="  重构 之 消除首位斜杠 , 输入容错" />
+    <MESSAGE value="  重构 之 数据共享尝试了很久, 失败,最后使用了最恶心链式继承,代码逻辑全部改." />
+    <option name="LAST_COMMIT_MESSAGE" value="  重构 之 数据共享尝试了很久, 失败,最后使用了最恶心链式继承,代码逻辑全部改." />
   </component>
   <component name="WindowStateProjectService">
     <state x="343" y="205" key="#Inspections" timestamp="1583587432176">
@@ -308,11 +331,11 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="302" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583502348233" />
-    <state x="655" y="180" key="CommitChangelistDialog2" timestamp="1584354578147">
+    <state x="655" y="180" key="CommitChangelistDialog2" timestamp="1584379487387">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
     <state x="654" y="184" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1583667330626" />
-    <state x="655" y="180" key="CommitChangelistDialog2/63.0.1857.1080@63.0.1857.1080" timestamp="1584354578147" />
+    <state x="655" y="180" key="CommitChangelistDialog2/63.0.1857.1080@63.0.1857.1080" timestamp="1584379487387" />
     <state x="192" y="100" width="1411" height="831" key="DiffContextDialog" timestamp="1584379243958">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
@@ -360,10 +383,10 @@
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
     <state x="164" y="100" width="1101" height="887" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/63.0.1857.1080@63.0.1857.1080" timestamp="1583770326645" />
-    <state x="325" y="267" width="759" height="548" key="find.popup" timestamp="1584361083515">
+    <state x="779" y="350" width="759" height="548" key="find.popup" timestamp="1584421169680">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
-    <state x="325" y="267" width="759" height="548" key="find.popup/63.0.1857.1080@63.0.1857.1080" timestamp="1584361083515" />
+    <state x="779" y="350" width="759" height="548" key="find.popup/63.0.1857.1080@63.0.1857.1080" timestamp="1584421169680" />
     <state x="737" y="341" width="672" height="286" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1583730862319">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>

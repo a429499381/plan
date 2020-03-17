@@ -9,30 +9,42 @@ class Player extends SceneGame {
 
     setup(path) {
         this.BulltesArr = []
-        this.Bullte = this.ui.imgPath('img/zhidanPro.png', {w: 1024, h: 1024, x: 0, y: 0})
-        this.speed = 20
-        this.TimeFireId = -5
-        this.isFire = false
+        this.Bullte = this.ui.imgPath(this.imgAll.zhidan, {w: 1024, h: 1024, x: 0, y: 0})
         this.isNum = 0
-        this.isUpdate = false
-        this.isAutoFire = false
-        this.autoFireNum = 0
-        this.isRegKey = false
         this.player = {
             image: this.ui.imgPath(path),
             x: 160,
             y: 550,
             vx: 0.4,
             vy: 0.4,
+            gy: 1,
+            w: 83,
+            h: 90,
+            speed: 20,
+        }
+        this.bullte = {
+            image: this.Bullte,
+            x: Math.floor(this.x + this.w / 2 - 20),
+            y: Math.floor(this.y - 20),
+            speed: 10,
+            w: 40,
+            h: 60,
         }
         this.x = this.player.x
         this.y = this.player.y
-        this.w = 83
-        this.h = 90
+        this.w = this.player.w
+        this.h = this.player.h
     }
 
 
     update() {
+        // 子弹坐标更新
+        if (this.BulltesArr.length > 0) {
+            this.BulltesArr.forEach(b => {
+                b.y -= b.speed || 3
+            })
+        }
+
         this.autoFire()
     }
 
@@ -44,7 +56,10 @@ class Player extends SceneGame {
         this.player.y = this.y
         this.ui.drawImage(this.player)
     }
-
+    fire() {
+        let c = this.createBulltes()
+        c ? this.BulltesArr.push(c) : ''
+    }
     autoFire() {
         if (this.regEvent.keydowns && this.regEvent.keydowns.Space) {
             this.fire()
@@ -52,18 +67,60 @@ class Player extends SceneGame {
         }
     }
 
-    bulltesDraw() {
-        for (let i = 0; i < this.BulltesArr.length; i++) {
-            let obj = this.BulltesArr[i]
-            // 每次循环移动一次   SPEED没有定位 做计算会导致NAN
-            obj.y -= obj.speed || 3
-
-            // 子弹飞出界面 移除
-            if (obj.y < -obj.h) {
-                this.BulltesArr.pop()
-            }
-            this.ui.context.drawImage(obj.image, 330, 5, 90, 100, obj.x, obj.y, 40, 60,)
+    createBulltes() {
+        this.isNum == undefined ? this.isNum = 0 : this.isNum++
+        // 不能被 9 除尽就退出
+        if (this.isNum % 9 !== 0) {
+            return
         }
+
+        let bullte = {
+            image: this.Bullte,
+            x: Math.floor(this.x + this.w / 2 - 20),
+            y: Math.floor(this.y - 20),
+            speed: 10,
+            w: 40,
+            h: 60,
+        }
+
+        return bullte
+
+        /*    this.isNum += 1
+            if (this.isNum === 0 || this.isNum >= 9) {
+                this.isNum = 0
+                let bullte = {
+                    w: 40,
+                    h: 60,
+                }
+                bullte.image = this.Bullte
+                bullte.x = Math.floor(this.x + this.w / 2 - 20)
+                bullte.y = Math.floor(this.y - 20)
+                bullte.speed = 10
+                return bullte
+            }*/
+    }
+    bulltesDraw() {
+        if (this.BulltesArr.length <= 0) {
+            return 'BulltesArr length 0'
+        }
+
+        this.BulltesArr.forEach(b => {
+            // 子弹飞出界面 移除
+            if (b.y < (-b.h || -200)) {
+                // 先进先出 每次移除头数组
+                this.BulltesArr.shift()
+
+            }
+            this.ui.context.drawImage(b.image, 330, 5, 90, 100, b.x, b.y, 40, 60,)
+        })
+
+    }
+
+    acceleration(x, y, speed, vx, vy, gy) {
+        //执行 加速度
+        y += vy
+        vy += gy * 0.2
+        y += speed
     }
 
     regKeyArr() {
@@ -94,39 +151,20 @@ class Player extends SceneGame {
         this.isRegKey = true
 
     }
-
-    createBulltes() {
-        this.isNum += 1
-        if (this.isNum === 0 || this.isNum >= 9) {
-            this.isNum = 0
-            let bullte = {}
-            bullte.image = this.Bullte
-            bullte.x = Math.floor(this.x + this.w / 2 - 20)
-            bullte.y = Math.floor(this.y - 20)
-            bullte.speed = 10
-            return bullte
-        }
-    }
-
-    fire() {
-        let c = this.createBulltes()
-        c ? this.BulltesArr.push(c) : ''
-    }
-
     moveUp() {
-        this.y > 0 ? this.y -= this.speed : this.y = 0;
+        this.y > 0 ? this.y -= this.player.speed : this.y = 0;
     }
 
     moveDown() {
-        this.y < 720 ? this.y += this.speed : this.y = 720;
+        this.y < 720 ? this.y += this.player.speed : this.y = 720;
     }
 
     moveLeft() {
-        this.x > 0 ? this.x -= this.speed : this.x = 0;
+        this.x > 0 ? this.x -= this.player.speed : this.x = 0;
     }
 
     moveRight() {
-        this.x <= (this.sceneWidth - this.w) ? this.x += this.speed : this.x = this.sceneWidth - this.w
+        this.x <= (this.sceneWidth - this.w) ? this.x += this.player.speed : this.x = this.sceneWidth - this.w
     }
 
 }
