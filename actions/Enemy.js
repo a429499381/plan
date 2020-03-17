@@ -109,13 +109,15 @@ class Enemy {
         let g = this.game
         let n = g.Between(num - 2, num)
         for (let i = 0; i < n; i++) {
+            let eNum = g.Between(1,10)
             let e = {
-                image: this.enemyImage,
+                // image: this.enemyImage,
+                image:g.ui.imgPath(g.imgAll.enemy[`enemy${eNum}`]),
                 name: `Enemy${i}`,
                 x: g.Between(50, 300),
                 y: g.Between(50, 300),
-                w: 130,
-                h: 130,
+                w: 100,
+                h: 70,
                 speed: 2 || this.speed,
                 isNum: 0,
                 BulltesArr: [],

@@ -66,6 +66,8 @@ class Player extends SceneGame {
                         this.BulltesArr.shift()
                         // 敌机消失方式
                         this.removeEnemy(this.enemy.EnemyArr, i)
+
+                        this.score += 10
                     }
                 })
             }
@@ -179,7 +181,6 @@ class Player extends SceneGame {
     }
 
     createBulltes() {
-
         let bullte = {
             image: this.BullteImage,
             name: `playerBulltes${this.isNum}`,
