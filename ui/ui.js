@@ -50,7 +50,10 @@ class Ui {
             return 'drawImage img is no object or img.x img.y is undefined'
         }
 
+        this.context.save()
+        this.context.scale(0.5, 0.5)
         this.context.drawImage(img.image, img.x, img.y,);
+        this.context.restore()
     }
 
 

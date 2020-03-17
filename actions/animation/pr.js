@@ -3,7 +3,6 @@ class Pr {
         //必须要传 路径 x y
         this.x = obj.x
         this.y = obj.y
-        this.game = new ShareDate(this)
         this.setup()
     }
 

@@ -10,11 +10,17 @@ class Enemy {
         this.EnemyArr = []
         this.isNum = 0
         this.enemyImage = g.ui.imgPath(g.imgAll.enemy.enemy0)
-        this.bulltesImage = this.game.ui.imgPath(this.game.imgAll.zhidan, {w: 1024, h: 1024, x: 0, y: 0}), this.x = config.x
+        this.bulltesImage = this.game.ui.imgPath(this.game.imgAll.zhidan, {
+            w: 1024,
+            h: 1024,
+            x: 0,
+            y: 0
+        }), this.x = config.x
         this.y = config.y
         // this.w = config.w || 0
         // this.h = config.h || 0
         this.speed = 3
+        this.zoom = 0.5
 
         this.createEnemyArr(5)
 
@@ -85,7 +91,10 @@ class Enemy {
                 e.BulltesArr.shift()
 
             }
+            this.game.ui.context.save()
+            this.game.ui.context.scale(0.5, 0.5)
             this.game.ui.context.drawImage(b.image, 330, 5, 90, 100, b.x, b.y, 40, 60,)
+            this.game.ui.context.restore()
         })
     }
 
@@ -94,8 +103,8 @@ class Enemy {
         let bullte = {
             image: this.bulltesImage,
             name: `EnemyBulltes${this.isNum}`,
-            x: coordinates.x + 30,
-            y: coordinates.y + 30,
+            x: coordinates.x * 1.5,
+            y: coordinates.y * 1.5,
             speed: 6,
             isNum: 0,
             w: 40,
@@ -109,13 +118,13 @@ class Enemy {
         let g = this.game
         let n = g.Between(num - 2, num)
         for (let i = 0; i < n; i++) {
-            let eNum = g.Between(1,10)
+            let eNum = g.Between(1, 10)
             let e = {
                 // image: this.enemyImage,
-                image:g.ui.imgPath(g.imgAll.enemy[`enemy${eNum}`]),
+                image: g.ui.imgPath(g.imgAll.enemy[`enemy${eNum}`]),
                 name: `Enemy${i}`,
-                x: g.Between(50, 300),
-                y: g.Between(50, 300),
+                x: g.Between(0, 340) * this.zoom * 4,
+                y: g.Between(10, 200) * this.zoom * 4,
                 w: 100,
                 h: 70,
                 speed: 2 || this.speed,

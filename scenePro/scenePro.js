@@ -10,8 +10,9 @@ class ScenePro{
         this.OtherArr = []
         this.ui = sing(Ui)
         this.regEvent = sing(RegEvent)
-        this.sceneWidth = this.ui.canvas.clientWidth || 400
-        this.sceneheight = this.ui.canvas.clientHeight || 400
+        this.zoom = 0.5
+        this.sceneWidth = this.ui.canvas.clientWidth * 2 || 400
+        this.sceneheight = this.ui.canvas.clientHeight * 2|| 400
 
     }
 
@@ -50,8 +51,8 @@ class ScenePro{
     draw() {
         this.ui.clearUi()
 
-        this.OtherArr.forEach(O => {
-            this.ui.drawImage(O)
+        this.OtherArr.forEach(img => {
+            this.ui.context.drawImage(img.image, img.x, img.y,);
         })
 
         this.EleArr.forEach(E => {

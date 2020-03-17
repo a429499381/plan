@@ -25,15 +25,15 @@ class Player extends SceneGame {
             speed: 20,
         }
 
-        this.x = 160
-        this.y = 550
+        this.x = 160 * this.zoom * 4
+        this.y = 650 * this.zoom * 4
         this.w = this.player.w
         this.h = this.player.h
         //礼花数组
         this.prArr = []
     }
 
-   removeEnemy(obj, index) {
+    removeEnemy(obj, index) {
         let e = obj
         let t = 0
         for (let i = index; i < e.length - 1; i++) {
@@ -117,11 +117,14 @@ class Player extends SceneGame {
     draw() {
         if (this.prArr && this.prArr.length > 0) {
             this.prArr.forEach((pr, i) => {
-                setTimeout(()=>{
+                setTimeout(() => {
                     this.prArr[i] = []
-                },500)
+                }, 500)
                 pr.forEach(b => {
+                    this.ui.context.save()
+                    this.ui.context.scale(0.3, 0.3)
                     this.ui.context.drawImage(b.image, 330, 5, 90, 100, b.x, b.y, 40, 60,)
+                    this.ui.context.restore()
                 })
             })
         }
@@ -149,8 +152,8 @@ class Player extends SceneGame {
             peng.flag = flag
             peng.vx += g.Between(-10, 10)
             peng.vy += g.Between(-10, 10)
-            peng.x = T.x + peng.vx
-            peng.y = T.y + peng.vy
+            peng.x = T.x * 1.5 + peng.vx
+            peng.y = T.y * 1.5 + peng.vy
             p.push(peng)
         }
 
@@ -171,7 +174,7 @@ class Player extends SceneGame {
 
     autoFire() {
         if (this.regEvent.keydowns && this.regEvent.keydowns.Space) {
-            if(this.isNum++ % 6 === 0) {
+            if (this.isNum++ % 6 === 0) {
                 let c = this.createBulltes()
                 c ? this.BulltesArr.push(c) : ''
             }
@@ -207,7 +210,10 @@ class Player extends SceneGame {
                 this.BulltesArr.shift()
 
             }
+            this.ui.context.save()
+            this.ui.context.scale(0.5, 0.5)
             this.ui.context.drawImage(b.image, 330, 5, 90, 100, b.x, b.y, 40, 60,)
+            this.ui.context.restore()
         })
 
     }
@@ -252,8 +258,9 @@ class Player extends SceneGame {
         this.y > 0 ? this.y -= this.player.speed : this.y = 0;
     }
 
+    // this.y < this.sceneheight ? this.y += this.player.speed : this.y = 720;
     moveDown() {
-        this.y < 720 ? this.y += this.player.speed : this.y = 720;
+        this.y < this.sceneheight - this.h ? this.y += this.player.speed : this.y = this.sceneheight - this.h;
     }
 
     moveLeft() {
