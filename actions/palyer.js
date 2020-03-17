@@ -54,7 +54,7 @@ class Player extends SceneGame {
                 this.removeEnemy(this.enemy.EnemyArr, j)
                 //减分
                 this.score -= 10
-                log('被击中')
+                // log('被击中')
             }
             //我方飞机子弹
             if (this.BulltesArr && this.BulltesArr.length > 0) {
@@ -78,7 +78,7 @@ class Player extends SceneGame {
                         this.removeEnemy(e.BulltesArr, k)
                         //减分
                         this.score -= 10
-                        log('被击中')
+                        // log('被击中')
                     }
                 })
             }
@@ -116,8 +116,8 @@ class Player extends SceneGame {
         if (this.prArr && this.prArr.length > 0) {
             this.prArr.forEach((pr, i) => {
                 setTimeout(()=>{
-                    this.removeEnemy(this.prArr, i)
-                },3000)
+                    this.prArr[i] = []
+                },500)
                 pr.forEach(b => {
                     this.ui.context.drawImage(b.image, 330, 5, 90, 100, b.x, b.y, 40, 60,)
                 })
@@ -152,7 +152,6 @@ class Player extends SceneGame {
             p.push(peng)
         }
 
-        log('pr arr', this.pengArr)
         this.prArr.push(p)
         return p
     }
@@ -160,7 +159,7 @@ class Player extends SceneGame {
     fire() {
         this.isNum == undefined ? this.isNum = 0 : this.isNum++
         // 不能被 6 除尽就退出
-        if (this.isNum % 6 !== 0) {
+        if (this.isNum++ % 9 !== 0) {
             return
         }
 
@@ -170,8 +169,12 @@ class Player extends SceneGame {
 
     autoFire() {
         if (this.regEvent.keydowns && this.regEvent.keydowns.Space) {
-            this.createBulltes()
-            //log('autoFire')
+            if(this.isNum++ % 6 === 0) {
+                let c = this.createBulltes()
+                c ? this.BulltesArr.push(c) : ''
+            }
+            log('autoFire', this.isNum)
+
         }
     }
 
