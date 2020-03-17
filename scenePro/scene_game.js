@@ -11,7 +11,7 @@ class SceneGame extends ScenePro {
         this.SceneGameTimeId = -1
         this.addOther(this.imgAll.bg)
         this.addOther(this.imgAll.yun0, this.Between(0, 50), this.Between(0, 100))
-        let enemy = new Enemy(this)
+        this.enemy = new Enemy(this)
         this.loop()
     }
 

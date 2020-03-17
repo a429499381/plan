@@ -110,6 +110,8 @@ class Enemy {
                 name: `Enemy${i}`,
                 x: g.Between(50, 300),
                 y: g.Between(50, 300),
+                w: 130,
+                h: 130,
                 speed: 2 || this.speed,
                 isNum: 0,
                 BulltesArr: [],

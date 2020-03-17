@@ -5,6 +5,7 @@ class Player extends SceneGame {
         this.regKeyArr()
         this.setup(this.imgAll.player)
         super.setup()
+
     }
 
     setup(path) {
@@ -31,6 +32,50 @@ class Player extends SceneGame {
     }
 
 
+    // 碰撞检测 后执行
+    collideAction() {
+        this.enemy.EnemyArr.forEach(e => {
+            //是否与飞机碰撞
+            let result = collide(this.player, e)
+            if (result) {
+                log('游戏结束')
+            }
+            //我方飞机子弹
+            if (this.BulltesArr && this.BulltesArr.length > 0) {
+                this.BulltesArr.forEach((b, i) => {
+                    let r = collide(b, e)
+                    if (r) {
+                        //子弹消失
+                        this.BulltesArr.shift()
+                        // 敌机消失方式
+                        removeEnemy(this.enemy.EnemyArr, i)
+                    }
+                })
+            }
+
+            if (e.BulltesArr && e.BulltesArr.length > 0) {
+                e.BulltesArr.forEach(b => {
+                    //是否与飞机碰撞
+                    let result = collide(this.player, b)
+                    if (result) {
+                        log('游戏结束')
+                    }
+                })
+            }
+
+        })
+
+        var removeEnemy = function (obj, index) {
+            let e = obj
+            let t = 0
+            for (let i = index; i < e.length - 1; i++) {
+                e[i] = e[i + 1]
+            }
+            //去掉尾部 空数组
+            e.pop()
+        }
+    }
+
     update() {
         // 子弹坐标更新
         if (this.BulltesArr.length > 0) {
@@ -39,7 +84,12 @@ class Player extends SceneGame {
             })
         }
 
+        // 碰撞检测 后执行
+        this.collideAction()
+
+
         this.createBulltes()
+        this.autoFire()
     }
 
     draw() {
@@ -52,23 +102,24 @@ class Player extends SceneGame {
     }
 
     fire() {
+        this.isNum == undefined ? this.isNum = 0 : this.isNum++
+        // 不能被 6 除尽就退出
+        if (this.isNum % 6 !== 0) {
+            return
+        }
+
         let c = this.createBulltes()
         c ? this.BulltesArr.push(c) : ''
     }
 
     autoFire() {
         if (this.regEvent.keydowns && this.regEvent.keydowns.Space) {
-            this.fire()
+            this.createBulltes()
             //log('autoFire')
         }
     }
 
     createBulltes() {
-        this.isNum == undefined ? this.isNum = 0 : this.isNum++
-        // 不能被 9 除尽就退出
-        if (this.isNum % 9 !== 0) {
-            return
-        }
 
         let bullte = {
             image: this.BullteImage,
@@ -93,7 +144,7 @@ class Player extends SceneGame {
             // 子弹飞出界面 移除
             if (b.y < (-b.h || -200)) {
                 // 先进先出 每次移除头数组
-                 this.BulltesArr.shift()
+                this.BulltesArr.shift()
 
             }
             this.ui.context.drawImage(b.image, 330, 5, 90, 100, b.x, b.y, 40, 60,)
