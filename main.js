@@ -1,5 +1,16 @@
 /*var //log = console.//log.bind(console);*/
 var {log} = console
+//用例测试模板
+const enTest = ((res, message) => {
+    let n = 0
+    return function () {
+        if (res) {
+            log(`成功${n + 1}`)
+        } else {
+            log(`测试失败 message${n+1}`)
+        }
+    }
+})()
 
 function main() {
     window.onload = function () {
