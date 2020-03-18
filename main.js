@@ -1,14 +1,14 @@
 /*var //log = console.//log.bind(console);*/
 var {log} = console
 //用例测试模板
-const enTest = (() => {
+const enTest = ((res, message) => {
     let n = 0
     return function (res, message) {
         n += 1
         if (res) {
             log(`成功 ${n}`)
         } else {
-            return log(`测试失败 ${message}${n}`)
+            return log(`测试失败 ${message} ${n}`)
 
         }
     }
