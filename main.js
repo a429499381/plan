@@ -3,11 +3,15 @@ var {log} = console
 //用例测试模板
 const enTest = ((res, message) => {
     let n = 0
-    return function () {
-        if (res) {
-            log(`成功${n + 1}`)
-        } else {
-            log(`测试失败 message${n+1}`)
+    if (res) {
+        return function () {
+            n += 1
+            log(`成功${n}` )
+        }
+    } else {
+        return function () {
+            n += 1
+            return log(`测试失败 message${n}`)
         }
     }
 })()
