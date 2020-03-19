@@ -92,7 +92,19 @@ class Player{
 
     }
 
+    gameover() {
+        this.BulltesArr = []
+        this.prArr = []
+        this.game.Ele = []
+        this.game.OtherArr = []
+        this.game.route.to('gameEnd')
+    }
+
     update() {
+        if(this.game.score < -2000) {
+            this.gameover()
+        }
+
         // 子弹坐标更新
         if (this.BulltesArr.length > 0) {
             this.BulltesArr.forEach(b => {
