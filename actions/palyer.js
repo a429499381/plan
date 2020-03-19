@@ -24,8 +24,8 @@ class Player{
             speed: 20,
         }
 
-        this.x = 160 * this.zoom * 4
-        this.y = 650 * this.zoom * 4
+        this.x = 160 * this.game.zoom * 4
+        this.y = 650 * this.game.zoom * 4
         this.w = this.player.w
         this.h = this.player.h
         //礼花数组
@@ -51,9 +51,9 @@ class Player{
             let result = collide(this.player, e)
             if (result) {
                 this.pr(e, 'playBulltesArr')
-                this.removeEnemy(this.enemy.EnemyArr, j)
+                this.removeEnemy(this.game.enemy.EnemyArr, j)
                 //减分
-                this.score -= 100
+                this.game.score -= 100
                 // log('被击中')
             }
 
@@ -65,7 +65,7 @@ class Player{
                     if (result) {
                         this.removeEnemy(e.BulltesArr, k)
                         //减分
-                        this.score -= 100
+                        this.game.score -= 100
                         // log('被击中')
                     }
                 })
@@ -80,9 +80,9 @@ class Player{
                         //子弹消失
                         this.BulltesArr.shift()
                         // 敌机消失方式
-                        this.removeEnemy(this.enemy.EnemyArr, i)
+                        this.removeEnemy(this.game.enemy.EnemyArr, i)
 
-                        this.score += 10
+                        this.game.score += 10
                     }
                 })
             }
@@ -143,7 +143,7 @@ class Player{
 
     // 爆炸烟花
     pr(T, flag) {
-        let g = this
+        let g = this.game
         let p = []
         for (let i = 1; i < 30; i++) {
             let peng = {
@@ -260,7 +260,7 @@ class Player{
 
     // this.y < this.sceneheight ? this.y += this.player.speed : this.y = 720;
     moveDown() {
-        this.y < this.sceneheight - this.h ? this.y += this.player.speed : this.y = this.sceneheight - this.h;
+        this.y < this.game.sceneheight - this.h ? this.y += this.player.speed : this.y = this.game.sceneheight - this.h;
     }
 
     moveLeft() {
@@ -268,7 +268,7 @@ class Player{
     }
 
     moveRight() {
-        this.x <= (this.sceneWidth - this.w) ? this.x += this.player.speed : this.x = this.sceneWidth - this.w
+        this.x <= (this.game.sceneWidth - this.w) ? this.x += this.player.speed : this.x = this.game.sceneWidth - this.w
     }
 
 }

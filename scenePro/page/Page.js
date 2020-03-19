@@ -14,8 +14,10 @@ class Page {
         this.ui.context.fillText(name, x, y)
     }
 
-    update = () => {
+    update = (key) => {
         log(this.game.route)
+        log('key update  page', key)
+        this.regKey.RemoveRegister(key)
         this.game.route.to('gameStart')
     }
 

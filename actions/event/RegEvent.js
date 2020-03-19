@@ -44,7 +44,8 @@ class RegEvent{
                     //如果按键被按下，调用注册的ACTION
      //               this.keydowns[key] = false
                     ////log('执行了按下后调函数', key)
-                    this.actions[key]();
+                    this.actions[key](key);
+                    // this.actions[key]();
 
                 }
             }
