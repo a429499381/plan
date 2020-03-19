@@ -55,6 +55,7 @@ class Player {
         e.pop()
     }
 
+
     // 碰撞检测 后执行
     collideAction() {
 
@@ -136,6 +137,7 @@ class Player {
 
         this.createBulltes()
         this.autoFire()
+
     }
 
     draw() {

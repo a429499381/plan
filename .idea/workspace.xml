@@ -4,6 +4,9 @@
     <list default="true" id="16172606-dcf2-46ae-b793-e4dc3de580f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/actions/palyer.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/palyer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/route/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/route/route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenePro/page/Page.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/page/Page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenePro/page/title.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/page/title.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,14 +130,8 @@
       <workItem from="1584631778697" duration="1945000" />
       <workItem from="1584633747516" duration="1566000" />
       <workItem from="1584638530814" duration="1788000" />
-      <workItem from="1584640337575" duration="1232000" />
-    </task>
-    <task id="LOCAL-00003" summary="开始做打飞机 方向 子弹发射  完成敌机随机产生数量 固定移动后自动归位循环">
-      <created>1583592035122</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1583592035122</updated>
+      <workItem from="1584640337575" duration="1787000" />
+      <workItem from="1584642146560" duration="1787000" />
     </task>
     <task id="LOCAL-00004" summary="开始做子弹发射">
       <created>1583646603776</created>
@@ -472,7 +469,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584641062732</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="   解决 跳转逻辑死循环,  &#10;   解决 跳转文字无法正常显示 初始是黑字,进入游戏后分数显示改为白色,跳转后显示还是白字,导致以为字没有显示, 加上跳转逻辑问题, 找了几个小时才解决.">
+      <created>1584641597903</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1584641597903</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,12 +555,12 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="302" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583502348233" />
-    <state x="435" y="40" key="CommitChangelistDialog2" timestamp="1584641578505">
+    <state x="435" y="40" key="CommitChangelistDialog2" timestamp="1584641596857">
       <screen x="74" y="0" width="1846" height="1080" />
     </state>
     <state x="654" y="184" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1583667330626" />
     <state x="603" y="40" key="CommitChangelistDialog2/63.0.1857.1080@63.0.1857.1080" timestamp="1584612062371" />
-    <state x="435" y="40" key="CommitChangelistDialog2/74.0.1846.1080@74.0.1846.1080" timestamp="1584641578505" />
+    <state x="435" y="40" key="CommitChangelistDialog2/74.0.1846.1080@74.0.1846.1080" timestamp="1584641596857" />
     <state x="202" y="100" width="1403" height="831" key="DiffContextDialog" timestamp="1584638520572">
       <screen x="74" y="0" width="1846" height="1080" />
     </state>

@@ -6,14 +6,13 @@ class Route {
 
     add(page, setup) {
         this.actions[page] = setup
-        log('router add',this.actions)
+        // log('router add',this.actions)
     }
     remove(page) {
         this.actions[page] = ''
     }
     to(page) {
         this.actions[page].setup()
-        log('router to',this.actions)
-        // this.game.[page].setup()
+        // log('router to',this.actions)
     }
 }

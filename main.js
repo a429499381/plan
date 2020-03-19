@@ -20,6 +20,7 @@ function main() {
         run.img = {
             bg: "/img/bg0.jpg",
             bg1: "img/bg1.jpg",
+            bg2: "img/bg2.png",
             zhidan: 'img/zhidanPro.png',
             enemy: {
                 enemy0: "img/Enemy0.png",

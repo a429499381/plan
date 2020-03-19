@@ -2,7 +2,6 @@ class Page {
     constructor(game) {
         this.game = game
         this.init()
-        log('page', this.constructor.name)
     }
 
     init() {
@@ -18,12 +17,12 @@ class Page {
     }
 
     update = (key) => {
-        log(this.game.route)
-        log('key update  page', key)
+        // log(this.game.route)
+        // log('key update  page', key)
         this.game.regEvent.RemoveRegister(key)
         this.game.isgameOver = false
         this.game.route.to('gameStart')
-        console.count('page')
+        // console.count('page')
     }
 
 
