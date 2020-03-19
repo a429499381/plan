@@ -34,20 +34,13 @@ class Player {
         this.prArr = []
     }
     gameOver() {
-        this.BulltesArr = []
-        this.prArr = []
-        this.game.Ele = []
         this.game.EleArr = []
         this.game.OtherArr = []
-        this.game.enemy = {}
         this.game.isgameOver = true
         clearInterval(this.game.SceneGameTimeId)
         this.game.SceneGameTimeId = -10
-        console.count('play')
-        this.game.ui.context.fillText('name', 200, 400)
+        this.game.route.to('gameEnd')
 
-
-        this.game.setup()
         return 'gameover is player'
     }
 

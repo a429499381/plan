@@ -25,7 +25,7 @@ class ScenePro{
         this.route.add('gameStart', this)
 
         // 初始画面
-        this.route.to('gameStart')
+        this.route.to('title')
 
     }
 

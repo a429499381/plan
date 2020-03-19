@@ -7,7 +7,7 @@
       <change beforePath="$PROJECT_DIR$/scenePro/page/Page.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/page/Page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenePro/page/title.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/page/title.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenePro/scenePro.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scenePro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenePro/scene_game.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scene_game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,14 +129,8 @@
       <workItem from="1584629944773" duration="1811000" />
       <workItem from="1584631778697" duration="1945000" />
       <workItem from="1584633747516" duration="1566000" />
-      <workItem from="1584638530814" duration="699000" />
-    </task>
-    <task id="LOCAL-00001" summary="开始做打飞机">
-      <created>1583502302804</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1583502302804</updated>
+      <workItem from="1584638530814" duration="1788000" />
+      <workItem from="1584640337575" duration="491000" />
     </task>
     <task id="LOCAL-00002" summary="开始做打飞机 方向 子弹发射">
       <created>1583508625852</created>
@@ -474,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584612063368</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="   跳转逻辑死循环BUG 找到, 继续验证">
+      <created>1584639269517</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1584639269518</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -517,7 +518,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" 添加了背景音乐" />
     <MESSAGE value="  重构" />
     <MESSAGE value="  重构 之 消除首位斜杠 , 输入容错" />
     <MESSAGE value="  重构 之 数据共享尝试了很久, 失败,最后使用了最恶心链式继承,代码逻辑全部改." />
@@ -542,7 +542,8 @@
     <MESSAGE value="  添加路由 开始页面跳转" />
     <MESSAGE value="  添加路由 开始页面跳转 结构错误, 重新更改初始化流程,  去掉多余player 继承" />
     <MESSAGE value="   添加了离开页面 按键屏蔽, 修复我方飞机更改结构后引用错误" />
-    <option name="LAST_COMMIT_MESSAGE" value="   添加了离开页面 按键屏蔽, 修复我方飞机更改结构后引用错误" />
+    <MESSAGE value="   跳转逻辑死循环BUG 找到, 继续验证" />
+    <option name="LAST_COMMIT_MESSAGE" value="   跳转逻辑死循环BUG 找到, 继续验证" />
   </component>
   <component name="WindowStateProjectService">
     <state x="343" y="205" key="#Inspections" timestamp="1583587432176">
@@ -553,11 +554,12 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="302" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583502348233" />
-    <state x="603" y="40" key="CommitChangelistDialog2" timestamp="1584612062371">
-      <screen x="63" y="0" width="1857" height="1080" />
+    <state x="611" y="40" key="CommitChangelistDialog2" timestamp="1584639267775">
+      <screen x="74" y="0" width="1846" height="1080" />
     </state>
     <state x="654" y="184" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1583667330626" />
     <state x="603" y="40" key="CommitChangelistDialog2/63.0.1857.1080@63.0.1857.1080" timestamp="1584612062371" />
+    <state x="611" y="40" key="CommitChangelistDialog2/74.0.1846.1080@74.0.1846.1080" timestamp="1584639267775" />
     <state x="202" y="100" width="1403" height="831" key="DiffContextDialog" timestamp="1584638520572">
       <screen x="74" y="0" width="1846" height="1080" />
     </state>
@@ -611,10 +613,11 @@
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
     <state x="164" y="100" width="1101" height="887" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/63.0.1857.1080@63.0.1857.1080" timestamp="1583770326645" />
-    <state x="774" y="421" width="759" height="548" key="find.popup" timestamp="1584624860119">
-      <screen x="63" y="0" width="1857" height="1080" />
+    <state x="781" y="421" width="759" height="548" key="find.popup" timestamp="1584639494861">
+      <screen x="74" y="0" width="1846" height="1080" />
     </state>
     <state x="774" y="421" width="759" height="548" key="find.popup/63.0.1857.1080@63.0.1857.1080" timestamp="1584624860119" />
+    <state x="781" y="421" width="759" height="548" key="find.popup/74.0.1846.1080@74.0.1846.1080" timestamp="1584639494861" />
     <state x="737" y="341" width="672" height="286" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1583730862319">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>

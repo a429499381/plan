@@ -9,11 +9,11 @@ class Page {
 
     }
 
-    draw(name, x = 100, y = 100) {
-        // this.game.ui.clearUi()
+    draw(name, x = 120, y = 400) {
+        this.game.ui.clearUi()
         this.game.ui.context.font = "20px Georgia";
+        this.game.ui.context.fillStyle = "red";
         this.game.ui.context.fillText(name, x, y)
-
 
     }
 

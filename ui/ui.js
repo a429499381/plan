@@ -59,7 +59,7 @@ class Ui {
 
     writeText(text, config = {x: 20, y: 740}) {
         let cx = this.context
-        cx.font = "24px sans-serif";
+        cx.font = "24 sans-serif";
         cx.fillStyle = 'white'
         cx.fillText(text, config.x, config.y)
     }
