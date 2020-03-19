@@ -1,15 +1,20 @@
 class Page {
     constructor() {
-        this.setup()
+        this.ui = sing(Ui)
+        this.regKey =sing(RegEvent)
+        this.init()
+
+
+        log('page', this.constructor.name)
     }
-    setup = (n) => {
+    init(){
         this.ui = sing(Ui)
         this.regKey =sing(RegEvent)
     }
-    draw(name) {
+    draw(name ,x = 100, y = 100) {
         this.ui.clearUi()
         this.ui.context.font = "20px Georgia";
-        this.ui.context.fillText(name, 240, 240)
+        this.ui.context.fillText(name, x, y)
     }
 }
 

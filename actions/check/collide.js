@@ -58,10 +58,6 @@ var collide = function (ball, paddle) {
     return false
 }
 
-enTest(collide({x: 100,y: 200, w:154, h:67, image: 10}, {x: 100, y:200, w:20, h: 68, image: 10}), 'collide')
-enTest(collide({x: 100, y:200, w:20, h: 68, image: 10},{x: 100,y: 200, w:154, h:67, image: 10}),  'collide')
-enTest(collide({x: 10,y: -20, w:54, h:67, image: 10}, {x: 10, y:34, w:56, h: 143, image: 10}), 'collide')
-enTest(collide({x: 10,y: -20, w:54, h:67, image: 10}, {x: -10, y:34, w:56, h: 143, image: 10}), 'collide')
 
 
 

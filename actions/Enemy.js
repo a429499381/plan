@@ -26,6 +26,12 @@ class Enemy {
     }
 
     update() {
+
+        if (this.EnemyArr.length <= 2) {
+            this.createEnemyArr(4)
+        }
+
+
         if (this.EnemyArr.length <= 0) {
             return
         }
@@ -55,10 +61,6 @@ class Enemy {
 
         })
 
-        if (this.EnemyArr.length <= 2) {
-            this.createEnemyArr(4)
-        }
-
 
     }
 
@@ -74,7 +76,6 @@ class Enemy {
             // 绘制每个飞机的子弹
             this.bulltesDraw(e)
         })
-
 
     }
 

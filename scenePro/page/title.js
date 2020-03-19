@@ -1,31 +1,54 @@
-class Title extends Page{
-    constructor() {
+class Title extends Page {
+    constructor(game) {
         super()
-        this.setup()
+        this.game = game
+        //route
+        this.game.route.add('title', this)
+        // this.setup()
     }
+
     setup() {
-        super.setup()
         this.title = {
             name: "按 k 开始游戏",
             key: "KeyK",
         }
+
+        log('setup title')
+        this.draw(this.title.name)
     }
 
+    update() {
+
+    }
 
 
 }
 
+class GameEnd extends Page {
+    constructor(game) {
+        super()
+        this.game = game
+        //route
+        this.game.route.add('gameEnd', this)
+        // this.setup()
+    }
+
+    setup() {
+        this.title = {
+            name: "按 r 重新开始游戏",
+            key: "KeyK",
+        }
+
+        log('setup title')
+        this.draw(this.title.name)
+    }
+
+    update() {
+
+    }
 
 
-
-
-
-
-
-
-
-
-
+}
 
 
 /*
