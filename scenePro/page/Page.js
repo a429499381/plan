@@ -1,10 +1,6 @@
 class Page {
     constructor() {
-        this.ui = sing(Ui)
-        this.regKey =sing(RegEvent)
         this.init()
-
-
         log('page', this.constructor.name)
     }
     init(){

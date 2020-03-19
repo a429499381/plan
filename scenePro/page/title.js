@@ -8,17 +8,19 @@ class Title extends Page {
     }
 
     setup() {
+        log('setup title')
         this.title = {
             name: "按 k 开始游戏",
             key: "KeyK",
         }
 
-        log('setup title')
+        this.regKey.register(this.title.key, this.update)
         this.draw(this.title.name)
     }
 
     update() {
-
+        log(this.game.route)
+        this.game.route.to('gameStart')
     }
 
 
@@ -39,12 +41,14 @@ class GameEnd extends Page {
             key: "KeyK",
         }
 
-        log('setup title')
+        log('setup gameEnd')
+        this.regKey.register(this.title.key, this.update)
         this.draw(this.title.name)
     }
 
     update() {
-
+        log(this.game.route)
+        this.game.route.to('gameStart')
     }
 
 

@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16172606-dcf2-46ae-b793-e4dc3de580f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/route/route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Marbles.html" beforeDir="false" afterPath="$PROJECT_DIR$/Marbles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/Enemy.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/Enemy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/check/collide.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/check/collide.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenePro/page/Page.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/page/Page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenePro/page/title.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/page/title.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenePro/scenePro.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scenePro.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenePro/scene_game.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scene_game.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +110,8 @@
       <workItem from="1584546091186" duration="1259000" />
       <workItem from="1584583988813" duration="1792000" />
       <workItem from="1584585796025" duration="1039000" />
-      <workItem from="1584588108972" duration="1663000" />
+      <workItem from="1584588108972" duration="1796000" />
+      <workItem from="1584589934052" duration="510000" />
     </task>
     <task id="LOCAL-00001" summary="开始做打飞机">
       <created>1583502302804</created>
@@ -425,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584513952317</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="  添加路由">
+      <created>1584589901123</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1584589901123</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,7 +471,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="   全部功能完成, 还有一些小东西需要改善,看情况再说" />
     <MESSAGE value="做被击中图片替换" />
     <MESSAGE value="做被击中图片替换  完成" />
     <MESSAGE value=" 使用切片方式 更换子弹样式" />
@@ -493,7 +495,8 @@
     <MESSAGE value="   解决 碰撞检测 错误报错 参数不全BUG ,   关于类型检测 也是有坑" />
     <MESSAGE value="   做用例测试" />
     <MESSAGE value="   做用例测试 最终版" />
-    <option name="LAST_COMMIT_MESSAGE" value="   做用例测试 最终版" />
+    <MESSAGE value="  添加路由" />
+    <option name="LAST_COMMIT_MESSAGE" value="  添加路由" />
   </component>
   <component name="WindowStateProjectService">
     <state x="343" y="205" key="#Inspections" timestamp="1583587432176">
@@ -504,11 +507,11 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="302" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583502348233" />
-    <state x="603" y="40" key="CommitChangelistDialog2" timestamp="1584513951391">
+    <state x="603" y="40" key="CommitChangelistDialog2" timestamp="1584589899989">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
     <state x="654" y="184" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1583667330626" />
-    <state x="603" y="40" key="CommitChangelistDialog2/63.0.1857.1080@63.0.1857.1080" timestamp="1584513951391" />
+    <state x="603" y="40" key="CommitChangelistDialog2/63.0.1857.1080@63.0.1857.1080" timestamp="1584589899989" />
     <state x="192" y="100" width="1411" height="831" key="DiffContextDialog" timestamp="1584513662785">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
