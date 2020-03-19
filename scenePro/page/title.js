@@ -12,7 +12,7 @@ class Title extends Page {
             key: "KeyK",
         }
 
-        this.regKey.register(this.title.key, this.update)
+        this.game.regEvent.register(this.title.key, this.update)
         this.draw(this.title.name, 100, 350)
     }
 
@@ -33,7 +33,7 @@ class GameEnd extends Page {
             key: "KeyR",
         }
 
-        this.regKey.register(this.title.key, this.update)
+        this.game.regEvent.register(this.title.key, this.update)
         this.draw(this.title.name, 100, 350)
 
     }

@@ -15,18 +15,22 @@ class ScenePro{
         this.regEvent = sing(RegEvent)
         this.sceneWidth = this.ui.canvas.clientWidth * 2 || 400
         this.sceneheight = this.ui.canvas.clientHeight * 2|| 400
+        this.isgameOver = false
 
         // page
-        this.title = new Title(this)
-        this.gameEnd = new GameEnd(this)
+        this.title = sing(Title,this)
+        // this.title = new Title(this)
+        this.gameEnd = sing(GameEnd,this)
+        // this.gameEnd = new GameEnd(this)
         this.route.add('gameStart', this)
 
         // 初始画面
         this.route.to('gameStart')
-        // this.route.to('title')
-
 
     }
+
+
+
 
 
     Between(min, max) {
@@ -56,12 +60,19 @@ class ScenePro{
     }
 
     update() {
+        if(this.isgameOver) {
+            return 'gameover is scenePro update()'
+        }
+
         this.EleArr.forEach(E => {
             E.update()
         })
     }
 
     draw() {
+        if(this.isgameOver) {
+            return 'gameover is scenePro draw()'
+        }
         this.ui.clearUi()
 
         this.OtherArr.forEach(img => {

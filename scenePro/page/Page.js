@@ -4,21 +4,26 @@ class Page {
         this.init()
         log('page', this.constructor.name)
     }
-    init(){
-        this.ui = sing(Ui)
-        this.regKey =sing(RegEvent)
+
+    init() {
+
     }
-    draw(name ,x = 100, y = 100) {
-        this.ui.clearUi()
-        this.ui.context.font = "20px Georgia";
-        this.ui.context.fillText(name, x, y)
+
+    draw(name, x = 100, y = 100) {
+        // this.game.ui.clearUi()
+        this.game.ui.context.font = "20px Georgia";
+        this.game.ui.context.fillText(name, x, y)
+
+
     }
 
     update = (key) => {
         log(this.game.route)
         log('key update  page', key)
-        this.regKey.RemoveRegister(key)
+        this.game.regEvent.RemoveRegister(key)
+        this.game.isgameOver = false
         this.game.route.to('gameStart')
+        console.count('page')
     }
 
 
