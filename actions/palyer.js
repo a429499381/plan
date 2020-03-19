@@ -8,7 +8,6 @@ class Player {
     }
 
     setup(path) {
-        window.game = this.game
 
         this.BulltesArr = []
         this.BullteImage = this.ui.imgPath(this.game.imgAll.zhidan, {w: 1024, h: 1024, x: 0, y: 0})

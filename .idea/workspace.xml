@@ -4,10 +4,7 @@
     <list default="true" id="16172606-dcf2-46ae-b793-e4dc3de580f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/actions/palyer.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/palyer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenePro/page/Page.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/page/Page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenePro/page/title.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/page/title.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenePro/scenePro.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scenePro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,14 +127,7 @@
       <workItem from="1584631778697" duration="1945000" />
       <workItem from="1584633747516" duration="1566000" />
       <workItem from="1584638530814" duration="1788000" />
-      <workItem from="1584640337575" duration="491000" />
-    </task>
-    <task id="LOCAL-00002" summary="开始做打飞机 方向 子弹发射">
-      <created>1583508625852</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1583508625852</updated>
+      <workItem from="1584640337575" duration="1232000" />
     </task>
     <task id="LOCAL-00003" summary="开始做打飞机 方向 子弹发射  完成敌机随机产生数量 固定移动后自动归位循环">
       <created>1583592035122</created>
@@ -475,7 +465,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584639269518</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="   解决 跳转逻辑死循环,  &#10;   解决 跳转文字无法正常显示 初始是黑字,进入游戏后分数显示改为白色,跳转后显示还是白字,导致以为字没有显示, 加上跳转逻辑问题, 找了几个小时才解决.">
+      <created>1584641062732</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1584641062732</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,7 +515,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="  重构" />
     <MESSAGE value="  重构 之 消除首位斜杠 , 输入容错" />
     <MESSAGE value="  重构 之 数据共享尝试了很久, 失败,最后使用了最恶心链式继承,代码逻辑全部改." />
     <MESSAGE value="  重构 之 飞机子弹代码结构优化" />
@@ -543,7 +539,8 @@
     <MESSAGE value="  添加路由 开始页面跳转 结构错误, 重新更改初始化流程,  去掉多余player 继承" />
     <MESSAGE value="   添加了离开页面 按键屏蔽, 修复我方飞机更改结构后引用错误" />
     <MESSAGE value="   跳转逻辑死循环BUG 找到, 继续验证" />
-    <option name="LAST_COMMIT_MESSAGE" value="   跳转逻辑死循环BUG 找到, 继续验证" />
+    <MESSAGE value="   解决 跳转逻辑死循环,  &#10;   解决 跳转文字无法正常显示 初始是黑字,进入游戏后分数显示改为白色,跳转后显示还是白字,导致以为字没有显示, 加上跳转逻辑问题, 找了几个小时才解决." />
+    <option name="LAST_COMMIT_MESSAGE" value="   解决 跳转逻辑死循环,  &#10;   解决 跳转文字无法正常显示 初始是黑字,进入游戏后分数显示改为白色,跳转后显示还是白字,导致以为字没有显示, 加上跳转逻辑问题, 找了几个小时才解决." />
   </component>
   <component name="WindowStateProjectService">
     <state x="343" y="205" key="#Inspections" timestamp="1583587432176">
@@ -554,12 +551,12 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="302" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583502348233" />
-    <state x="611" y="40" key="CommitChangelistDialog2" timestamp="1584639267775">
+    <state x="435" y="40" key="CommitChangelistDialog2" timestamp="1584641578505">
       <screen x="74" y="0" width="1846" height="1080" />
     </state>
     <state x="654" y="184" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1583667330626" />
     <state x="603" y="40" key="CommitChangelistDialog2/63.0.1857.1080@63.0.1857.1080" timestamp="1584612062371" />
-    <state x="611" y="40" key="CommitChangelistDialog2/74.0.1846.1080@74.0.1846.1080" timestamp="1584639267775" />
+    <state x="435" y="40" key="CommitChangelistDialog2/74.0.1846.1080@74.0.1846.1080" timestamp="1584641578505" />
     <state x="202" y="100" width="1403" height="831" key="DiffContextDialog" timestamp="1584638520572">
       <screen x="74" y="0" width="1846" height="1080" />
     </state>
