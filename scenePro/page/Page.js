@@ -1,5 +1,6 @@
 class Page {
-    constructor() {
+    constructor(game) {
+        this.game = game
         this.init()
         log('page', this.constructor.name)
     }
@@ -12,5 +13,12 @@ class Page {
         this.ui.context.font = "20px Georgia";
         this.ui.context.fillText(name, x, y)
     }
+
+    update = () => {
+        log(this.game.route)
+        this.game.route.to('gameStart')
+    }
+
+
 }
 

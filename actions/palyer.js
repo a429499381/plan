@@ -1,16 +1,15 @@
-class Player extends SceneGame {
-    constructor(run) {
-        super(run)
-        this.addEle(this)
+class Player{
+    constructor(game) {
+        this.game = game
+        this.ui = this.game.ui
+        this.game.addEle(this)
         this.regKeyArr()
-        this.setup(this.imgAll.player)
-        super.setup()
-
+        this.setup(this.game.imgAll.player)
     }
 
     setup(path) {
         this.BulltesArr = []
-        this.BullteImage = this.ui.imgPath(this.imgAll.zhidan, {w: 1024, h: 1024, x: 0, y: 0})
+        this.BullteImage = this.ui.imgPath(this.game.imgAll.zhidan, {w: 1024, h: 1024, x: 0, y: 0})
         this.isNum = 0
         this.player = {
             image: this.ui.imgPath(path),
@@ -46,7 +45,8 @@ class Player extends SceneGame {
     // 碰撞检测 后执行
     collideAction() {
 
-        this.enemy.EnemyArr.forEach((e, j) => {
+
+        this.game.enemy.EnemyArr.forEach((e, j) => {
             //敌机是否与飞机碰撞
             let result = collide(this.player, e)
             if (result) {
@@ -229,8 +229,7 @@ class Player extends SceneGame {
     regKeyArr() {
         // 注册按键
         // this.regEvent = sing(RegEvent)
-        //this.regEvent = this.game.
-
+        this.regEvent = this.game.regEvent
         this.regEvent.register('Space', () => {
             //  log('fire')
             this.fire();

@@ -1,35 +1,32 @@
 class ScenePro{
-    constructor() {
+    constructor(run) {
+        this.imgAll = run.img
         this.init()
     }
-
 
     init() {
         this.level = 0
         this.score = 0
         this.EleArr = []
         this.OtherArr = []
+        this.zoom = 0.5
         this.route = sing(Route,this)
         this.ui = sing(Ui)
         this.regEvent = sing(RegEvent)
-        this.zoom = 0.5
         this.sceneWidth = this.ui.canvas.clientWidth * 2 || 400
         this.sceneheight = this.ui.canvas.clientHeight * 2|| 400
+
+        // page
+        this.title = new Title(this)
+        this.gameEnd = new GameEnd(this)
+        this.route.add('gameStart', this)
+
+        // 初始画面
+        this.route.to('title')
+
+
     }
 
-    routes() {
-        return {
-            add: function add_(page) {
-                this.Route[page] = page
-            },
-            to: function to_(page) {
-                  this.Route[page]()
-            },
-            remove: function remove(page) {
-                this.Route[page] = ''
-            },
-        }
-    }
 
     Between(min, max) {
         let t = Math.floor(Math.random() * (max + 1 - min)) + min;

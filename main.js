@@ -42,7 +42,7 @@ function main() {
         };
         //run.ShareObj = new ShareObj(run)
         // run.sceneGame = new SceneGame(run)
-        run.player = new Player(run)
+        run.player = new SceneGame(run)
 
         // run.titlePage = new Title(run)
         //run.titlePage.setup()
