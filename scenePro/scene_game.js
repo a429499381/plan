@@ -1,27 +1,27 @@
 class SceneGame extends ScenePro {
     constructor(run) {
         super(run)
-        // this.setup()
-}
+            // this.setup()
+    }
 
-        setup() {
-            this.SceneGameTimeId = -1
-            this.isgameOver = false
-            this.addOther(this.imgAll.bg)
-            this.addOther(this.imgAll.yun0, this.Between(0, 50), this.Between(0, 100))
-            this.enemy = new Enemy(this)
-            this.player = new Player(this)
+    setup() {
+        this.SceneGameTimeId = -1
+        this.isgameOver = false
+        this.addOther(this.imgAll.bg)
+        this.addOther(this.imgAll.yun0, this.Between(0, 50), this.Between(0, 100))
+        this.enemy = new Enemy(this)
+        this.player = new Player(this)
 
         this.loop()
     }
 
     loop() {
-        if(this.SceneGameTimeId > 0 ) {
+        if (this.SceneGameTimeId > 0) {
             return
         }
         this.SceneGameTimeId = setInterval(() => {
             if (this.SceneGameTimeId < 0 || this.isgameOver) {
-                clearInterval(this.SceneGameTimeId)
+                clearInteSpacerval(this.SceneGameTimeId)
                 this.SceneGameTimeId = -10
                 return false
             }
@@ -30,3 +30,6 @@ class SceneGame extends ScenePro {
         }, 1000 / 30)
     }
 }
+this.EleApp.forEach(element => {
+    element.value = 10
+});

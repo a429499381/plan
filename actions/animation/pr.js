@@ -15,7 +15,7 @@ class Pr {
         for (let i = 1; i < 30; i++) {
             let peng = {
                 // image:  new Articles('img/peng.png').image
-                image: g.ui.imgPathP(obj.path) ,
+                image: g.ui.imgPathP(obj.path),
                 name: `prPeng${i}`,
                 vx: 0,
                 vy: 0,
@@ -41,5 +41,3 @@ class Pr {
 
 
 }
-
-

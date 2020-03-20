@@ -1,0 +1,13 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.hover.delay": 100,
+    "editor.mouseWheelZoom": true,
+    "editor.renderLineHighlight": "all",
+    "editor.smoothScrolling": true,
+    "editor.tabCompletion": "on",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorBlinking": "phase",
+    "editor.fontWeight": "300",
+    "editor.formatOnPaste": true,
+    "files.autoSaveDelay": 3000
+}
