@@ -1,15 +1,19 @@
 class Page {
     constructor(game) {
         this.game = game
-        this.init()
+        // this.init()
     }
 
-    init() {
+    init(name, key='Space') {
+        var  image = this.game.ui.imgPath(this.game.imgAll.bg1)
+        this.draw(name, image)
+        this.game.regEvent.register(key, this.update)
 
     }
 
-    draw(name, x = 120, y = 400) {
+    draw(name, image, x = 120, y = 400) {
         this.game.ui.clearUi()
+        this.game.ui.context.drawImage(image, 0, 0);
         this.game.ui.context.font = "20px Georgia";
         this.game.ui.context.fillStyle = "red";
         this.game.ui.context.fillText(name, x, y)
@@ -17,12 +21,9 @@ class Page {
     }
 
     update = (key) => {
-        // log(this.game.route)
-        // log('key update  page', key)
         this.game.regEvent.RemoveRegister(key)
         this.game.isgameOver = false
         this.game.route.to('gameStart')
-        // console.count('page')
     }
 
 
