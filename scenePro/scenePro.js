@@ -1,6 +1,7 @@
-class ScenePro{
+class ScenePro {
     constructor(run) {
         this.imgAll = run.img
+        this.imgP = {}
         this.init()
     }
 
@@ -10,17 +11,19 @@ class ScenePro{
         this.EleArr = []
         this.OtherArr = []
         this.zoom = 0.5
-        this.route = sing(Route,this)
+        this.route = sing(Route, this)
         this.ui = sing(Ui)
         this.regEvent = sing(RegEvent)
         this.sceneWidth = this.ui.canvas.clientWidth * 2 || 400
-        this.sceneheight = this.ui.canvas.clientHeight * 2|| 400
+        this.sceneheight = this.ui.canvas.clientHeight * 2 || 400
         this.isgameOver = false
 
+        // 预加载图片
+        // this.toImg(this.imgAll)
         // page
-        this.title = sing(Title,this)
+        this.title = sing(Title, this)
         // this.title = new Title(this)
-        this.gameEnd = sing(GameEnd,this)
+        this.gameEnd = sing(GameEnd, this)
         // this.gameEnd = new GameEnd(this)
         this.route.add('gameStart', this)
 
@@ -29,8 +32,33 @@ class ScenePro{
 
     }
 
+    toImg(imgO) {
+        let k = Object.keys(imgO)
+        for (let i = 0; i < k.length; i++) {
+            log(k[i])
+            let pr = new Promise((res, rej) => {
+                let img = new Image()
+                img.src = imgO[k[i]]
+                img.onload = function () {
+                    res({
+                        image: img,
+                        w: img.width,
+                        h: img.height,
+                    })
+                }
+            })
+
+            pr.then(value => {
+                this.imgP[k[i]] = value
+                log(this.imgP)
+
+            })
 
 
+        }
+
+
+    }
 
 
     Between(min, max) {
@@ -60,7 +88,7 @@ class ScenePro{
     }
 
     update() {
-        if(this.isgameOver) {
+        if (this.isgameOver) {
             return 'gameover is scenePro update()'
         }
 
@@ -70,7 +98,7 @@ class ScenePro{
     }
 
     draw() {
-        if(this.isgameOver) {
+        if (this.isgameOver) {
             return 'gameover is scenePro draw()'
         }
         this.ui.clearUi()

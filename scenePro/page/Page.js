@@ -6,8 +6,10 @@ class Page {
 
     init(name, key='Space') {
         var  image = this.game.ui.imgPath(this.game.imgAll.bg1)
-        this.draw(name, image)
         this.game.regEvent.register(key, this.update)
+        setTimeout( ()=> {
+            this.draw(name, image)
+        },100)
 
     }
 

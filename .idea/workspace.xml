@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="16172606-dcf2-46ae-b793-e4dc3de580f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/Enemy.js" beforeDir="false" afterPath="$PROJECT_DIR$/actions/Enemy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenePro/page/Page.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/page/Page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scenePro/page/title.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/page/title.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenePro/scenePro.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scenePro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenePro/scene_game.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scene_game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ui.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +30,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
   <component name="ProjectId" id="1Yl0tg7YdaKYoO69M7Y5VdnxGVB" />
@@ -131,14 +136,12 @@
       <workItem from="1584642146560" duration="1787000" />
       <workItem from="1584643955647" duration="845000" />
       <workItem from="1584671289489" duration="1785000" />
-      <workItem from="1584673095242" duration="490000" />
-    </task>
-    <task id="LOCAL-00006" summary="开始做子弹发射完成， 方向按键 会打断 子弹的发射">
-      <created>1583649767890</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1583649767890</updated>
+      <workItem from="1584673095242" duration="1362000" />
+      <workItem from="1584676916908" duration="2171000" />
+      <workItem from="1584682134251" duration="1783000" />
+      <workItem from="1584683941303" duration="1783000" />
+      <workItem from="1584685808970" duration="1312000" />
+      <workItem from="1584690005724" duration="1181000" />
     </task>
     <task id="LOCAL-00007" summary="解决方向按键 会打断 子弹的发射">
       <created>1583658107801</created>
@@ -476,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584671759467</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="   实例化类后,拿不到内部定义变量声明, 可以在内部&#10;   Title.x = 70 可以类外 里面通用">
+      <created>1584673864356</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1584673864356</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,7 +529,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="  重构 之 飞机子弹代码结构优化" />
     <MESSAGE value="  重构 之 飞机子弹代码结构优化 容错" />
     <MESSAGE value="  重构 之 子弹结构本想用对象保存副本,每次创建引用即可, 也便于集中管理,   被 深浅复制 坑道了,算了." />
     <MESSAGE value="  重构 之 敌机子弹自动发射" />
@@ -544,23 +553,28 @@
     <MESSAGE value="   解决 跳转逻辑死循环,  &#10;   解决 跳转文字无法正常显示 初始是黑字,进入游戏后分数显示改为白色,跳转后显示还是白字,导致以为字没有显示, 加上跳转逻辑问题, 找了几个小时才解决." />
     <MESSAGE value="  给开始界面加背景" />
     <MESSAGE value="  给开始界面加背景01" />
-    <option name="LAST_COMMIT_MESSAGE" value="  给开始界面加背景01" />
+    <MESSAGE value="   实例化类后,拿不到内部定义变量声明, 可以在内部&#10;   Title.x = 70 可以类外 里面通用" />
+    <option name="LAST_COMMIT_MESSAGE" value="   实例化类后,拿不到内部定义变量声明, 可以在内部&#10;   Title.x = 70 可以类外 里面通用" />
   </component>
   <component name="WindowStateProjectService">
     <state x="343" y="205" key="#Inspections" timestamp="1583587432176">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="343" y="205" key="#Inspections/62.0.1858.1080@62.0.1858.1080" timestamp="1583587432176" />
+    <state x="138" y="205" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584676963302">
+      <screen x="74" y="0" width="1846" height="1080" />
+    </state>
+    <state x="138" y="205" key="#com.intellij.execution.impl.EditConfigurationsDialog/74.0.1846.1080@74.0.1846.1080" timestamp="1584676963302" />
     <state x="302" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583502348233">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="302" y="265" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1858.1080@62.0.1858.1080" timestamp="1583502348233" />
-    <state x="435" y="40" key="CommitChangelistDialog2" timestamp="1584671758423">
+    <state x="435" y="40" key="CommitChangelistDialog2" timestamp="1584673863309">
       <screen x="74" y="0" width="1846" height="1080" />
     </state>
     <state x="654" y="184" key="CommitChangelistDialog2/62.0.1858.1080@62.0.1858.1080" timestamp="1583667330626" />
     <state x="603" y="40" key="CommitChangelistDialog2/63.0.1857.1080@63.0.1857.1080" timestamp="1584612062371" />
-    <state x="435" y="40" key="CommitChangelistDialog2/74.0.1846.1080@74.0.1846.1080" timestamp="1584671758423" />
+    <state x="435" y="40" key="CommitChangelistDialog2/74.0.1846.1080@74.0.1846.1080" timestamp="1584673863309" />
     <state x="202" y="100" width="1403" height="831" key="DiffContextDialog" timestamp="1584672970098">
       <screen x="74" y="0" width="1846" height="1080" />
     </state>
@@ -595,11 +609,12 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="675" y="231" key="SettingsEditor/62.0.1858.1080@62.0.1858.1080" timestamp="1583650540220" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1584625894290">
-      <screen x="63" y="0" width="1857" height="1080" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1584690673112">
+      <screen x="74" y="0" width="1846" height="1080" />
     </state>
     <state width="498" height="446" key="SwitcherDM/62.0.1858.1080@62.0.1858.1080" timestamp="1583650918388" />
     <state width="498" height="446" key="SwitcherDM/63.0.1857.1080@63.0.1857.1080" timestamp="1584625894290" />
+    <state width="498" height="446" key="SwitcherDM/74.0.1846.1080@74.0.1846.1080" timestamp="1584690673112" />
     <state x="156" y="100" width="742" height="887" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1584513662785">
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
@@ -614,6 +629,14 @@
       <screen x="63" y="0" width="1857" height="1080" />
     </state>
     <state x="164" y="100" width="1101" height="887" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/63.0.1857.1080@63.0.1857.1080" timestamp="1583770326645" />
+    <state x="427" y="231" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1584690090622">
+      <screen x="74" y="0" width="1846" height="1080" />
+    </state>
+    <state x="427" y="231" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/74.0.1846.1080@74.0.1846.1080" timestamp="1584690090622" />
+    <state x="456" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584674923530">
+      <screen x="74" y="0" width="1846" height="1080" />
+    </state>
+    <state x="456" y="466" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/74.0.1846.1080@74.0.1846.1080" timestamp="1584674923530" />
     <state x="781" y="421" width="759" height="548" key="find.popup" timestamp="1584639494861">
       <screen x="74" y="0" width="1846" height="1080" />
     </state>

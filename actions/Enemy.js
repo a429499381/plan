@@ -16,6 +16,7 @@ class Enemy {
             x: config.x,
             y: config.y,
         })
+
         this.x = config.x
         this.y = config.y
         this.speed = 3

@@ -4,7 +4,6 @@ class SceneGame extends ScenePro {
         // this.setup()
 }
 
-
         setup() {
             this.SceneGameTimeId = -1
             this.isgameOver = false

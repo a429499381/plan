@@ -33,9 +33,19 @@ class Ui {
             path.slice(0,1) === '/' ? s.path = path.slice(1) : s.path = path
         }
 
+        // //实际代码
+        // let img = new Image();
+        // img.src = s.path || path;
+        // return img
+
         //实际代码
         let img = new Image();
         img.src = s.path || path;
+        console.time(path)
+        img.onload = function () {
+
+            console.timeEnd(path)
+        }
         return img
     }
 

@@ -2,6 +2,7 @@ class Title extends Page {
     constructor(game) {
         super(game)
         //route
+
         this.game.route.add('title', this)
 
     }
@@ -10,6 +11,7 @@ class Title extends Page {
         this.title = {
             name: "按 空格 开始游戏",
         }
+
 
         this.init(this.title.name)
     }
