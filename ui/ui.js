@@ -41,10 +41,10 @@ class Ui {
         //实际代码
         let img = new Image();
         img.src = s.path || path;
-        console.time(path)
+        // console.time(path)
         img.onload = function () {
 
-            console.timeEnd(path)
+            // console.timeEnd(path)
         }
         return img
     }

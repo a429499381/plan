@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cs</title>
+    <script src="ui/ui.js"></script>
+</head>
+<body>
+<canvas id="id-canvas" width="400px" height="700px"></canvas>
+</body>
+<script>
+    const {log} = console
+    var __main = function () {
+        var ui = new Ui()
+        var imgAll = {}
+        var promiseAll = []
+
+        function imgPath(path, key) {
+            return new Promise((res, rej) => {
+                var img = new Image()
+                img.src = path
+                setTimeout(() => {
+                    rej(path)
+                },1500)
+                img.onload = function () {
+                    res({[key]:{image: img, w: img.width, h: img.height,x:0, y:0,}})
+                }
+            })
+        }
+
+        function toimg(key, value) {
+
+        }
+
+        var run = {}
+        run.img = {
+            bg: "img/bg0.jpg",
+            bg1: "img/bg1.jpg",
+            bg2: "img/bg2.png",
+            zhidan: 'img/zhidanPro.png',
+        }
+        var enemy = {
+            enemy0: "img/Enemy0.png",
+            enemy1: "img/Enemy1.png",
+            enemy2: "img/Enemy2.png",
+            enemy3: "img/Enemy3.png",
+            enemy4: "img/Enemy4.png",
+            enemy5: "img/Enemy5.png",
+            enemy6: "img/Enemy6.png",
+            enemy7: "img/Enemy7.png",
+            enemy8: "img/Enemy8.png",
+            enemy9: "img/Enemy9.png",
+            enemy10: "img/Enemy10.png",
+        }
+
+
+        function toimb(img) {
+            for (let key in img) {
+                let k = key
+                key= imgPath(img[key], key)
+                promiseAll.push(key)
+            }
+        }
+
+        toimb(enemy)
+
+        let pAll = Promise.all(promiseAll)
+        pAll.then(value => {
+            imgAll = value
+            log('imgAll', imgAll)
+            log('promiseAll', value, promiseAll)
+
+
+            // ui.drawImage(imgAll[0].enemy0)
+        }).catch(err => {
+            log('pAll err', err)
+        })
+
+
+    }
+    __main()
+</script>
+
+</html>

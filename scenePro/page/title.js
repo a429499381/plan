@@ -13,8 +13,8 @@ class Title extends Page {
         }
 
 
-        this.init(this.title.name)
-    }
+    this.init(this.title.name)
+}
 
 
 
