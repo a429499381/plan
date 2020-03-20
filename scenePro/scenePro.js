@@ -31,34 +31,34 @@ class ScenePro {
         this.route.to('title')
 
     }
-
-    toImg(imgO) {
-        let k = Object.keys(imgO)
-        for (let i = 0; i < k.length; i++) {
-            log(k[i])
-            let pr = new Promise((res, rej) => {
-                let img = new Image()
-                img.src = imgO[k[i]]
-                img.onload = function () {
-                    res({
-                        image: img,
-                        w: img.width,
-                        h: img.height,
-                    })
-                }
-            })
-
-            pr.then(value => {
-                this.imgP[k[i]] = value
-                log(this.imgP)
-
-            })
-
-
-        }
-
-
-    }
+    //
+    // toImg(imgO) {
+    //     let k = Object.keys(imgO)
+    //     for (let i = 0; i < k.length; i++) {
+    //         log(k[i])
+    //         let pr = new Promise((res, rej) => {
+    //             let img = new Image()
+    //             img.src = imgO[k[i]]
+    //             img.onload = function () {
+    //                 res({
+    //                     image: img,
+    //                     w: img.width,
+    //                     h: img.height,
+    //                 })
+    //             }
+    //         })
+    //
+    //         pr.then(value => {
+    //             this.imgP[k[i]] = value
+    //             log(this.imgP)
+    //
+    //         })
+    //
+    //
+    //     }
+    //
+    //
+    // }
 
 
     Between(min, max) {

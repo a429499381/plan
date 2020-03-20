@@ -9,16 +9,19 @@ class Page {
         this.game.regEvent.register(key, this.update)
         setTimeout( ()=> {
             this.draw(name, image)
-        },100)
+        },50)
 
     }
 
     draw(name, image, x = 120, y = 400) {
         this.game.ui.clearUi()
-        this.game.ui.context.drawImage(image, 0, 0);
-        this.game.ui.context.font = "20px Georgia";
-        this.game.ui.context.fillStyle = "red";
-        this.game.ui.context.fillText(name, x, y)
+        setTimeout(()=>{
+            this.game.ui.context.drawImage(image, 0, 0);
+            this.game.ui.context.font = "20px Georgia";
+            this.game.ui.context.fillStyle = "red";
+            this.game.ui.context.fillText(name, x, y)
+        },50)
+
 
     }
 
