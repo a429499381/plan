@@ -31,35 +31,7 @@ class ScenePro {
         this.route.to('mapEdit')
 
     }
-    //
-    // toImg(imgO) {
-    //     let k = Object.keys(imgO)
-    //     for (let i = 0; i < k.length; i++) {
-    //         log(k[i])
-    //         let pr = new Promise((res, rej) => {
-    //             let img = new Image()
-    //             img.src = imgO[k[i]]
-    //             img.onload = function () {
-    //                 res({
-    //                     image: img,
-    //                     w: img.width,
-    //                     h: img.height,
-    //                 })
-    //             }
-    //         })
-    //
-    //             this.imgP[k[i]] = value
-    //         pr.then(value => {
-        //             log(this.imgP)
-        //
-        
-        //log('001)
-        //         })
-        //
-        //     }
-    //
-    //
-    // }
+   
 
     Between(min, max) {
         let t = Math.floor(Math.random() * (max + 1 - min)) + min;

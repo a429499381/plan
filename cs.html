@@ -5,93 +5,64 @@
     <meta charset="UTF-8">
     <title>cs</title>
     <script src="ui/ui.js"></script>
+    <script src="actions/ajax/ajax.js"></script>
 </head>
 <STYLE>
-   
+
 </STYLE>
 
 <body>
     <canvas id="id-canvas" width="400px" height="700px"></canvas>
 </body>
 <script>
- 
-    var __main = function () {
-        var ui = new Ui()
-        var imgAll = {}
-        var promiseAll = []
+    const url = 'http://127.0.0.1:5500'
 
-        function imgPath(path, key) {
-            return new Promise((res, rej) => {
-                var img = new Image()
-                img.src = path
-                setTimeout(() => {
-                    rej(path)
-                }, 1500)
-                img.onload = function () {
-                    res({
-                        [key]: {
-                            image: img,
-                            w: img.width,
-                            h: img.height,
-                            x: 0,
-                            y: 0,
-                        }
-                    })
-                }
+        ajaxP(url).then((res) => {
+                console.log('ajaxp then ok')
+            }).catch((err) => {
+                console.log(err)
             })
-        }
+    // const ajaxP = function (url, type = 'GET') {
 
-        function toimg(key, value) {
+    //     return new Promise((result, rej) => {
+    //         // 简单检测
+    //         let u = url.split(':')[0]
+    //         if (u !== 'http' && u !== 'https') {
+    //             // console.log(u == 'http')
+    //             return rej('url 不合法')
 
-        }
+    //         }
 
-        var run = {}
-        run.img = {
-            bg: "img/bg0.jpg",
-            bg1: "img/bg1.jpg",
-            bg2: "img/bg2.png",
-            zhidan: 'img/zhidanPro.png',
-        }
-        var enemy = {
-            enemy0: "img/Enemy0.png",
-            enemy1: "img/Enemy1.png",
-            enemy2: "img/Enemy2.png",
-            enemy3: "img/Enemy3.png",
-            enemy4: "img/Enemy4.png",
-            enemy5: "img/Enemy5.png",
-            enemy6: "img/Enemy6.png",
-            enemy7: "img/Enemy7.png",
-            enemy8: "img/Enemy8.png",
-            enemy9: "img/Enemy9.png",
-            enemy10: "img/Enemy10.png",
-        }
+    //         var ajax = new XMLHttpRequest()
 
+    //         ajax.open(type, url, true)
 
-        function toimb(img) {
-            for (let key in img) {
-                let k = key
-                key = imgPath(img[key], key)
-                promiseAll.push(key)
-            }
-        }
+    //         ajax.setRequestHeader('Content-Type', 'Application/json')
 
-        toimb(enemy)
+    //         ajax.onreadystatechange = function () {
+    //             if (ajax.readyState == 4 && ajax.status === 200) {
+    //                 console.log('state change', ajax.readyState)
+    //                 // var json = JSON.parse(ajax.response)
+    //                 result(ajax.response)
 
-        let pAll = Promise.all(promiseAll)
-        pAll.then(value => {
-            imgAll = value
-            log('imgAll', imgAll)
-            log('promiseAll', value, promiseAll)
+    //             } else {
+    //                 console.log('state change', ajax.readyState)
+    //             }
+    //         }
+
+    //         setTimeout(function () {
+    //             rej(ajax)
+    //         }, 3000)
+
+    //         ajax.send()
+
+    //     })
+
+    // }
 
 
-            // ui.drawImage(imgAll[0].enemy0)
-        }).catch(err => {
-            log('pAll err', err)
-        })
 
-
-    }
-    __main()
 </script>
+
 
 </html>

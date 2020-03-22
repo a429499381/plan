@@ -8,7 +8,7 @@ class MapEdit {
     }
     setup() {
         this.img = {
-            bg: "/img/bg0.jpg",
+            bg: "img/bg1.jpg",
 
         }
         this.enemy = {
@@ -26,9 +26,22 @@ class MapEdit {
             enemy10: "img/Enemy10.png",
         }
 
+        this.bg = {
+            image: this.game.ui.imgPathPromise(this.img.bg),
+            src: this.img,
+            name: 'bg',
+            x: 0,
+            y: 0,
+
+        }
+        this.bg.image = this.bg.image.then(img => {
+            return Object.assign(this.bg, img)
+        })
+        log(this.bg)
+      
         this.toImgArr(this.enemy, this.draw)
         // this.toImgArr(this.enemy)
-        // this.reg('KeyS', this.update)
+        this.reg('KeyS', this.update)
         // this.drag = new drag()
 
         // 写入
@@ -40,10 +53,8 @@ class MapEdit {
     }
 
     draw = (img) => {
-        log('draw mapedit', img)
-
+        this.game.ui.drawImage(this.bg, 1)    
         this.game.ui.drawImage(img, 0.4)
-
     }
 
     toImgArr(object, call) {
