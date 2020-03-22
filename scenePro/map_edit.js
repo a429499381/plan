@@ -25,36 +25,36 @@ class MapEdit {
             enemy9: "img/Enemy9.png",
             enemy10: "img/Enemy10.png",
         }
-
-        this.bg = {
-            image: this.game.ui.imgPathPromise(this.img.bg),
+        let image = this.game.ui.imgPathPromise(this.img.bg)
+        this.bg = {   
             src: this.img,
             name: 'bg',
             x: 0,
             y: 0,
-
         }
-        this.bg.image = this.bg.image.then(img => {
-            return Object.assign(this.bg, img)
+        image.then(img => {
+            return Object.assign(this.bg, img )
+        }).then((v) => {
+            this.draw(v, 1)
+            this.toImgArr(this.enemy, this.draw)
         })
-        log(this.bg)
+        // log(this.bg)
       
-        this.toImgArr(this.enemy, this.draw)
         // this.toImgArr(this.enemy)
         this.reg('KeyS', this.update)
-        // this.drag = new drag()
+        this.drag = new Drag()
 
         // 写入
 
 
     }
     update(data) {
-
+        log('this.update mapedit')
     }
 
-    draw = (img) => {
-        this.game.ui.drawImage(this.bg, 1)    
-        this.game.ui.drawImage(img, 0.4)
+    draw = (img, scale = 0.4) => {
+
+        this.game.ui.drawImage(img, scale)
     }
 
     toImgArr(object, call) {
@@ -70,7 +70,7 @@ class MapEdit {
             element.then(obj => {
                 object[obj.src] = {
                     x: this.game.sceneWidth - obj.w,
-                    y: 150 * index + obj.h ,
+                    y: 50 * index + obj.h ,
                 }
                 return Object.assign(object[obj.src], obj)
             }).then(img => {

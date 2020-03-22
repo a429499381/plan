@@ -1,11 +1,11 @@
-class RegEvent{
-        constructor() {
-            this.actions = {}
-            this.keydowns = {}
-            this.init()
-        }
-        init() {
-            //event
+class RegEvent {
+    constructor() {
+        this.actions = {}
+        this.keydowns = {}
+        this.init()
+    }
+    init() {
+        //event
         var self = this
         window.addEventListener('keydown', function (event) {
             self.keydowns[event.code] = true;
@@ -20,8 +20,32 @@ class RegEvent{
         })
     }
 
+    regEvent(key) {
+        var self = this
+        window.addEventListener(key, function (event) {
+            //log('keyup')
+            if (event.code === 'mousedown') {
+                self.keydowns[event.code] = true;
+                // 比对获取KEY 响应的函数 并执行
+                self.keyAction()
+                //log('keydown')
+            }
+            if (event.code === 'mouseup') {
+                self.keydowns[event.code] = false;
+                self.keydowns['mousemove'] = false;
+            }
+            if (event.code === 'mousemove') {
+                self.keydowns[event.code] = true;
+                // 比对获取KEY 响应的函数 并执行
+                self.keyAction()
+                //log('keydown')
+            }
+
+        })
+    }
+
     // 把回调函数 存在相应的KEY
-   register = (key, callback) => {
+    register = (key, callback) => {
         // ('key ok', key)
         this.actions[key] = callback;
     }
@@ -42,7 +66,7 @@ class RegEvent{
                 let key = actions[i];
                 if (this.keydowns[key] && this.actions[key]) {
                     //如果按键被按下，调用注册的ACTION
-     //               this.keydowns[key] = false
+                    //               this.keydowns[key] = false
                     ////log('执行了按下后调函数', key)
                     this.actions[key](key);
                     // this.actions[key]();
