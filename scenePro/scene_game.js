@@ -5,7 +5,7 @@ class SceneGame extends ScenePro {
     }
 
     setup() {
-        this.SceneGameTimeId = -1
+        this.SceneGameTimeId = -1   
         this.isgameOver = false
         this.addOther(this.imgAll.bg)
         this.addOther(this.imgAll.yun0, this.Between(0, 50), this.Between(0, 100))
@@ -14,7 +14,7 @@ class SceneGame extends ScenePro {
 
         this.loop()
     }
-
+    
     loop() {
         if (this.SceneGameTimeId > 0) {
             return
@@ -23,13 +23,12 @@ class SceneGame extends ScenePro {
             if (this.SceneGameTimeId < 0 || this.isgameOver) {
                 clearInteSpacerval(this.SceneGameTimeId)
                 this.SceneGameTimeId = -10
-                return false
+                return  false
             }
             this.update()
             this.draw()
         }, 1000 / 30)
     }
 }
-this.EleApp.forEach(element => {
-    element.value = 10
-});
+    
+

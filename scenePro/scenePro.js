@@ -4,12 +4,11 @@ class ScenePro {
         this.imgP = {}
         this.init()
     }
-
-    init() {
-        this.level = 0
-        this.score = 0
+    init(){
+        this.level = 0 
+        this .score = 0
         this.EleArr = []
-        this.OtherArr = []
+        this.OtherArr = []  
         this.zoom = 0.5
         this.route = sing(Route, this)
         this.ui = sing(Ui)
@@ -24,11 +23,12 @@ class ScenePro {
         this.title = sing(Title, this)
         // this.title = new Title(this)
         this.gameEnd = sing(GameEnd, this)
+        this.mapEdit = sing(MapEdit, this)
         // this.gameEnd = new GameEnd(this)
         this.route.add('gameStart', this)
 
         // 初始画面
-        this.route.to('gameStart')
+        this.route.to('mapEdit')
 
     }
     //
@@ -48,18 +48,18 @@ class ScenePro {
     //             }
     //         })
     //
-    //         pr.then(value => {
     //             this.imgP[k[i]] = value
-    //             log(this.imgP)
-    //
-    //         })
-    //
-    //
-    //     }
+    //         pr.then(value => {
+        //             log(this.imgP)
+        //
+        
+        //log('001)
+        //         })
+        //
+        //     }
     //
     //
     // }
-
 
     Between(min, max) {
         let t = Math.floor(Math.random() * (max + 1 - min)) + min;

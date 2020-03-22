@@ -9,5 +9,7 @@
     "editor.cursorBlinking": "phase",
     "editor.fontWeight": "300",
     "editor.formatOnPaste": true,
-    "files.autoSaveDelay": 3000
+	"files.autoSaveDelay": 3000,
+	"emmet.triggerExpansionOnTab": true,
+	"prettier.useEditorConfig": false
 }

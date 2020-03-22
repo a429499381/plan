@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>cs</title>
     <script src="ui/ui.js"></script>
 </head>
+<STYLE>
+   
+</STYLE>
+
 <body>
-<canvas id="id-canvas" width="400px" height="700px"></canvas>
+    <canvas id="id-canvas" width="400px" height="700px"></canvas>
 </body>
 <script>
-    const {log} = console
+ 
     var __main = function () {
         var ui = new Ui()
         var imgAll = {}
@@ -21,9 +26,17 @@
                 img.src = path
                 setTimeout(() => {
                     rej(path)
-                },1500)
+                }, 1500)
                 img.onload = function () {
-                    res({[key]:{image: img, w: img.width, h: img.height,x:0, y:0,}})
+                    res({
+                        [key]: {
+                            image: img,
+                            w: img.width,
+                            h: img.height,
+                            x: 0,
+                            y: 0,
+                        }
+                    })
                 }
             })
         }
@@ -57,7 +70,7 @@
         function toimb(img) {
             for (let key in img) {
                 let k = key
-                key= imgPath(img[key], key)
+                key = imgPath(img[key], key)
                 promiseAll.push(key)
             }
         }

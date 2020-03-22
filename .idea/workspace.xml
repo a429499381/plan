@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="16172606-dcf2-46ae-b793-e4dc3de580f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Marbles.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs.html" beforeDir="false" afterPath="$PROJECT_DIR$/cs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenePro/page/title.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/page/title.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenePro/scenePro.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scenePro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scenePro/scene_game.js" beforeDir="false" afterPath="$PROJECT_DIR$/scenePro/scene_game.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,6 +165,8 @@
       <workItem from="1584730157090" duration="1674000" />
       <workItem from="1584731854136" duration="87000" />
       <workItem from="1584732606275" duration="781000" />
+      <workItem from="1584736272594" duration="598000" />
+      <workItem from="1584813376844" duration="2000" />
     </task>
     <task id="LOCAL-00011" summary="开始做碰撞逻辑  子弹碰撞各自消失完成， 大概率子弹无法正确相撞，相撞后子弹自动不停连发， 循环时间&#10;异常等问题">
       <created>1583687104081</created>
