@@ -20,9 +20,10 @@ class RegEvent {
         })
     }
 
-    regMouseEvent = (key) => {
+    regMouseEvent = (key, object) => {
         var self = this
-        window.addEventListener(key, (event) => {
+        let obj = object || window
+        obj.addEventListener(key, (event) => {
             if (event.type === 'mousedown') {
                 log('regMouseEvent d', event.movementX)
                 self.keydowns[event.type] = true;

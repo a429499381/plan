@@ -1,16 +1,18 @@
 class Drag {
     constructor(params) {
         this.reg = sing(RegEvent)
+        this.ui = sing(Ui)
         this.setup()
     }
     setup() {
         this.isMove = false
         this.isDrag = false
         this.isRegKey = false
+        this.canvas = this.ui.canvas
 
-        this.reg.regMouseEvent('mousedown')
-        this.reg.regMouseEvent('mousemove')
-        this.reg.regMouseEvent('mouseup')
+        this.reg.regMouseEvent('mousedown', this.canvas)
+        this.reg.regMouseEvent('mousemove', this.canvas)
+        this.reg.regMouseEvent('mouseup', this.canvas)
     }
 
   

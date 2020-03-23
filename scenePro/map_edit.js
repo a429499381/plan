@@ -10,7 +10,7 @@ class MapEdit {
         this.PlayNewArr = []
         this.playN = 1
         this.zoom = 0.3
-        this.maxZoom = 1 / this.zoom 
+        this.maxZoom = 1 / this.zoom
         //添加进路由
         this.game.route.add('mapEdit', this)
         //this.setup()
@@ -19,6 +19,11 @@ class MapEdit {
         this.img = {
             bg: "img/bg1.jpg",
 
+        }
+        this.text = {
+            txt: '编辑模式 S按键保存退出',
+            x: 50,
+            y: this.game.sceneHeight - 20,
         }
         this.enemy = {
             player: "img/player1.png",
@@ -45,6 +50,7 @@ class MapEdit {
             return Object.assign(this.bg, img)
         }).then((v) => {
             this.draw(v, 1)
+            this.game.ui.writeText(this.text.txt)
         })
         this.toImgArr(this.enemy)
 
@@ -93,13 +99,7 @@ class MapEdit {
                 this.draw(play, this.zoom)
                 // this.game.ui.drawImage(play, this.zoom)
                 this.playN += 1
-
             })
-
-
-
-
-
         }
     }
     MouseUp = (obj) => {
