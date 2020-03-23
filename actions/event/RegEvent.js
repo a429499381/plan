@@ -20,26 +20,33 @@ class RegEvent {
         })
     }
 
-    regEvent(key) {
+    regMouseEvent = (key) => {
         var self = this
-        window.addEventListener(key, function (event) {
-            //log('keyup')
-            if (event.code === 'mousedown') {
-                self.keydowns[event.code] = true;
-                // 比对获取KEY 响应的函数 并执行
+        window.addEventListener(key, (event) => {
+            if (event.type === 'mousedown') {
+                // log('regMouseEvent d', event.timeStamp)
+                self.keydowns[event.type] = true;
+                self.keydowns['mousemove'] = true;
                 self.keyAction()
-                //log('keydown')
+                return true
             }
-            if (event.code === 'mouseup') {
-                self.keydowns[event.code] = false;
+            if (event.type === 'mouseup') {
+                // log('regMouseEvent u', event.timeStamp)
+                self.keydowns[event.type] = true;
                 self.keydowns['mousemove'] = false;
-            }
-            if (event.code === 'mousemove') {
-                self.keydowns[event.code] = true;
-                // 比对获取KEY 响应的函数 并执行
                 self.keyAction()
-                //log('keydown')
+                return true
             }
+            if (event.type === 'mousemove') {
+                // 让鼠标按键控制是否执行 mousemove方法
+                if (self.keydowns['mousemove']) {
+                    // 比对获取KEY 响应的函数 并执行
+                    self.keyAction({ x: event.x, y: event.y })
+                }
+                return true
+            }
+
+            return false
 
         })
     }
@@ -59,15 +66,18 @@ class RegEvent {
     }
 
     // 比对 响应按键 执行保存回调函数
-    keyAction() {
+    keyAction(obj) {
         var actions = Object.keys(this.actions);
         if (actions) {
             for (var i = 0; i < actions.length; i++) {
                 let key = actions[i];
                 if (this.keydowns[key] && this.actions[key]) {
-                    //如果按键被按下，调用注册的ACTION
-                    //               this.keydowns[key] = false
-                    ////log('执行了按下后调函数', key)
+
+                    if (key === 'mousemove') {
+                        this.actions[key](obj);
+                        return     
+                    }
+
                     this.actions[key](key);
                     // this.actions[key]();
 

@@ -2,6 +2,11 @@ class MapEdit {
     constructor(game) {
         this.game = game
         this.reg = this.game.regEvent.register
+        // 引入抓取
+        this.reg = sing(RegEvent)
+        this.drag = new Drag()
+        this.isDrag = false
+
         //添加进路由
         this.game.route.add('mapEdit', this)
         //this.setup()
@@ -26,30 +31,54 @@ class MapEdit {
             enemy10: "img/Enemy10.png",
         }
         let image = this.game.ui.imgPathPromise(this.img.bg)
-        this.bg = {   
+        this.bg = {
             src: this.img,
             name: 'bg',
             x: 0,
             y: 0,
         }
         image.then(img => {
-            return Object.assign(this.bg, img )
+            return Object.assign(this.bg, img)
         }).then((v) => {
             this.draw(v, 1)
             this.toImgArr(this.enemy, this.draw)
         })
-        // log(this.bg)
-      
-        // this.toImgArr(this.enemy)
-        this.reg('KeyS', this.update)
-        this.drag = new Drag()
 
+        this.reg.register('KeyS', this.update)
+        this.reg.register('mousedown', this.MouseDown)
+
+        this.reg.register('mouseup', this.MouseUp)
+        this.reg.register('KeyP', this.MouseEn)
         // 写入
 
-
     }
+    MouseEn = () => {
+        this.isDrag = !this.isDrag
+        log('mouseEn', this.isDrag)
+        if (this.isDrag) {
+            this.reg.register('mousemove', this.MouseMove)
+        } else {
+            this.reg.RemoveRegister('mousemove')
+        }
+        }
+    MouseDown = () => {
+        if (this.isDrag) {
+            log('addMouseDown')
+        }
+    }
+    MouseUp = () => {
+        if(this.isDrag){
+            log('addMouseUp')
+        }
+    }
+    MouseMove = (obj) => {
+        if(this.isDrag){
+            log('addMouseMove', obj)
+        }
+    }
+
     update(data) {
-        log('this.update mapedit')
+        log('this.update keyS')
     }
 
     draw = (img, scale = 0.4) => {
@@ -70,13 +99,13 @@ class MapEdit {
             element.then(obj => {
                 object[obj.src] = {
                     x: this.game.sceneWidth - obj.w,
-                    y: 50 * index + obj.h ,
+                    y: 50 * index + obj.h,
                 }
                 return Object.assign(object[obj.src], obj)
             }).then(img => {
                 call(img)
             }).catch((err) => {
-               log('map edit toImgArr err', err)  
+                log('map edit toImgArr err', err)
             })
         });
     }

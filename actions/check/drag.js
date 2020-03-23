@@ -8,29 +8,12 @@ class Drag {
         this.isDrag = false
         this.isRegKey = false
 
-        this.reg.regEvent('mousedown')
-        this.reg.regEvent('mousemove')
-        this.reg.regEvent('mouseup')
-
-
-        this.reg.register('mousedown', this.addMouseDown)
-        this.reg.register('mousemove', this.addMouseMove)
-        this.reg.register('mouseup', this.addMouseUp)
-        this.reg.register('KeyP',  () => {
-            this.isDrag = !this.isDrag
-            log('keyP')
-        })
+        this.reg.regMouseEvent('mousedown')
+        this.reg.regMouseEvent('mousemove')
+        this.reg.regMouseEvent('mouseup')
     }
 
-    addMouseDown() {
-        log('addMouseDown')
-    }
-    addMouseUp() {
-        log('addMouseUp')
-    }
-    addMouseMove() {
-        log('addMouseMove')
-    }
+  
 
 
 }
