@@ -9,7 +9,8 @@ class MapEdit {
         this.playArr = []
         this.PlayNewArr = []
         this.playN = 1
-        this.zoom = 0.5
+        this.zoom = 0.3
+        this.maxZoom = 1 / this.zoom 
         //添加进路由
         this.game.route.add('mapEdit', this)
         //this.setup()
@@ -70,14 +71,14 @@ class MapEdit {
             let play = {}
             let offx = 60
             let offy = 10
-            let maxTop = this.game.sceneHeight / 4 - 100
-            let maxBottom = this.game.sceneHeight - 200
+            let maxTop = (this.game.sceneHeight / 4 - 100) * this.maxZoom
+            let maxBottom = (this.game.sceneHeight - 200) * this.maxZoom
             let p = this.playArr[this.playN]
             p.then((img) => {
                 Object.assign(play, obj)
                 Object.assign(play, img)
-                play.x = play.x * this.zoom * 4 - offx * this.zoom * 4 - play.w / 2
-                play.y = play.y * this.zoom * 4 - offy * this.zoom * 4 - play.h / 2
+                play.x = play.x * this.maxZoom - offx * this.maxZoom - play.w / 2
+                play.y = play.y * this.maxZoom - offy * this.maxZoom - play.h / 2
                 play.zoom = this.zoom
                 // 保存当前屏幕飞机坐标
                 this.PlayNewArr.push(play)
