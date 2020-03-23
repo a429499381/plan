@@ -24,24 +24,23 @@ class RegEvent {
         var self = this
         window.addEventListener(key, (event) => {
             if (event.type === 'mousedown') {
-                // log('regMouseEvent d', event.timeStamp)
+                log('regMouseEvent d', event.movementX)
                 self.keydowns[event.type] = true;
                 self.keydowns['mousemove'] = true;
-                self.keyAction()
-                return true
+                self.keyAction({ key: event.type, x: event.x, y: event.y })
             }
             if (event.type === 'mouseup') {
-                // log('regMouseEvent u', event.timeStamp)
+                log('regMouseEvent u', event.movementX)
                 self.keydowns[event.type] = true;
                 self.keydowns['mousemove'] = false;
-                self.keyAction()
+                self.keyAction({ key: event.type, x: event.x, y: event.y })
                 return true
             }
             if (event.type === 'mousemove') {
                 // 让鼠标按键控制是否执行 mousemove方法
                 if (self.keydowns['mousemove']) {
                     // 比对获取KEY 响应的函数 并执行
-                    self.keyAction({ x: event.x, y: event.y })
+                    self.keyAction({ key: event.type, x: event.x, y: event.y })
                 }
                 return true
             }
@@ -73,9 +72,9 @@ class RegEvent {
                 let key = actions[i];
                 if (this.keydowns[key] && this.actions[key]) {
 
-                    if (key === 'mousemove') {
+                    if (obj && obj.key === key) {
                         this.actions[key](obj);
-                        return     
+                        return
                     }
 
                     this.actions[key](key);

@@ -5,8 +5,11 @@ class MapEdit {
         // 引入抓取
         this.reg = sing(RegEvent)
         this.drag = new Drag()
-        this.isDrag = false
-
+        this.isDrag = true
+        this.playArr = []
+        this.PlayNewArr = []
+        this.playN = 1
+        this.zoom = 0.5
         //添加进路由
         this.game.route.add('mapEdit', this)
         //this.setup()
@@ -41,8 +44,8 @@ class MapEdit {
             return Object.assign(this.bg, img)
         }).then((v) => {
             this.draw(v, 1)
-            this.toImgArr(this.enemy, this.draw)
         })
+        this.toImgArr(this.enemy)
 
         this.reg.register('KeyS', this.update)
         this.reg.register('mousedown', this.MouseDown)
@@ -60,19 +63,51 @@ class MapEdit {
         } else {
             this.reg.RemoveRegister('mousemove')
         }
-        }
-    MouseDown = () => {
+    }
+    MouseDown = (obj) => {
         if (this.isDrag) {
-            log('addMouseDown')
+            log('addMouseDown', obj)
+            let play = {}
+            let offx = 60
+            let offy = 10
+            let maxTop = this.game.sceneHeight / 4 - 100
+            let maxBottom = this.game.sceneHeight - 200
+            let p = this.playArr[this.playN]
+            p.then((img) => {
+                Object.assign(play, obj)
+                Object.assign(play, img)
+                play.x = play.x * this.zoom * 4 - offx * this.zoom * 4 - play.w / 2
+                play.y = play.y * this.zoom * 4 - offy * this.zoom * 4 - play.h / 2
+                play.zoom = this.zoom
+                // 保存当前屏幕飞机坐标
+                this.PlayNewArr.push(play)
+                if (this.playN > this.playArr.length - 2) {
+                    this.playN = 0
+                }
+
+                // 条件判断 敌机 在 屏幕上半部分    我方在屏幕的底部200px
+                if ((play.y + play.h) > maxTop) {
+                    play.y = maxTop
+                }
+                this.draw(play, this.zoom)
+                // this.game.ui.drawImage(play, this.zoom)
+                this.playN += 1
+
+            })
+
+
+
+
+
         }
     }
-    MouseUp = () => {
-        if(this.isDrag){
-            log('addMouseUp')
+    MouseUp = (obj) => {
+        if (this.isDrag) {
+            log('addMouseUp', obj)
         }
     }
     MouseMove = (obj) => {
-        if(this.isDrag){
+        if (this.isDrag) {
             log('addMouseMove', obj)
         }
     }
@@ -86,28 +121,13 @@ class MapEdit {
         this.game.ui.drawImage(img, scale)
     }
 
-    toImgArr(object, call) {
-        const Arr = []
+    toImgArr(object) {
         for (const key in object) {
             if (key !== undefined && object.hasOwnProperty(key)) {
                 const image = this.game.ui.imgPathPromise(object[key])
-                Arr.push(image)
+                this.playArr.push(image)
             }
         }
-
-        Arr.forEach((element, index) => {
-            element.then(obj => {
-                object[obj.src] = {
-                    x: this.game.sceneWidth - obj.w,
-                    y: 50 * index + obj.h,
-                }
-                return Object.assign(object[obj.src], obj)
-            }).then(img => {
-                call(img)
-            }).catch((err) => {
-                log('map edit toImgArr err', err)
-            })
-        });
     }
 
 

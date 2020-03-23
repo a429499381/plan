@@ -14,7 +14,7 @@ class ScenePro {
         this.ui = sing(Ui)
         this.regEvent = sing(RegEvent)
         this.sceneWidth = this.ui.canvas.clientWidth * 2 || 400
-        this.sceneheight = this.ui.canvas.clientHeight * 2 || 400
+        this.sceneHeight = this.ui.canvas.clientHeight * 2 || 400
         this.isgameOver = false
 
         // 预加载图片
