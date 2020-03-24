@@ -40,7 +40,7 @@ class Enemy {
         this.EnemyArr.forEach(e => {
             e.y += e.speed
 
-            if (e.y > this.game.sceneheight + (e.h || 100)) {
+            if (e.y > this.game.sceneHeight + (e.h || 100)) {
                 e.x = this.game.Between(10, 300) * this.game.zoom * 4
                 e.y = this.game.Between(50, 200) * this.game.zoom * 4
             }

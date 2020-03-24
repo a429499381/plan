@@ -65,6 +65,13 @@ class MapEdit {
 
     update = (data) => {
         log('this.update keyS')
+        this.playArr = []
+        this.PlayNewArr = []
+        this.MouseEn()
+        this.reg.RemoveRegister('KeyS')
+        this.reg.RemoveRegister('KeyP')
+        this.reg.RemoveRegister('mousedown')
+        this.reg.RemoveRegister('mouseup')
         this.game.route.to('gameStart')
 
     }
