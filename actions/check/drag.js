@@ -15,9 +15,6 @@ class Drag {
         this.reg.regMouseEvent('mouseup', this.canvas)
     }
 
-  
-
-
 }
 
 

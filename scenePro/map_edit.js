@@ -5,11 +5,11 @@ class MapEdit {
         // 引入抓取
         this.reg = sing(RegEvent)
         this.drag = new Drag()
-        this.isDrag = true
+        this.isDrag = false
         this.playArr = []
         this.PlayNewArr = []
         this.playN = 1
-        this.zoom = 0.3
+        this.zoom = 0.5
         this.maxZoom = 1 / this.zoom
         //添加进路由
         this.game.route.add('mapEdit', this)
@@ -17,11 +17,11 @@ class MapEdit {
     }
     setup() {
         this.img = {
-            bg: "img/bg1.jpg",
+            bg: "img/bg0.jpg",
 
         }
         this.text = {
-            txt: '编辑模式 S按键保存退出',
+            txt: '编辑模式 S按键保存退出, P锁定',
             x: 50,
             y: this.game.sceneHeight - 20,
         }
@@ -62,6 +62,19 @@ class MapEdit {
         // 写入
 
     }
+
+    update = (data) => {
+        log('this.update keyS')
+        this.game.route.to('gameStart')
+
+    }
+
+    draw = (img, scale = 0.4) => {
+
+        this.game.ui.drawImage(img, scale)
+    }
+
+
     MouseEn = () => {
         this.isDrag = !this.isDrag
         log('mouseEn', this.isDrag)
@@ -111,15 +124,6 @@ class MapEdit {
         if (this.isDrag) {
             log('addMouseMove', obj)
         }
-    }
-
-    update(data) {
-        log('this.update keyS')
-    }
-
-    draw = (img, scale = 0.4) => {
-
-        this.game.ui.drawImage(img, scale)
     }
 
     toImgArr(object) {

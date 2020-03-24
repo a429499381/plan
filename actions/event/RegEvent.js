@@ -16,7 +16,6 @@ class RegEvent {
         window.addEventListener('keyup', function (event) {
             //log('keyup')
             self.keydowns[event.code] = false;
-
         })
     }
 

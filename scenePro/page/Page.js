@@ -27,10 +27,10 @@ class Page {
 
     }
 
-    update(key) {
+    update(key, jump = 'gameStart') {
         this.game.regEvent.RemoveRegister(key)
         this.game.isgameOver = false
-        this.game.route.to('gameStart')
+        this.game.route.to(jump)
     }
 
 

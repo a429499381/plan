@@ -14,6 +14,7 @@ class Ui {
             self.drawImage(arr[i])
         }
     }
+    
 
     imgPath(path) {
         // 必须是路径, 并且结尾必须 png jpg
