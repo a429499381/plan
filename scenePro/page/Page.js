@@ -17,7 +17,7 @@ class Page {
 
     }
 
-    draw(name, image, x = 120, y = 400) {
+    draw(name, image, x = 50, y = 400) {
         this.game.ui.clearUi()
         this.game.ui.context.drawImage(image, 0, 0);
         this.game.ui.context.font = "20px Georgia";

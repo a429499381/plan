@@ -1,7 +1,6 @@
 class MapEdit {
     constructor(game) {
         this.game = game
-        this.reg = this.game.regEvent.register
         // 引入抓取
         this.reg = sing(RegEvent)
         this.drag = new Drag()
@@ -64,7 +63,7 @@ class MapEdit {
     }
 
     update = (data) => {
-        log('this.update keyS')
+        //log('this.update keyS')
         this.playArr = []
         this.PlayNewArr = []
         this.MouseEn()
@@ -84,7 +83,7 @@ class MapEdit {
 
     MouseEn = () => {
         this.isDrag = !this.isDrag
-        log('mouseEn', this.isDrag)
+        //log('mouseEn', this.isDrag)
         if (this.isDrag) {
             this.reg.register('mousemove', this.MouseMove)
         } else {
@@ -93,7 +92,7 @@ class MapEdit {
     }
     MouseDown = (obj) => {
         if (this.isDrag) {
-            log('addMouseDown', obj)
+            //log('addMouseDown', obj)
             let play = {}
             let offx = 60
             let offy = 10
@@ -124,12 +123,12 @@ class MapEdit {
     }
     MouseUp = (obj) => {
         if (this.isDrag) {
-            log('addMouseUp', obj)
+            //log('addMouseUp', obj)
         }
     }
     MouseMove = (obj) => {
         if (this.isDrag) {
-            log('addMouseMove', obj)
+            //log('addMouseMove', obj)
         }
     }
 

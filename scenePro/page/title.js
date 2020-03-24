@@ -34,7 +34,7 @@ class GameEnd extends Page {
 
 	setup() {
 		this.title = {
-			name: "按 空格  重新开始游戏",
+			name: "            按 空格  重新开始游戏",
 		}
 		this.init(this.title.name)
 

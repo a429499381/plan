@@ -11,10 +11,10 @@ class RegEvent {
             self.keydowns[event.code] = true;
             // 比对获取KEY 响应的函数 并执行
             self.keyAction()
-            //log('keydown')
+            ////log('keydown')
         })
         window.addEventListener('keyup', function (event) {
-            //log('keyup')
+            ////log('keyup')
             self.keydowns[event.code] = false;
         })
     }
@@ -24,13 +24,13 @@ class RegEvent {
         let obj = object || window
         obj.addEventListener(key, (event) => {
             if (event.type === 'mousedown') {
-                log('regMouseEvent d', event.movementX)
+                //log('regMouseEvent d', event.movementX)
                 self.keydowns[event.type] = true;
                 self.keydowns['mousemove'] = true;
                 self.keyAction({ key: event.type, x: event.x, y: event.y })
             }
             if (event.type === 'mouseup') {
-                log('regMouseEvent u', event.movementX)
+                //log('regMouseEvent u', event.movementX)
                 self.keydowns[event.type] = true;
                 self.keydowns['mousemove'] = false;
                 self.keyAction({ key: event.type, x: event.x, y: event.y })
@@ -60,7 +60,7 @@ class RegEvent {
     RemoveRegister = (key) => {
         this.actions[key] = false
         this.keydowns[key] = false
-        //log('RemoveRegister',  this.keydowns[key])
+        ////log('RemoveRegister',  this.keydowns[key])
         return false
     }
 
